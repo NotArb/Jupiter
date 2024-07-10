@@ -5,7 +5,7 @@ rem Define lib path to be used instead of %CD% to allow this script to be called
 set "lib_path=%~dp0"
 
 rem Remove trailing slash from lib path
-set "lib_path=%lib_path:~0,-1%"
+if "%lib_path:~-1%"=="\" set "lib_path=%lib_path:~0,-1%"
 
 rem This is automatically assigned per release, change manually to use a different version
 set "not_arb_path=%lib_path%\..\..\NotArbBot-0.0.1-alpha"

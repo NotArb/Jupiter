@@ -5,7 +5,7 @@ rem Define lib path to be used instead of %CD% to allow this script to be called
 set "lib_path=%~dp0"
 
 rem Remove trailing slash from lib path
-set "lib_path=%lib_path:~0,-1%"
+if "%lib_path:~-1%"=="\" set "lib_path=%lib_path:~0,-1%"
 
 rem The url of the java archive to download
 set java_url=https://download.java.net/java/GA/jdk22.0.1/c7ec1332f7bb44aeba2eb341ae18aca4/8/GPL/openjdk-22.0.1_windows-x64_bin.zip
@@ -13,14 +13,14 @@ set java_url=https://download.java.net/java/GA/jdk22.0.1/c7ec1332f7bb44aeba2eb34
 rem This must match the folder name being extracted from the java url archive
 set archive_folder=jdk-22.0.1
 
-rem The path to the downloaded and extracted java archive
-set java_path=%lib_path%\%archive_folder%
+rem The path of the executable java file
+set java_exe_path=%lib_path%\%archive_folder%\bin\java.exe
 
 rem Check if exe already exists and is valid
-if exist "%java_path%\bin\java.exe" (
-    "%java_path%\bin\java.exe" --version
+if exist "%java_exe_path%" (
+    "%java_exe_path%" --version
     if !errorlevel! == 0 (
-        echo %java_path%\bin\java.exe
+        echo %java_exe_path%
         endlocal
         goto :eof
     )
@@ -33,5 +33,5 @@ powershell -Command ^
     "Expand-Archive -Path $tempFile -DestinationPath '%lib_path%' -Force; " ^
     "Remove-Item -Force $tempFile;"
 
-echo %java_path%\bin\java.exe
+echo %java_exe_path%
 endlocal
