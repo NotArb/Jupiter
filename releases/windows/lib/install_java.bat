@@ -18,22 +18,15 @@ set java_path=%lib_path%\%archive_folder%
 
 rem Check if exe already exists and is valid
 if exist "%java_path%\bin\java.exe" (
-    echo Checking existing java.exe...
     "%java_path%\bin\java.exe" --version
     if !errorlevel! == 0 (
         echo %java_path%\bin\java.exe
         endlocal
         goto :eof
     )
-    echo Existing java.exe is corrupt or not functioning, re-downloading...
 )
 
 rem Download and extract Java using PowerShell
-
-echo Downloading java...
-echo %java_url%
-echo ""
-
 powershell -Command ^
     "$tempFile = '%lib_path%\java_download_temp.zip'; " ^
     "Invoke-WebRequest -Uri '%java_url%' -OutFile $tempFile; " ^
