@@ -1,9 +1,13 @@
 @echo off
 
-set "config_path=example-config.toml"
+rem The path to the bot file (optional)
+set "bot_path="
 
-set "vm_args=-Xmx512m"
+rem The path to the bot config file (required)
+set "config_path=..\example-config.toml"
 
-set "bot_args="
+rem The path to the java exe file (optional)
+set "java_exe_path="
 
-call ".\lib\run_bot.bat"
+rem Call the run_bot.bat lib where args = vm_args
+call ".\lib\run_bot.bat" -Xmx512m

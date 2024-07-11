@@ -8,6 +8,9 @@ Be sure to check back here frequently for updates, we're close to an alpha relea
 
 <br><br><br>
 
+**Standalone Java Run Example**<br>
+java -cp NotArbBot-[version].jar ABSOLUTE_CONFIG_FILE_PATH
+
 
 
 ~~ WIP ~~
