@@ -22,7 +22,7 @@ set "java_folder=jdk-22.0.1"
 rem The path of the executable java file
 set "java_exe_path=%lib_path%\%java_folder%\bin\java.exe"
 
-rem Verify existing java exe if it exists
+rem Verify existing Java executable
 if exist "%java_exe_path%" (
     echo %java_exe_path%
     "%java_exe_path%" --version
