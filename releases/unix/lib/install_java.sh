@@ -13,7 +13,7 @@ detect_os_arch() {
     fi
 
     arch=$(uname -m | tr '[:upper:]' '[:lower:]')
-    if [[ "$arch" == "aarch64" ]]; then
+    if [[ "$arch" == "aarch64" || "$arch" == "arm64" ]]; then
         arch="aarch64"
     else
         arch="x64"
@@ -64,7 +64,7 @@ lib_path="${lib_path%/}"
 # Add lib_path to java_exe_path
 java_exe_path="$lib_path/$java_exe_path"
 
-# Download bool
+# Download flag
 download=1
 
 # Verify existing Java executable
@@ -73,7 +73,7 @@ if [ -f "$java_exe_path" ]; then
     "$java_exe_path" --version
     if [ $? -eq 0 ]; then
         echo "Java installation not required."
-        download=0 # using a bool var because we can't simply do an exit here when script is sourced
+        download=0
     fi
 fi
 
@@ -92,8 +92,9 @@ if [ $download -eq 1 ]; then
   "$java_exe_path" --version
   if [ $? -eq 0 ]; then
       echo "Java installation successful!"
-      export java_exe_path
   else
       echo "Warning: Java installation could not be verified!"
   fi
 fi
+
+export java_exe_path

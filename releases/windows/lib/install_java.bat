@@ -27,10 +27,8 @@ if exist "%java_exe_path%" (
     echo %java_exe_path%
     "%java_exe_path%" --version
     if %errorlevel% == 0 (
-        if defined standalone (
-            echo Java installation not required.
-            pause
-        )
+        echo Java installation not required.
+        if defined standalone ( pause )
         goto :eof
     )
 )
