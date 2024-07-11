@@ -97,4 +97,4 @@ if [ $download -eq 1 ]; then
   fi
 fi
 
-export java_exe_path
+export JAVA_EXE_PATH="$java_exe_path"

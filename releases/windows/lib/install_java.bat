@@ -20,13 +20,13 @@ rem This must match the folder name being extracted from the java url archive
 set "java_folder=jdk-22.0.1"
 
 rem The path of the executable java file
-set "java_exe_path=%lib_path%\%java_folder%\bin\java.exe"
+set "JAVA_EXE_PATH=%lib_path%\%java_folder%\bin\java.exe"
 
 rem Verify existing Java executable
-if exist "%java_exe_path%" (
-    echo %java_exe_path%
-    "%java_exe_path%" --version
-    if %errorlevel% == 0 (
+if exist "%JAVA_EXE_PATH%" (
+    echo %JAVA_EXE_PATH%
+    "%JAVA_EXE_PATH%" --version
+    if %ERRORLEVEL% == 0 (
         echo Java installation not required.
         if defined standalone ( pause )
         goto :eof
@@ -49,9 +49,9 @@ powershell -Command ^
     "Remove-Item -Force $tempFile;"
 
 rem Verify installed java exe
-echo %java_exe_path%
-"%java_exe_path%" --version
-if %errorlevel% == 0 (
+echo %JAVA_EXE_PATH%
+"%JAVA_EXE_PATH%" --version
+if %ERRORLEVEL% == 0 (
     echo Java installation successful!
     if defined standalone ( pause )
 ) else (
