@@ -1,7 +1,9 @@
 @echo off
 
-set lib_path=%CD%\lib
+set "config_path=example-config.toml"
 
-set config_path=%CD%\..\example-config.toml
+set "vm_args=-Xmx512m"
 
-"%lib_path%\run_bot.bat" "%config_path%"
+set "bot_args="
+
+call ".\lib\run_bot.bat"

@@ -1,36 +1,44 @@
 @echo off
-setlocal
 
-rem Define lib path to be used instead of %CD% to allow this script to be called from an outside package
-set lib_path=%~dp0
+rem Define caller path, passed to bot for locating config files
+set "caller_path=%CD%"
 
-rem Remove trailing slash from lib path if it exists
-if %lib_path:~-1%==\ set lib_path=%lib_path:~0,-1%
+rem Define cur path
+set "cur_path=%~dp0"
 
-rem This is automatically assigned per release, change manually to use a different version (KEEP STRING UNQUOTED)
-set not_arb_path=%lib_path%\..\..\NotArbBot-0.0.1-alpha
-
-rem Either provide your own java path (at least jdk22) or leave empty to auto install Java (KEEP STRING UNQUOTED)
-set java_exe_path=
-
-rem If java_exe_path is empty, run install_java.bat and capture the output
-if "%java_exe_path%"=="" (
-    echo Checking for Java installation...
-    for /f "delims=" %%i in ('call "%lib_path%\install_java.bat"') do (
-        set java_exe_path=%%i
-    )
+rem Remove trailing slash from cur path if it exists
+if "%cur_path:~-1%"=="\" (
+    set "cur_path=%cur_path:~0,-1%"
 )
 
-rem Print java info for debug purposes
+if not defined config_path (
+    echo Error: config_path not defined
+    pause
+    exit
+)
+
+if not defined vm_args (
+    echo Warning: vm_args not defined
+    set "vm_args="
+)
+
+if not defined bot_args (
+    set "bot_args="
+)
+
+if not defined bot_path (
+    rem If bot_path is not set from caller, it will default to the last defined release
+    set "bot_path=%caller_path%\..\NotArbBot-0.0.1-alpha"
+)
+
+if not defined java_exe_path (
+    rem Attempt to install Java if necessary
+    call "%cur_path%\install_java.bat"
+)
+
 echo %java_exe_path%
 "%java_exe_path%" --version
 
-rem More debug prints
-echo %not_arb_path%
-if "%~1"=="" ( echo No config file provided. ) else ( echo %1 )
+echo %bot_path%
 
-rem Run the bot launcher with the provided configuration file arg
-"%java_exe_path%" -cp "%not_arb_path%" org.notarb.launcher.Main "%~1"
-
-endlocal
-pause
+"%java_exe_path%" %vm_args% -cp "%bot_path%" org.notarb.launcher.Main %bot_args%
