@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # The path to the bot file (optional)
-export BOT_PATH=""
+export bot_path=""
 
 # The path to the bot config file (required)
-export CONFIG_PATH="../example-config.toml"
+export config_path="../example-config.toml"
 
 # The path to the java executable file (optional)
-export JAVA_EXE_PATH=""
+export java_exe_path=""
 
 # Source the run_bot.sh script with the specified VM arguments
 . ./lib/run_bot.sh -Xmx512m
