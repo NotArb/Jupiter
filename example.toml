@@ -2,25 +2,22 @@
 # Use the key in other configurations that require rpc servers.
 
 [[rpc]]
-key="helius_geyser_free"
-url="..."
+key="solana"
+url="https://api.mainnet-beta.solana.com"
 http_timeout_ms=5000
 requests_per_second=10
 thread_pool_size=1
 
-[[rpc]]
-key="shyft_free"
-url="..."
+[jito]
+url="https://mainnet.block-engine.jito.wtf"
 http_timeout_ms=5000
-requests_per_second=30
+requests_per_second=5
 thread_pool_size=1
-
-[[rpc]]
-key="quasar_lups"
-url="..."
-http_timeout_ms=5000
-requests_per_second=100
-thread_pool_size=1
+queue_timeout_ms=5000
+#proxy_host=""
+#proxy_port=1234
+#proxy_user=""
+#proxy_password=""
 
 [jupiter]
 url="http://0.0.0.0:8080/"
@@ -32,13 +29,10 @@ unmetered=true
 # Miscellaneous bot configuration
 
 [bot_misc]
-keypair_path="my-keypair.json" # required for signing transactions
+keypair_path="/path/to/keypair" # required for signing transactions
 task_scheduler_threads=5 # the amount of threads to execute repeating tasks such as fetching latest blockhashes
-token_subscribe_wss_url="..." # used to subscribe to token programs for quoting
-address_table_lookup_rpc_keys=["quasar_lups"] # lookup requests will randomly select one of the rpcs to use
-address_table_lookup_max_cache_size=1000 # max number of lookup tables to cache
-address_table_lookup_timeout_ms=10000 # how long should a lookup request wait before cancelling
-latest_blockhash_rpc_keys=["helius_geyser_free"] # each key will schedule a latest blockhash fetch task to ensure the bot has the latest blockhash for transactions
+token_subscribe_wss_url="wss://api.mainnet-beta.solana.com" # used to subscribe to token programs for quoting
+latest_blockhash_rpc_keys=["solana"] # each key will schedule a latest blockhash fetch task to ensure the bot has the latest blockhash for transactions
 latest_blockhash_fetch_ms=200 # the rate at which latest blockhash fetch tasks should execute
 latest_blockhash_timeout_ms=3000 # how long should a fetch task wait before cancelling
 
@@ -55,9 +49,7 @@ min_spend=123
 max_spend=456
 
 # Priority fee - Define your desired priority fee settings.
-# Ex: priorityFeeLamports = (estimatedProfitLamports * priority_fee_profit_factor).max(min_priority_fee_lamports).min(max_priority_fee_lamports)
-# If priority_fee_profit_factor is set to 0, the priority fee of the tx will be rand(min_priority_fee_lamports, max_priority_fee_lamports)
-priority_fee_profit_factor=0.05 # default value
+# At the moment this just randomizes min-max... but eventually I want to get more in depth with this setting
 min_priority_fee_lamports=100 # default value
 max_priority_fee_lamports=1000 # default value
 
@@ -65,7 +57,8 @@ max_priority_fee_lamports=1000 # default value
 # Transactions with a calculated compute unit limit greater than max_compute_limit will not be sent.
 # Warning: Enabling this will cause transactions to simulate first, which is overall slower and uses one more rpc call.
 # Disable this setting by simply not including it or setting it to -1
-max_compute_limit=-1 # default value
+#not available at the moment, may be removed in future
+#max_compute_limit=-1 # default value
 
 # Max swap routes - The maximum amount of swap routes allowed for a transaction to be sent.
 # Disable this setting by simply not including it, although, we recommend this set to 5.
@@ -103,6 +96,7 @@ min_pref_jito_tip=0 # default value - "pref" means preferred, meaning it will tr
 max_pref_jito_tip=0 # default value - "pref" isn't really necessary here - this is the max jito tip your tx can have
 
 # Normal transaction settings - If you don't want normal txs sending, do not include any settings for them
+# not available at the moment, design will most likely change in future
 [[strategy_example_doc.normal_tx]]
 rpc_key="example_rpc_key"
 min_profit_lamports=1234 # the minimum ESTIMATED profit lamports for this to send
@@ -119,7 +113,6 @@ mint="EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
 decimals=6
 
 [swap.strategy_defaults]
-priority_fee_profit_factor=0.25
 min_priority_fee_lamports=190
 max_priority_fee_lamports=1900
 jito_tip_percent=10
@@ -171,7 +164,6 @@ decimals=9
 
 [swap.strategy_defaults]
 wrap_unwrap_sol=false
-priority_fee_profit_factor=0.25
 min_priority_fee_lamports=190
 max_priority_fee_lamports=1900
 jito_tip_percent=10
