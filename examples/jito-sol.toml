@@ -1,7 +1,7 @@
 # Define your desired rpc configurations, identified by "key" which must be unique.
 # Use the key in other configurations that require rpc servers.
 
-[[rpc]]
+[[rpc]] # this is just an example rpc configuration, we recommend changing it (be sure to also change the blockhash_fetcher rpc_keys below)
 key="solana-public"
 url="https://api.mainnet-beta.solana.com"
 http_timeout_ms=5000
