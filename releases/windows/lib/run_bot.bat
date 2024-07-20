@@ -58,6 +58,6 @@ echo bot_path=%bot_path%
 echo config_path=%config_path%
 
 rem Run bot
-"%java_exe_path%" %* -Dcaller_script_dir="%CD%" -cp "%bot_path%" org.notarb.launcher.Main "%config_path%"
+"%java_exe_path%" --enable-preview %* -Dcaller_script_dir="%CD%" -cp "%bot_path%" org.notarb.launcher.Main "%config_path%"
 echo Bot exited with code %errorlevel%
 pause
