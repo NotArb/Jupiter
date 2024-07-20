@@ -37,8 +37,7 @@ thread_pool_size=1
 queue_timeout_ms=11000
 
 [jupiter]
-#url="http://0.0.0.0:7406/"
-url="http://45.43.16.71:7406/"
+url="http://0.0.0.0:8080/"
 http_timeout_ms=3000
 requests_per_second=0 # not used when unmetered=true
 thread_pool_size=0 # not used when unmetered=true
