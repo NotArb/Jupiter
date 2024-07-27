@@ -10,4 +10,4 @@ export config_path="../example-config.toml"
 export java_exe_path=""
 
 # Source the run_bot.sh script with the specified VM arguments
-. ./lib/run_bot.sh -Xmx512m
+. ./lib/run_bot.sh -Xmx1024m
