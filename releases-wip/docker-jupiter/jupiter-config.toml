@@ -1,0 +1,26 @@
+auto_restart_minutes=10
+
+[env]
+RUST_LOG="info"
+RUST_BACKTRACE="full"
+HOST="0.0.0.0"
+PORT="8080" # do not change this, port mapping is done from the build_jupiter script
+RPC_URL="your.url"
+#YELLOWSTONE_GRPC_ENDPOINT=""
+#YELLOWSTONE_GRPC_X_TOKEN=""
+ALLOW_CIRCULAR_ARBITRAGE="true"
+ENABLE_NEW_DEXES="true"
+
+FILTER_MARKETS_WITH_MINTS="" # don't set this, it's overwritten with filters below
+
+[jupiter_mint_filter]
+enabled=true
+required_tags=[
+    ["birdeye-trending"],
+    ["verified", "pump"]
+]
+
+[[mint_filter]]
+enabled=true
+mints=[
+]

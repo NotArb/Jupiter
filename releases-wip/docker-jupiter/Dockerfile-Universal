@@ -1,0 +1,29 @@
+FROM ubuntu:22.04
+
+RUN apt-get update && apt-get install -y \
+    curl \
+    unzip \
+    openjdk-21-jdk \
+    && rm -rf /var/lib/apt/lists/*
+
+ARG RELEASE_URL
+
+WORKDIR /jupiter
+
+# Copy and filter NotArbBot files by version
+
+COPY NotArbBot-* /tmp/
+
+RUN latest_file=$(ls -v /tmp/NotArbBot-* | tail -n 1) && \
+    mv "$latest_file" /jupiter/NotArbBot && \
+    rm -rf /tmp/NotArbBot-*
+
+# Download Jupiter and mark as executable
+
+RUN curl -L ${RELEASE_URL} -o /tmp/jupiter-release.zip && \
+    unzip /tmp/jupiter-release.zip -d /jupiter && \
+    rm /tmp/jupiter-release.zip
+
+RUN chmod +x /jupiter/jupiter-swap-api
+
+CMD ["java", "-Xmx512m", "-cp", "/jupiter/NotArbBot", "org.notarg.Main", "--jupiter-server"]
