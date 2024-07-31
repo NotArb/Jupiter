@@ -14,22 +14,9 @@ if [ ! -x "$(command -v docker)" ]; then
     exit 1
 fi
 
-if [ -z "$1" ]; then
-    read -p "Enter absolute path to config file: " CONFIG_PATH
-else
-    CONFIG_PATH="$1"
-fi
-
-# Ensure config file exists in working dir
-if [ ! -f "$CONFIG_PATH" ]; then
-  echo "Jupiter config file not found: \"$CONFIG_PATH\""
-  echo "Make sure to use an absolute path."
-  exit 1
-fi
-
 echo "Starting Jupiter Docker Build..."
 
-dockerfile_name="Dockerfile-Jupiter-Universal"
+dockerfile_name="Dockerfile-Universal"
 
 if [ -f /etc/os-release ]; then
     . /etc/os-release
@@ -40,23 +27,36 @@ if [ -f /etc/os-release ]; then
 
         if [ "$major_version" -ge 22 ] && [ "$minor_version" -ge 4]; then
           echo "Detected Ubuntu 22.04, using Ubuntu Dockerfile..."
-          dockerfile_name="Dockerfile-Jupiter-Ubuntu"
+          #todo
+          #dockerfile_name="Dockerfile-Ubuntu"
         fi
     fi
 fi
 
-# Bring us to the "releases" dir
-cd "$(dirname "${BASH_SOURCE[0]}")" && cd ../..
+jupiter_port=8080
+
+if [ -n "$1" ]; then
+  jupiter_port=$1
+fi
+
+# Get this scripts directory
+script_dir=$(dirname "${BASH_SOURCE[0]}")
+
+# Change our dir to the one that has the NotArbBot file
+cd "$script_dir" && cd ../
 
 # Build docker image
 docker build -t jupiter-image:latest --build-arg RELEASE_URL=$RELEASE_URL \
-  -f "docker/$dockerfile_name" .
+  -f "$script_dir/$dockerfile_name" .
+
+echo "build complete"
 
 # Create docker container named jupiter, but first stop/remove any existing ones
 docker stop jupiter 2>/dev/null || true
 docker rm jupiter 2>/dev/null || true
 docker create --name jupiter --restart unless-stopped jupiter-image:latest \
-  -v "$CONFIG_PATH:/jupiter/jupiter-config.toml"
+  -v "$script_dir/jupiter-config.toml:/jupiter/jupiter-config.toml" \
+  -p $jupiter_port:8080
 
 # Print some useful info to the user
 echo ""

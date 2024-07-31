@@ -4,7 +4,7 @@ auto_restart_minutes=10
 RUST_LOG="info"
 RUST_BACKTRACE="full"
 HOST="0.0.0.0"
-PORT="8080" # do not change this, port mapping is done from the build_jupiter script
+PORT="8080" # do not change this, port mapping is done from the build script (ex bash build.sh 1234 where 1234 is your desired port)
 RPC_URL="your.url"
 #YELLOWSTONE_GRPC_ENDPOINT=""
 #YELLOWSTONE_GRPC_X_TOKEN=""
@@ -13,14 +13,17 @@ ENABLE_NEW_DEXES="true"
 
 FILTER_MARKETS_WITH_MINTS="" # don't set this, it's overwritten with filters below
 
-[jupiter_mint_filter]
+# The dynamic mint filter fetches tradable tokens from Jupiter's Token API on startup.
+# Optionally filter tokens by "required_tags" which are groups of tags - only 1 group needs to match to accept the token.
+[dynamic_mint_filter]
 enabled=true
 required_tags=[
     ["birdeye-trending"],
     ["verified", "pump"]
 ]
 
-[[mint_filter]]
+[[static_mint_filter]]
 enabled=true
 mints=[
+    "..."
 ]
