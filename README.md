@@ -11,7 +11,7 @@
 
 ## Features
 
-### Docker Jupiter Management Server
+### Jupiter Management Server
 
 Currently, this service is only available via Docker, with potential support for other platforms in the future.
 - **Auto-Restart Feature**: Ensures the server automatically restarts if it stops due to failure.
