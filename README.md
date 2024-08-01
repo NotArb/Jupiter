@@ -42,7 +42,7 @@ https://solscan.io/account/BqirtYFXWbEaQr2VxcDKZ7nehZqNtqrLJbpoUaBpPZ6z
 
 #### Hosting
 - The bot can be run on the same host as the Jupiter server or on a separate host.
-- Unlike the RPC and Jupiter servers, the bot itself does not require a heavy-duty host. Specifications and recommendations will be provided soon.
+- Unlike the RPC and Jupiter servers, the bot itself does not require a heavy-duty host. _Specifications and recommendations to come._
 - While you can technically run the bot using free RPC endpoints, this will likely result in a very poor transaction success rate. Higher quality servers will improve your returns.
 
 
