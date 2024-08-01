@@ -7,7 +7,7 @@
 
 #### Warnings
   - Never use NotArb files that you did not directly download from our official GitHub page.
-  - Never put private keys on shared or unesecured hosts.
+  - Never put private keys on shared or unsecured hosts.
 
 ## Features
 
@@ -27,19 +27,17 @@ Currently, this service is only available via Docker, with potential support for
   [jupiter-config.toml](https://github.com/NotArb/Jupiter/blob/main/releases-wip/docker-jupiter/jupiter-config.toml)
 
 ### Jupiter Arb Bot
-NotArb primarily focuses on offering a powerful Jupiter Arbitrage Bot designed for executing arbitrage transactions quickly and efficiently on the Solana blockchain.
 
-## Bot Availability
-The bot is publicly available, but it's currently in an alpha stage. It is very early in development and will undergo several changes. You can follow the bot's program account to see its activity at:<br>
+NotArb offers a powerful Jupiter Arbitrage Bot designed for executing arbitrage transactions quickly and efficiently on the Solana blockchain. The bot utilizes Jupiter Swap to identify and execute arbitrage transactions as quickly as possible.
+
+#### Bot Availability
+The bot is publicly available but is currently in an alpha stage and will undergo several changes. You can follow the bot's program account to see its activity at:<br>
 https://solscan.io/account/BqirtYFXWbEaQr2VxcDKZ7nehZqNtqrLJbpoUaBpPZ6z
 
 Feel free to join our Discord community:
 [Discord - NotArb](https://discord.notarb.org)
 
-## How It Works
-NotArb Bot is a Solana-based bot that utilizes Jupiter Swap to identify and execute arbitrage transactions as quickly as possible.
-
-## Requirements
+#### Requirements
 - **RPC Server**
 - **Jupiter Server**
 - **Bot Server**
@@ -47,9 +45,6 @@ NotArb Bot is a Solana-based bot that utilizes Jupiter Swap to identify and exec
 The bot itself does not require a heavy-duty host, unlike the RPC and Jupiter servers. Specifications and recommendations will be provided soon.
 
 Note: While you can technically run the bot using free RPC endpoints, this will likely result in a very poor transaction success rate. Higher quality servers will improve your returns.
-
-## More Information
-More detailed information and updates will be provided as we approach the public release.
 
 ## Links
 - [Discord Community](https://discord.notarb.org)
