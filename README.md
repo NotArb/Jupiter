@@ -26,7 +26,6 @@ Currently, this service is only available via Docker, with potential support for
 
   [jupiter-config.toml](https://github.com/NotArb/Jupiter/blob/main/releases-wip/docker-jupiter/jupiter-config.toml)
 
-<br>
 
 ### Jupiter Arb Bot
 
@@ -36,19 +35,18 @@ NotArb offers a powerful Jupiter Arbitrage Bot designed for executing arbitrage 
 The bot is publicly available but is currently in an alpha stage and will undergo several changes. You can follow the bot's program account to see its activity at:<br>
 https://solscan.io/account/BqirtYFXWbEaQr2VxcDKZ7nehZqNtqrLJbpoUaBpPZ6z
 
-Feel free to join our Discord community:
-[Discord - NotArb](https://discord.notarb.org)
-
 #### Requirements
 - **RPC Server**
 - **Jupiter Server**
 - **Bot Server**
 
-The bot itself does not require a heavy-duty host, unlike the RPC and Jupiter servers. Specifications and recommendations will be provided soon.
+#### Hosting
+- The bot can be run on the same host as the Jupiter server or on a separate host.
+- Unlike the RPC and Jupiter servers, the bot itself does not require a heavy-duty host. Specifications and recommendations will be provided soon.
+- While you can technically run the bot using free RPC endpoints, this will likely result in a very poor transaction success rate. Higher quality servers will improve your returns.
 
-Note: While you can technically run the bot using free RPC endpoints, this will likely result in a very poor transaction success rate. Higher quality servers will improve your returns.
 
-## Links
+## Offical Links
 - [Discord Community](https://discord.notarb.org)
 - [Example Arbitrage Configurations](https://examples.notarb.org)
 - [Download NotArb](https://download.notarb.org)
