@@ -18,7 +18,7 @@ Currently, this service is only available via Docker, with potential support for
 - **Timed Restart Feature**: Optionally, the server can be configured to restart at regular intervals, providing additional stability.
 - **Dynamic/Static Mint Filters**:
   - **Dynamic Filter**: Fetches tradable tokens from Jupiter's official [Token List API](https://station.jup.ag/docs/token-list/token-list-api) and adds them to the program's filtered mint list.
-  - **Static Filter**: A list of predefined mints in your config file that will be added to the program's filtered mint list. 
+  - **Static Filter**: A list of predefined mints that will be added to the program's filtered mint list. 
   - _All filters are configurable and can be enabled/disabled in the config file._
   - _Filters are applied on every start/restart._
 
