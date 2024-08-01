@@ -1,4 +1,4 @@
-# NotArb
+# NotArb (UNDER DEVELOPMENT)
 
 **NotArb** is a versatile platform designed to optimize token trading and arbitrage operations on the Solana blockchain. It offers two main components:
 
