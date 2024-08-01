@@ -20,7 +20,7 @@ Currently, this service is only available via Docker, with potential support for
   - **Dynamic Filter**: Fetches tradable tokens from Jupiter's official Tokens API and adds them to the jupiter-swap-api's filtered mint list.
   - **Static Filter**: A list of predefined mints in your config file that will be added to the jupiter-swap-api's filtered mint list. 
   - _All filters are configurable and can be enabled/disabled in the config file._
-  - _Filters are applied on every start/restart.
+  - _Filters are applied on every start/restart._
 
 - **Dependency Management**: Automatically downloads and installs required dependencies, such as the `jupiter-swap-api`, ensuring users have everything they need to get started quickly.
 - **Configurable via `jupiter-config.toml`**: Allows users to pass any ENV variables to the `jupiter-swap-api` and set up configurations such as the auto-restart timer and filters.
