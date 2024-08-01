@@ -17,9 +17,10 @@ Currently, this service is only available via Docker, with potential support for
 - **Auto-Restart Feature**: Ensures the server automatically restarts if it stops due to failure.
 - **Timed Restart Feature**: Optionally, the server can be configured to restart at regular intervals, providing additional stability.
 - **Dynamic/Static Mint Filters**:
-  - **Dynamic Filter**: On every start/restart, the server fetches tradable tokens from Jupiter's official Tokens API and adds them to the jupiter-swap-api's filtered mint list.
-  - **Static Filter**: On every start/restart, the server includes mints from predefined lists in your config file to the jupiter-swap-api's filtered mint list. 
+  - **Dynamic Filter**: Fetches tradable tokens from Jupiter's official Tokens API and adds them to the jupiter-swap-api's filtered mint list.
+  - **Static Filter**: Use a list of predefined mints in your config file to add to the jupiter-swap-api's filtered mint list. 
   - _All filters are configurable and can be enabled/disabled in the config file._
+  - _Filters are applied on every start/restart.
 
 - **Dependency Management**: Automatically downloads and installs required dependencies, such as the `jupiter-swap-api`, ensuring users have everything they need to get started quickly.
 - **Configurable via `jupiter-config.toml`**: Allows users to pass any ENV variables to the `jupiter-swap-api` and set up configurations such as the auto-restart timer and filters.
