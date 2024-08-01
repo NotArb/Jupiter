@@ -11,7 +11,6 @@ disable_http_pools=false # Disable HTTP pools for debugging purposes (will be re
 max_threads=36 # Maximum number of threads for handling swap requests (defaults to the number of available processors)
 
 [jupiter]
-enabled=true # Enable or disable Jupiter for making quote requests (default: true)
 url="http://0.0.0.0:8080/" # URL of your Jupiter server
 http_timeout_ms=3000 # HTTP request timeout for Jupiter (in milliseconds)
 http_pool_max_size=50 # Maximum number of HTTP connections in the pool for Jupiter requests
