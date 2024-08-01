@@ -5,8 +5,9 @@
 - A Docker-based Jupiter management server with features designed to enhance token trading efficiency.
 - A bot that performs arbitrage operations using Jupiter on the Solana blockchain.
 
-#### Warning
-**Do not use any NotArb files that you did not directly download from our official GitHub page.**
+#### Warnings
+  - Never use NotArb files that you did not directly download from our official GitHub page.
+  - Never put private keys on shared or unesecured hosts.
 
 ## Features
 
