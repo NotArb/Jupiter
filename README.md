@@ -5,6 +5,8 @@
 - A Docker-based Jupiter management server with features designed to enhance token trading efficiency.
 - A bot that performs arbitrage operations using Jupiter on the Solana blockchain.
 
+## Warning
+**Do not use any NotArb files that you did not directly download from our official GitHub page.**
 
 ## Features
 
@@ -32,9 +34,6 @@ https://solscan.io/account/BqirtYFXWbEaQr2VxcDKZ7nehZqNtqrLJbpoUaBpPZ6z
 
 Feel free to join our Discord community:
 [Discord - NotArb](https://discord.notarb.org)
-
-## Warning
-**Do not use any NotArb files that you did not directly download from our official GitHub page.**
 
 ## How It Works
 NotArb Bot is a Solana-based bot that utilizes Jupiter Swap to identify and execute arbitrage transactions as quickly as possible.
