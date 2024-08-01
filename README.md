@@ -30,7 +30,7 @@ Currently, this service is only available via Docker, with potential support for
 
 ### Jupiter Arb Bot (ALPHA)
 
-NotArb offers a powerful Jupiter Arbitrage Bot designed for executing arbitrage transactions quickly and efficiently on the Solana blockchain. The bot utilizes Jupiter Swap to identify and execute arbitrage transactions as quickly as possible.
+NotArb offers a powerful Jupiter Arbitrage Bot designed for executing arbitrage transactions quickly and efficiently on the Solana blockchain. The bot utilizes [Jupiter Swap API](https://station.jup.ag/docs/apis/swap-api) to identify and execute arbitrage transactions as quickly as possible.
 
 _The bot is publicly available but is currently in an alpha stage and will undergo several changes. You can follow the bot's program account to see its activity at:<br>_
 
