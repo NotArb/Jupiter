@@ -1,6 +1,10 @@
 # NotArb
 
-**NotArb** is a program that offers a Docker-based Jupiter management server with features designed to enhance token trading efficiency and support for arbitrage operations.
+**NotArb** is a versatile platform designed to optimize token trading and arbitrage operations on the Solana blockchain. It offers two main components:
+
+- A Docker-based Jupiter management server with features designed to enhance token trading efficiency.
+- A bot that performs arbitrage operations using Jupiter on the Solana blockchain.
+
 
 ## Features
 
