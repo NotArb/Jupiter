@@ -27,8 +27,8 @@ Currently, this service is only available via Docker, with potential support for
 NotArb primarily focuses on offering a powerful Jupiter Arbitrage Bot designed for executing arbitrage transactions quickly and efficiently on the Solana blockchain.
 
 ## Bot Availability
-The bot is publicly available, but it's currently in an alpha stage. It is very early in development and will undergo several changes. You can follow the bot's program account to see its activity at:
-[Solscan - NotArb Bot Program Account](https://solscan.io/account/BqirtYFXWbEaQr2VxcDKZ7nehZqNtqrLJbpoUaBpPZ6z)
+The bot is publicly available, but it's currently in an alpha stage. It is very early in development and will undergo several changes. You can follow the bot's program account to see its activity at:<br>
+https://solscan.io/account/BqirtYFXWbEaQr2VxcDKZ7nehZqNtqrLJbpoUaBpPZ6z
 
 Feel free to join our Discord community:
 [Discord - NotArb](https://discord.notarb.org)
