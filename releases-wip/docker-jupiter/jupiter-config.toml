@@ -1,29 +1,51 @@
+# This program is essentially just a "manager" for the jupiter-swap-api process.
+[manager]
 auto_restart_minutes=10
 
+# These environmental variables are specific to Jupiter.
+# For a complete list of available variables, use the jupiter-swap-api --help command.
 [env]
 RUST_LOG="info"
 RUST_BACKTRACE="full"
 HOST="0.0.0.0"
-PORT="8080" # do not change this, port mapping is done from the build script (ex bash build.sh 1234 where 1234 is your desired port)
+PORT="8080" # Do not change this! To use a different port, change PORT in build.sh
 RPC_URL="your.url"
-#YELLOWSTONE_GRPC_ENDPOINT=""
-#YELLOWSTONE_GRPC_X_TOKEN=""
+#YELLOWSTONE_GRPC_ENDPOINT="" # only enable if you intend to use grpc
+#YELLOWSTONE_GRPC_X_TOKEN=""  # only enable if you intend to use grpc
 ALLOW_CIRCULAR_ARBITRAGE="true"
 ENABLE_NEW_DEXES="true"
+FILTER_MARKETS_WITH_MINTS="" # This will be ovewritten by mint filters defined below.
 
-FILTER_MARKETS_WITH_MINTS="" # don't set this, it's overwritten with filters below
-
-# The dynamic mint filter fetches tradable tokens from Jupiter's Token API on startup.
-# Optionally filter tokens by "required_tags" which are groups of tags - only 1 group needs to match to accept the token.
+# The dynamic mint filter fetches tradable tokens from Jupiter's Token API during startup.
+# By default, tokens are filtered out if they have no daily volume, are freezable, or are mintable.
+# Optionally, tokens can also be filtered by "required_tags". These tags are organized into groups,
+# and a token only needs to match at least one group to be accepted.
+# Find all of Jupiter's token tags here: https://station.jup.ag/docs/token-list/token-list-api
 [dynamic_mint_filter]
 enabled=true
 required_tags=[
     ["birdeye-trending"],
-    ["verified", "pump"]
+    #["verified", "pump"]
 ]
 
+# Static mint filters are predefined lists of mints that you want to include.
+# Multiple filters can be defined to suit different needs.
 [[static_mint_filter]]
 enabled=true
 mints=[
-    "..."
+    "So11111111111111111111111111111111111111112",  # sol
+    "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB", # usdt
+    "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # usdc
+    "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R", # ray
+    "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn", # jitosol
+    "mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So",  # msol
+    "7dHbWXmci3dT8UFYWYZweBLXgycu7Y3iL6trKn1Y7ARj", # stsol
+    "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs", # weth
+    "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh", # wbtc
+    "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",  # jup
+    "HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3", # pyth
+    "HNTvzaqTmDxJbi3isreXtUn9MUJEJy1bp9bo1rpGEGhi", # aurasol
+    "jucy5XJ76pHVvtPZb5TKRcGQExkwit2P5s4vY8UzmpC",  # jucysol
+    "iSoLdL1Nqqo94A51EXr5iuBiUtHMAnxHJKaToGKphLq",  # isol
+    "bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1",  # bsol
 ]

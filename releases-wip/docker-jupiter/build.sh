@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Change this to use a different version of Jupiter.
-# Remember if you change this url you'll need to re-run this script to build a new docker image.
-# (This url must be a .zip file)
-RELEASE_URL="https://github.com/jup-ag/jupiter-swap-api/releases/download/v6.0.23/jupiter-swap-api-x86_64-unknown-linux-gnu.zip"
+# If you want your Jupiter server to listen on a different port, change this before building.
+PORT=8080
 
 # Ensure Docker is installed
 if [ ! -x "$(command -v docker)" ]; then
@@ -14,29 +12,15 @@ if [ ! -x "$(command -v docker)" ]; then
     exit 1
 fi
 
-echo "Starting Jupiter Docker Build..."
+echo "Creating jupiter build image..."
 
-dockerfile_name="Dockerfile-Universal"
+# Collect all arguments to be used as jvm args
+vm_args="$@"
 
-if [ -f /etc/os-release ]; then
-    . /etc/os-release
-
-    if [ "$NAME" == "Ubuntu" ]; then
-        major_version=$(echo "$VERSION_ID" | cut -d'.' -f1)
-        minor_version=$(echo "$VERSION_ID" | cut -d'.' -f2)
-
-        if [ "$major_version" -ge 22 ] && [ "$minor_version" -ge 4]; then
-          echo "Detected Ubuntu 22.04, using Ubuntu Dockerfile..."
-          #todo
-          #dockerfile_name="Dockerfile-Ubuntu"
-        fi
-    fi
-fi
-
-jupiter_port=8080
-
-if [ -n "$1" ]; then
-  jupiter_port=$1
+# Check if vm_args is empty and set to default if necessary
+if [ -z "$vm_args" ]; then
+  echo "No vm args passed, using defaults..."
+  vm_args="-Xmx512m"
 fi
 
 # Get this scripts directory
@@ -46,21 +30,26 @@ script_dir=$(dirname "${BASH_SOURCE[0]}")
 cd "$script_dir" && cd ../
 
 # Build docker image
-docker build -t jupiter-image:latest --build-arg RELEASE_URL=$RELEASE_URL \
-  -f "$script_dir/$dockerfile_name" .
+docker build -t jupiter-image:latest \
+  --build-arg VM_ARGS="$vm_args" \
+  -f "$script_dir/Dockerfile" .
 
-echo "build complete"
+echo "Jupiter image created!"
 
 # Create docker container named jupiter, but first stop/remove any existing ones
+echo "Creating jupiter container... (port=$PORT)"
 docker stop jupiter 2>/dev/null || true
 docker rm jupiter 2>/dev/null || true
-docker create --name jupiter --restart unless-stopped jupiter-image:latest \
+docker create --name jupiter --restart unless-stopped \
+  -p $PORT:8080 \
   -v "$script_dir/jupiter-config.toml:/jupiter/jupiter-config.toml" \
-  -p $jupiter_port:8080
+  jupiter-image:latest
+
+echo "Jupiter container created!"
+echo "--------------------"
 
 # Print some useful info to the user
-echo ""
-echo "Build complete! You can now run your Jupiter server with the following command:"
+echo "You can now run your Jupiter server with the following command:"
 echo "-> docker start jupiter"
 echo "Here are some other useful commands:"
 echo "-> docker stop jupiter"
