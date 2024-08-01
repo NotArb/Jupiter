@@ -26,7 +26,7 @@ fi
 # Get this scripts directory
 script_dir=$(dirname "${BASH_SOURCE[0]}")
 
-# Change our dir to the one that has the NotArbBot file
+# Change our dir to the one that has the NotArb file
 cd "$script_dir" && cd ../
 
 # Build docker image

@@ -1,34 +1,49 @@
-**Coming Soon!**<br>
-At this time our bot is not publicly available, but you can follow our bot's program account to see some activity at:<br>https://solscan.io/account/BqirtYFXWbEaQr2VxcDKZ7nehZqNtqrLJbpoUaBpPZ6z
+# NotArb
 
-Our bot is currently being run on a Mac laptop alongside a self-hosted Jupiter using Quasar RPC.
+**NotArb** is a program that offers a Docker-based Jupiter management server with features designed to enhance token trading efficiency and support for arbitrage operations.
 
-Be sure to check back here frequently for updates, we're close to an alpha release! We have a Discord that's still being worked on but feel free to join<br>https://discord.gg/76JgyMmt
+## Features
 
+### Docker Jupiter Management Server
+- **Auto-Restart Feature**: Ensures the server automatically restarts if it stops due to failure.
+- **Timed Restart Feature**: Optionally, the server can be configured to restart at regular intervals, providing additional stability.
+- **Dynamic/Static Mint Filter**:
+    - **Dynamic Filter**: On every start, including restarts, the server fetches tradable tokens from Jupiter's official Tokens API if enabled.
+    - **Static Filter**: On every start, including restarts, allows users to predefine a list of mints which will be added to the mint filter list if enabled.
+- **Dependency Management**: Automatically downloads and installs required dependencies, such as the `jupiter-swap-api`, ensuring users have everything they need to get started quickly.
+- **Configurable via `jupiter-server.toml`**: Allows users to pass any ENV variables to the `jupiter-swap-api` and set up configurations such as the auto-restart timer and filters.
 
-<br><br><br>
+Currently, this service is only available via Docker, with potential support for other platforms in the future.
 
-**Standalone Java Run Example**<br>
-java -cp NotArbBot-[version].jar ABSOLUTE_CONFIG_FILE_PATH
+### Jupiter Arb Bot
+NotArb primarily focuses on offering a powerful Jupiter Arbitrage Bot designed for executing arbitrage transactions quickly and efficiently on the Solana blockchain.
 
+## Bot Availability
+The bot is publicly available, but it's currently in an alpha stage. It is very early in development and will undergo several changes. You can follow the bot's program account to see its activity at:
+[Solscan - NotArb Bot Program Account](https://solscan.io/account/BqirtYFXWbEaQr2VxcDKZ7nehZqNtqrLJbpoUaBpPZ6z)
 
+Feel free to join our Discord community:
+[Discord - NotArb](https://discord.notarb.org)
 
-~~ WIP ~~
+## Warning
+**Do not use any NotArb files that you did not directly download from our official GitHub page.**
 
-**Warning:** Do not use any NotArb files that you did not directly download from our official GitHub page.
+## How It Works
+NotArb Bot is a Solana-based bot that utilizes Jupiter Swap to identify and execute arbitrage transactions as quickly as possible.
 
-**How it works**<br>
-NotArb Bot is a Solana bot that utilizes Jupiter Swap to find and execute arbitrage transactions as quickly as possible.
+## Requirements
+- **RPC Server**
+- **Jupiter Server**
+- **Bot Server**
 
-**What you will need**<br>
-RPC Server<br>
-Jupiter Server<br>
-Bot Server<br>
-<br>
-The bot itself doesn't require such a heavy hitting host like the RPC and Jupiter server do. Recommended specs to come.
+The bot itself does not require a heavy-duty host, unlike the RPC and Jupiter servers. Specifications and recommendations will be provided soon.
 
-Also, you could technically run the bot using free rpc endpoints, you'll just have very poor land rate. The better your servers the better your returns.
+Note: While you can technically run the bot using free RPC endpoints, this will likely result in a very poor transaction success rate. Higher quality servers will improve your returns.
 
-More info to come!
+## More Information
+More detailed information and updates will be provided as we approach the public release.
 
-At this time our bot is not public
+## Links
+- [Discord Community](https://discord.notarb.org)
+- [Example Arbitrage Configurations](https://examples.notarb.org)
+- [Download NotArb](https://download.notarb.org)
