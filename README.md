@@ -9,6 +9,7 @@
 ## Features
 
 ### Docker Jupiter Management Server
+Currently, this service is only available via Docker, with potential support for other platforms in the future.
 - **Auto-Restart Feature**: Ensures the server automatically restarts if it stops due to failure.
 - **Timed Restart Feature**: Optionally, the server can be configured to restart at regular intervals, providing additional stability.
 - **Dynamic/Static Mint Filter**:
@@ -20,8 +21,6 @@
 - **Configurable via `jupiter-config.toml`**: Allows users to pass any ENV variables to the `jupiter-swap-api` and set up configurations such as the auto-restart timer and filters.
 
   [jupiter-config.toml](https://github.com/NotArb/Jupiter/blob/main/releases-wip/docker-jupiter/jupiter-config.toml)
-
-Currently, this service is only available via Docker, with potential support for other platforms in the future.
 
 ### Jupiter Arb Bot
 NotArb primarily focuses on offering a powerful Jupiter Arbitrage Bot designed for executing arbitrage transactions quickly and efficiently on the Solana blockchain.
