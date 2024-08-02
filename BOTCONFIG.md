@@ -68,8 +68,8 @@ fetch_ms=10000 # Interval for fetching tradable tokens from Jupiter (in millisec
 max_per_cycle=5 # Maximum number of tokens to attempt a swap per cycle
 required_tags=[ # Fetched tokens must match at least one group to be accepted.
     ["birdeye-trending"],
-    ["lst"],
     #["pump", "verified"],
+    ["lst"],
 ] # Juptier token tags can be found here: https://station.jup.ag/docs/token-list/token-list-api
 
 # Token list configuration (Optional, but required if no other token suppliers are enabled)
