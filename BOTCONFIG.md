@@ -80,17 +80,6 @@ mints=[ # List of token mints to use
     "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # USDC
 ]
 
-# Transaction sender configuration (Optional)
-[[tx_sender]] # Responsible for sending non-Jito transactions
-enabled=false # Enable or disable this transaction sender (default: true)
-key="example_tx_sender" # Unique key identifier for this transaction sender
-rpc_keys=["solana-pub"] # List of RPC keys to send transactions from
-min_gain_type="solana" # Accepted types: solana, lamports, bps, percent
-min_gain_value=0.5 # Minimum gain required; note that the actual gain may vary by the time the transaction lands. Consider starting with a higher value to be safe.
-cooldown_duration="10s" # Duration to wait before attempting to send another transaction
-skip_preflight=true # Use the Solana "skipPreflight" transaction option
-max_retries=0 # Use the Solana "maxRetries" transaction option
-
 # Swap config (At least one required to find swaps)
 [[swap]]
 enabled=true # Enable or disable this swap configuration (default: true)
@@ -106,9 +95,15 @@ jito_enabled=true
 enabled=true
 min_spend=0.001 
 max_spend=0.01
+cu_limit=250_000 
+min_profit_type="bps" # Accepted types: solana, lamports, bps, percent
+min_profit_value=20 # Minimum profit required; note that the actual profit may vary by the time the transaction lands. Consider starting with a higher value to be safe.
 min_priority_fee_lamports=190 
 max_priority_fee_lamports=190 
-tx_senders=["example_tx_sender"] 
+ntx_senders=[ # Normal transaction senders
+    { rpc_key="solana-pub", skip_preflight=true, max_retries=0 },
+]
+ntx_cooldown="5s"
 # Refer to Strategy Fields below #
 ```
 
@@ -119,6 +114,8 @@ The following fields can be used in strategy configuration:
 - `wrap_unwrap_sol`: Whether to automatically wrap and unwrap SOL for transactions.
 - `min_spend`: The minimum amount to spend per swap operation.
 - `max_spend`: The maximum amount to spend per swap operation.
+- `min_profit_type`: The type of profit calculation: "solana", "lamports", "percent", or "bps"
+- `min_profit_value`: The minimum profit required based on min_profit_type to send a transaction.
 - `auto_priority_fee`: Use Jupiter's auto priority fee feature. (Your min/max will still be respected)
 - `min_priority_fee_lamports`: The minimum priority fee for transactions in lamports.
 - `max_priority_fee_lamports`: The maximum priority fee for transactions in lamports.
@@ -146,4 +143,5 @@ The following fields can be used in strategy configuration:
 - `jito_tip_percent`: The percentage of profit to tip to Jito. (0-100)
 - `min_pref_jito_tip`: The minimum preferred Jito tip.
 - `max_pref_jito_tip`: The maximum preferred Jito tip.
-- `tx_senders`: A list of tx_sender keys to send normal transactions.
+- `ntx_senders`: A list of normal transaction senders, which consist of rpc_key, skip_preflight, and max_retries.
+- `ntx_cooldown`: The amount of time to wait before trying to send another normal transaction from the given strategy.
