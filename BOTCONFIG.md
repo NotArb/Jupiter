@@ -70,7 +70,7 @@ required_tags=[ # Fetched tokens must match at least one group to be accepted.
     ["birdeye-trending"],
     ["lst"],
     #["pump", "verified"],
-]
+] # Juptier token tags can be found here: https://station.jup.ag/docs/token-list/token-list-api
 
 # Token list configuration (Optional, but required if no other token suppliers are enabled)
 [[token_list]] # Also referred to as a token supplier
