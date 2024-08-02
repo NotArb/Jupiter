@@ -86,7 +86,8 @@ mints=[ # List of token mints to use
 # Transaction sender configuration (Optional)
 [[tx_sender]] # Responsible for sending non-Jito transactions
 enabled=false # Enable or disable this transaction sender (default: true)
-rpc_keys=["shyft"] # List of RPC keys to send transactions from
+key="example_tx_sender" # Unique key identifier for this transaction sender
+rpc_keys=["solana-pub"] # List of RPC keys to send transactions from
 min_gain_type="solana" # Accepted types: solana, lamports, bps, percent
 min_gain_value=0.5 # Minimum gain required; note that the actual gain may vary by the time the transaction lands. Consider starting with a higher value to be safe.
 cooldown_duration="10s" # Duration to wait before attempting to send another transaction
@@ -101,6 +102,7 @@ decimals=9 # Number of decimals for the base mint (important for price calculati
 
 [swap.strategy_defaults] # Default strategy configuration for all of this swap's strategies
 wrap_unwrap_sol=false 
+jito_enabled=true
 # Refer to Strategy Fields below #
 
 [[swap.strategy]]
@@ -109,6 +111,7 @@ min_spend=0.001 # Minimum amount to spend per swap
 max_spend=0.01 # Maximum amount to spend per swap
 min_priority_fee_lamports=190 # Minimum priority fee in lamports
 max_priority_fee_lamports=190 # Maximum priority fee in lamports
+tx_senders=["example_tx_sender"]
 # Refer to Strategy Fields below #
 ```
 
@@ -142,7 +145,8 @@ The following fields can be used in strategy configuration:
 - `exit_dexes`: The list of DEXes allowed for exit swaps.
 - `exit_exclude_dexes`: The list of DEXes to exclude from exit swaps.
 - `exit_max_price_impact`: The maximum price impact allowed for exit swaps (as a percentage).
+- `jito_enabled`: Enable or disable Jito sending for the specific strategy.
 - `jito_tip_percent`: The percentage of profit to tip to Jito. (0-100)
 - `min_pref_jito_tip`: The minimum preferred Jito tip.
 - `max_pref_jito_tip`: The maximum preferred Jito tip.
-- `jito_only`: Restrict this strategy to use only Jito transactions. (Ths will most likely be changed!)
+- `tx_senders`: An array of tx_sender keys to send normal transactions.
