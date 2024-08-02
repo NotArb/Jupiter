@@ -33,7 +33,6 @@ http_timeout_ms=3000 # HTTP request timeout for Jito (in milliseconds)
 requests_per_second=5 # Maximum number of requests per second to Jito
 thread_pool_size=5 # Number of threads for dispatching Jito requests
 queue_timeout_ms=7500 # Timeout for requests in the Jito queue to prevent overload
-
 # Proxy settings for Jito dispatchers (optional)
 proxy_host=""
 proxy_port=8002
@@ -66,6 +65,15 @@ mints=[ # List of token mints to use
     "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB", # USDT
     "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # USDC
 ]
+
+[[tx_sender]]
+enabled=false # Enable or disable this transaction sender
+rpc_keys=["shyft"] # List of RPC keys to send transactions from
+min_gain_type="solana" # accepted types: solana, lamports, bps, percent
+min_gain_value=0.5 # keep in mind by the time the tx lands this value may change drastically
+cooldown_duration="10s" # How long can this transaction sender wait before trying to send another transaction
+skip_preflight=true # Default Solana "skipPreflight" transaction option
+max_retries=0 # Default Solana "maxRetries" transaction option
 
 [[swap]]
 enabled=true # Enable or disable this swap configuration
