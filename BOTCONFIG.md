@@ -130,8 +130,8 @@ The following fields can be used in strategy configuration:
 - `entry_max_slippage_bps`: The maximum slippage allowed for entry swaps (in basis points).
 - `entry_max_auto_slippage_bps`: The maximum automatic slippage for entry swaps (in basis points).
 - `entry_max_accounts`: The maximum number of accounts that can be used for entry swaps.
-- `entry_dexes`: The list of DEXes allowed for entry swaps.
-- `entry_exclude_dexes`: The list of DEXes to exclude from entry swaps.
+- `entry_dexes`: A list of DEXes allowed for entry swaps.
+- `entry_exclude_dexes`: A list of DEXes to exclude from entry swaps.
 - `entry_max_price_impact`: The maximum price impact allowed for entry swaps (as a percentage).
 - `exit_only_direct_routes`: Restrict the exit swaps to direct routes only.
 - `exit_restrict_intermediate_tokens`: Restrict the use of intermediate tokens during exit swaps.
@@ -139,8 +139,8 @@ The following fields can be used in strategy configuration:
 - `exit_max_slippage_bps`: The maximum slippage allowed for exit swaps (in basis points).
 - `exit_max_auto_slippage_bps`: The maximum automatic slippage for exit swaps (in basis points).
 - `exit_max_accounts`: The maximum number of accounts that can be used for exit swaps.
-- `exit_dexes`: The list of DEXes allowed for exit swaps.
-- `exit_exclude_dexes`: The list of DEXes to exclude from exit swaps.
+- `exit_dexes`: A list of DEXes allowed for exit swaps.
+- `exit_exclude_dexes`: A list of DEXes to exclude from exit swaps.
 - `exit_max_price_impact`: The maximum price impact allowed for exit swaps (as a percentage).
 - `jito_enabled`: Enable or disable Jito sending for the specific strategy.
 - `jito_tip_percent`: The percentage of profit to tip to Jito. (0-100)
