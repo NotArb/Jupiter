@@ -113,7 +113,7 @@ max_priority_fee_lamports=190 # Maximum priority fee in lamports
 
 ## Strategy Fields
 
-The following fields are used in the strategy configuration:
+The following fields can be used in strategy configuration:
 
 - `wrap_unwrap_sol`: Whether to automatically wrap and unwrap SOL for transactions.
 - `min_spend`: The minimum amount to spend per swap operation.
