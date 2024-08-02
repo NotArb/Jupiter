@@ -34,7 +34,7 @@ NotArb offers a powerful Jupiter Arbitrage Bot designed for executing arbitrage 
 
 _The bot is publicly available but is currently in its alpha stage and will undergo several changes.<br>Feel free to follow the bot's program account to monitor its activity:_
 
-[View Solana Program Account](https://solscan.io/account/BqirtYFXWbEaQr2VxcDKZ7nehZqNtqrLJbpoUaBpPZ6z)
+[View Solana Program Account](https://program.notarb.org)
 
 
 #### Requirements
