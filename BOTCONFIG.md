@@ -137,7 +137,7 @@ The following fields are used in the strategy configuration:
 - `exit_dexes`: The list of DEXes allowed for exit swaps.
 - `exit_exclude_dexes`: The list of DEXes to exclude from exit swaps.
 - `exit_max_price_impact`: The maximum price impact allowed for exit swaps (as a percentage).
-- `jito_tip_percent`: The percentage of the tip to be given to Jito (0-100%).
+- `jito_tip_percent`: The percentage of profit to tip to Jito. (0-100)
 - `min_pref_jito_tip`: The minimum preferred Jito tip.
 - `max_pref_jito_tip`: The maximum preferred Jito tip.
 - `jito_only`: Restrict this strategy to use only Jito transactions. (Ths will most likely be changed!)
