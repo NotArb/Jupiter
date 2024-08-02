@@ -108,7 +108,7 @@ min_spend=0.001 # Minimum amount to spend per swap
 max_spend=0.01 # Maximum amount to spend per swap
 min_priority_fee_lamports=190 # Minimum priority fee in lamports
 max_priority_fee_lamports=190 # Maximum priority fee in lamports
-tx_senders=["example_tx_sender"]
+tx_senders=["example_tx_sender"] # List of transaction sender keys to send transactions (optional)
 # Refer to Strategy Fields below #
 ```
 
