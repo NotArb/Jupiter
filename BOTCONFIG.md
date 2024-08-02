@@ -122,7 +122,7 @@ The following fields can be used in strategy configuration:
 - `min_priority_fee_lamports`: The minimum priority fee for transactions in lamports.
 - `max_priority_fee_lamports`: The maximum priority fee for transactions in lamports.
 - `max_swap_routes`: The maximum number of swap routes that can be utilized.
-- `cu_limit`: The cu limit to set. (If you're unsure, leave unset.)
+- `cu_limit`: The cu limit to set per transaction. (If you're unsure, leave unset.)
 - `entry_only_direct_routes`: Restrict the entry swaps to direct routes only.
 - `entry_restrict_intermediate_tokens`: Restrict the use of intermediate tokens during entry swaps.
 - `entry_min_slippage_bps`: The minimum slippage allowed for entry swaps (in basis points).
