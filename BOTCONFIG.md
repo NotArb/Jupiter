@@ -19,7 +19,7 @@ disable_http_pools=false # Disable HTTP pools for debugging purposes (will be re
 max_threads=10 # Maximum number of threads for handling swap requests (defaults to the number of available processors)
 
 # Jupiter configuration (Required)
-[jupiter]
+[jupiter] # Also referred to as a http dispatcher
 url="http://0.0.0.0:8080/" # URL of your Jupiter server
 http_timeout_ms=3000 # HTTP request timeout for Jupiter (in milliseconds)
 http_pool_max_size=50 # Maximum number of HTTP connections allowed to be pooled for this dispatcher's requests (default: 5)
@@ -28,7 +28,8 @@ thread_pool_size=0 # Number of threads for dispatching requests
 unmetered=true # Ignore rate limits and send requests as fast as possible
 
 # RPC configuration (At least one required for blockhash fetching)
-[[rpc]] # This is just an example, we advise changing this from solana's public rpc.
+# This is just an example, we advise changing this from solana's public rpc.
+[[rpc]] # Also referred to as a http dispatcher
 enabled=true # Enable or disable this RPC node configuration (default: true)
 key="solana-pub" # Unique key identifier for this RPC configuration
 url="https://api.mainnet-beta.solana.com" # URL and port of your RPC server
@@ -39,7 +40,7 @@ thread_pool_size=3 # Number of threads for dispatching RPC requests
 
 # Jito configuration (At least one required for sending Jito transactions)
 # Swaps will execute on the enabled Jito dispatcher with the least amount of requests queued.
-[[jito]]
+[[jito]] # Also referred to as a http dispatcher
 enabled=false # Enable or disable sending (default: true)
 url="https://mainnet.block-engine.jito.wtf" # URL of the block engine
 http_timeout_ms=3000 # HTTP request timeout (in milliseconds)
@@ -61,7 +62,7 @@ fetch_rate_ms=1200 # Interval for fetching the latest blockhash (in milliseconds
 # Jupiter token fetcher (Optional)
 # Note: Enabling this may result in opening multiple token accounts, which can affect your balance due to account creation fees.
 # Token accounts are only opened once. Adjust your filters to limit the number of tokens if this is a concern.
-[jupiter_token_fetcher]
+[jupiter_token_fetcher] # Also referred to as a token supplier
 enabled=true # Enable or disable the Jupiter token fetcher
 fetch_ms=10000 # Interval for fetching tradable tokens from Jupiter (in milliseconds)
 max_per_cycle=5 # Maximum number of tokens to attempt a swap per cycle
@@ -72,7 +73,7 @@ required_tags=[ # Fetched tokens must match at least one group to be accepted.
 ]
 
 # Token list configuration (Optional, but required if no other token suppliers are enabled)
-[[token_list]]
+[[token_list]] # Also referred to as a token supplier
 enabled=true # Enable or disable this token list
 random_order=true # Randomize the order of tokens in this list
 max_per_cycle=5 # Maximum number of tokens to attempt a swap per cycle
