@@ -4,7 +4,7 @@
 
 This guide provides detailed instructions on configuring your NotArb bot using the provided configuration options.
 
-[View Examples](https://examples.notarb.org/)
+[View Example Configs](https://examples.notarb.org/)
 
 ## Configuration Options
 
