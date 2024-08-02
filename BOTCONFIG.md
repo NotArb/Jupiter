@@ -14,8 +14,8 @@ This guide provides detailed instructions on configuring your NotArb bot using t
 keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # Path to the keypair file used for signing transactions
 disable_http_pools=false # Disable HTTP pools for debugging purposes (will be removed in future)
 
-# Swap executor configuration (Required - this may be merged into bot_misc in the future)
-[swap_executor]
+# Swap executor configuration (Required)
+[swap_executor] # This may be merged into bot_misc in the future
 max_threads=10 # Maximum number of threads for handling swap requests (defaults to the number of available processors)
 
 # Jupiter configuration (Required)
@@ -53,8 +53,8 @@ proxy_port=8002
 proxy_user=""
 proxy_password=""
 
-# Blockhash fetcher (Required - needed to ensure transactions have the latest blockhash to land)
-[blockhash_fetcher]
+# Blockhash fetcher (Required)
+[blockhash_fetcher] # Needed to ensure transactions have the latest blockhash to land
 rpc_keys=["solana-pub"] # List of RPC keys to fetch blockhashes from
 commitment="confirmed" # Commitment level of the blockhash to fetch
 fetch_rate_ms=1200 # Interval for fetching the latest blockhash (in milliseconds)
@@ -83,8 +83,8 @@ mints=[ # List of token mints to use
     "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # USDC
 ]
 
-# Transaction sender configuration (Optional - used to send non-Jito transactions)
-[[tx_sender]]
+# Transaction sender configuration (Optional)
+[[tx_sender]] # Responsible for sending non-Jito transactions
 enabled=false # Enable or disable this transaction sender
 rpc_keys=["shyft"] # List of RPC keys to send transactions from
 min_gain_type="solana" # Accepted types: solana, lamports, bps, percent
@@ -93,7 +93,7 @@ cooldown_duration="10s" # Duration to wait before attempting to send another tra
 skip_preflight=true # Use the Solana "skipPreflight" transaction option
 max_retries=0 # Use the Solana "maxRetries" transaction option
 
-# Swap config (Required - at least one required to execute swaps)
+# Swap config (At least one required to find swaps)
 [[swap]]
 enabled=true # Enable or disable this swap configuration (default: true)
 mint="So11111111111111111111111111111111111111112" # Base mint to trade
