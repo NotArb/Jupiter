@@ -16,18 +16,18 @@ max_threads=10 # Maximum number of threads for handling swap requests (defaults 
 [jupiter]
 url="http://0.0.0.0:8080/" # URL of your Jupiter server
 http_timeout_ms=3000 # HTTP request timeout for Jupiter (in milliseconds)
-http_pool_max_size=50 # Maximum number of HTTP connections in the pool for this dispatcher's requests (default: 5)
+http_pool_max_size=50 # Maximum number of HTTP connections allowed to be pooled for this dispatcher's requests (default: 5)
 requests_per_second=0 # Maximum number of requests per second to Jupiter
 thread_pool_size=0 # Number of threads for dispatching requests
 unmetered=true # Ignore rate limits and send requests as fast as possible
 
-# RPC configuration (At least one required for Blockhash fetching)
+# RPC configuration (At least one required for blockhash fetching)
 [[rpc]] # This is just an example, we advise changing this from solana's public rpc.
 enabled=true # Enable or disable this RPC node configuration (default: true)
 key="solana-pub" # Unique key identifier for this RPC configuration
 url="https://api.mainnet-beta.solana.com" # URL and port of your RPC server
 http_timeout_ms=3000 # HTTP request timeout for RPC (in milliseconds)
-http_pool_max_size=5 # Maximum number of HTTP connections in the pool for this dispatcher's requests (default: 5)
+http_pool_max_size=5 # Maximum number of HTTP connections allowed to be pooled for this dispatcher's requests (default: 5)
 requests_per_second=10 # Maximum number of requests per second to this RPC
 thread_pool_size=3 # Number of threads for dispatching RPC requests
 
@@ -37,7 +37,7 @@ thread_pool_size=3 # Number of threads for dispatching RPC requests
 enabled=false # Enable or disable Jito sending (default: true)
 url="https://mainnet.block-engine.jito.wtf" # URL of the Jito block engine
 http_timeout_ms=3000 # HTTP request timeout for Jito (in milliseconds)
-http_pool_max_size=5 # Maximum number of HTTP connections in the pool for this dispatcher's requests (default: 5)
+http_pool_max_size=5 # Maximum number of HTTP connections allowed to be pooled for this dispatcher's requests (default: 5)
 requests_per_second=5 # Maximum number of requests per second to Jito
 thread_pool_size=5 # Number of threads for dispatching Jito requests
 queue_timeout_ms=7500 # Timeout for requests in the Jito queue to prevent overload
