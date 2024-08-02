@@ -103,12 +103,12 @@ jito_enabled=true
 # Refer to Strategy Fields below #
 
 [[swap.strategy]]
-enabled=true # Enable or disable this specific strategy (default: true)
-min_spend=0.001 # Minimum amount to spend per swap
-max_spend=0.01 # Maximum amount to spend per swap
-min_priority_fee_lamports=190 # Minimum priority fee in lamports
-max_priority_fee_lamports=190 # Maximum priority fee in lamports
-tx_senders=["example_tx_sender"] # List of transaction sender keys to send transactions (optional)
+enabled=true
+min_spend=0.001 
+max_spend=0.01
+min_priority_fee_lamports=190 
+max_priority_fee_lamports=190 
+tx_senders=["example_tx_sender"] 
 # Refer to Strategy Fields below #
 ```
 
@@ -146,4 +146,4 @@ The following fields can be used in strategy configuration:
 - `jito_tip_percent`: The percentage of profit to tip to Jito. (0-100)
 - `min_pref_jito_tip`: The minimum preferred Jito tip.
 - `max_pref_jito_tip`: The maximum preferred Jito tip.
-- `tx_senders`: An array of tx_sender keys to send normal transactions.
+- `tx_senders`: A list of tx_sender keys to send normal transactions.
