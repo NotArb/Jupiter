@@ -63,7 +63,7 @@ fetch_rate_ms=1200 # Interval for fetching the latest blockhash (in milliseconds
 # Note: Enabling this may result in opening multiple token accounts, which can affect your balance due to account creation fees.
 # Token accounts are only opened once. Adjust your filters to limit the number of tokens if this is a concern.
 [jupiter_token_fetcher] # Also referred to as a token supplier
-enabled=true # Enable or disable the Jupiter token fetcher
+enabled=true # Enable or disable the Jupiter token fetcher (default: true)
 fetch_ms=10000 # Interval for fetching tradable tokens from Jupiter (in milliseconds)
 max_per_cycle=5 # Maximum number of tokens to attempt a swap per cycle
 required_tags=[ # Fetched tokens must match at least one group to be accepted.
@@ -74,7 +74,7 @@ required_tags=[ # Fetched tokens must match at least one group to be accepted.
 
 # Token list configuration (Optional, but required if no other token suppliers are enabled)
 [[token_list]] # Also referred to as a token supplier
-enabled=true # Enable or disable this token list
+enabled=true # Enable or disable this token list (default: true)
 random_order=true # Randomize the order of tokens in this list
 max_per_cycle=5 # Maximum number of tokens to attempt a swap per cycle
 mints=[ # List of token mints to use
@@ -85,7 +85,7 @@ mints=[ # List of token mints to use
 
 # Transaction sender configuration (Optional)
 [[tx_sender]] # Responsible for sending non-Jito transactions
-enabled=false # Enable or disable this transaction sender
+enabled=false # Enable or disable this transaction sender (default: true)
 rpc_keys=["shyft"] # List of RPC keys to send transactions from
 min_gain_type="solana" # Accepted types: solana, lamports, bps, percent
 min_gain_value=0.5 # Minimum gain required; note that the actual gain may vary by the time the transaction lands. Consider starting with a higher value to be safe.
