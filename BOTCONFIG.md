@@ -119,6 +119,7 @@ The following fields can be used in strategy configuration:
 - `wrap_unwrap_sol`: Whether to automatically wrap and unwrap SOL for transactions.
 - `min_spend`: The minimum amount to spend per swap operation.
 - `max_spend`: The maximum amount to spend per swap operation.
+- `auto_priority_fee`: Use Jupiter's auto priority fee feature. (Your min/max will still be respected)
 - `min_priority_fee_lamports`: The minimum priority fee for transactions in lamports.
 - `max_priority_fee_lamports`: The maximum priority fee for transactions in lamports.
 - `max_swap_routes`: The maximum number of swap routes that can be utilized.
