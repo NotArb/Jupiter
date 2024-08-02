@@ -55,14 +55,14 @@ case "$os-$arch" in
         ;;
 esac
 
-# Define lib path
-lib_path=$(dirname "${BASH_SOURCE[0]}")
+# Define src path
+src_path=$(dirname "${BASH_SOURCE[0]}")
 
-# Remove trailing slash from lib path if it exists
-lib_path="${lib_path%/}"
+# Remove trailing slash from src path if it exists
+src_path="${src_path%/}"
 
-# Add lib_path to java_exe_path
-java_exe_path="$lib_path/$java_exe_path"
+# Add src_path to java_exe_path
+java_exe_path="$src_path/$java_exe_path"
 
 # Download flag
 download=1
@@ -82,9 +82,9 @@ if [ $download -eq 1 ]; then
   echo "$java_url"
 
   # Download and extract Java
-  temp_file="$lib_path/java_download_temp.tar.gz"
+  temp_file="$src_path/java_download_temp.tar.gz"
   download_file "$java_url" "$temp_file"
-  tar -xzf "$temp_file" -C "$lib_path"
+  tar -xzf "$temp_file" -C "$src_path"
   rm -f "$temp_file"
 
   # Verify installed Java executable
