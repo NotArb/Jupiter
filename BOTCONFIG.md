@@ -13,10 +13,7 @@ This guide provides detailed instructions on configuring your NotArb bot using t
 [bot_misc]
 keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # Path to the keypair file used for signing transactions
 disable_http_pools=false # Disable HTTP pools for debugging purposes (will be removed in future)
-
-# Swap executor configuration (Required)
-[swap_executor] # This may be merged into bot_misc in the future
-max_threads=10 # Maximum number of threads for handling swap requests (defaults to the number of available processors)
+max_swap_threads=10 # Maximum number of threads for handling swap requests (defaults to the number of available processors)
 
 # Jupiter configuration (Required)
 [jupiter] # Also referred to as a http dispatcher
