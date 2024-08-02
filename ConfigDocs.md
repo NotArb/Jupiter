@@ -3,13 +3,16 @@
 Here are the available configurations with brief info. The config file is in TOML format.
 
 ```toml
+# Miscellaneous configuration (Required)
 [bot_misc]
 keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # Path to the keypair file used for signing transactions
 disable_http_pools=false # Disable HTTP pools for debugging purposes (will be removed in future)
 
+# Swap executor configuration (Required)
 [swap_executor]
 max_threads=10 # Maximum number of threads for handling swap requests (defaults to the number of available processors)
 
+# Jupiter configuration (Required)
 [jupiter]
 url="http://0.0.0.0:8080/" # URL of your Jupiter server
 http_timeout_ms=3000 # HTTP request timeout for Jupiter (in milliseconds)
@@ -18,6 +21,7 @@ requests_per_second=0 # Maximum number of requests per second to Jupiter
 thread_pool_size=0 # Number of threads for dispatching requests
 unmetered=true # Ignore rate limits and send requests as fast as possible
 
+# RPC configuration (At least one required for Blockhash fetching)
 [[rpc]] # This is just an example, we advise changing this from solana's public rpc.
 enabled=true # Enable or disable this RPC node configuration (default: true)
 key="solana-pub" # Unique key identifier for this RPC configuration
@@ -27,6 +31,8 @@ http_pool_max_size=5 # Maximum number of HTTP connections in the pool for this d
 requests_per_second=10 # Maximum number of requests per second to this RPC
 thread_pool_size=3 # Number of threads for dispatching RPC requests
 
+# Jito configuration (At least one required for sending Jito transactions)
+# By default, swaps will execute on the least occupied enabled Jito dispatcher.
 [[jito]]
 enabled=false # Enable or disable Jito sending (default: true)
 url="https://mainnet.block-engine.jito.wtf" # URL of the Jito block engine
@@ -41,11 +47,13 @@ proxy_port=8002
 proxy_user=""
 proxy_password=""
 
+# Blockhash fetcher (Required - needed to ensure transactions have the latest blockhash to land)
 [blockhash_fetcher]
 rpc_keys=["solana-pub"] # List of RPC keys to fetch blockhashes from
 commitment="confirmed" # Commitment level of the blockhash to fetch
 fetch_rate_ms=1200 # Interval for fetching the latest blockhash (in milliseconds)
 
+# Jupiter token fetcher (Optional)
 [jupiter_token_fetcher]
 enabled=true # Enable or disable the Jupiter token fetcher
 fetch_ms=10000 # Interval for fetching tradable tokens from Jupiter (in milliseconds)
@@ -58,6 +66,7 @@ required_tags=[ # Fetched tokens must match at least one group to be accepted.
     #["community"]
 ]
 
+# Token list config (Optional, but if no token suppliers are enabled the bot won't have tokens to swap with)
 [[token_list]]
 enabled=true # Enable or disable this token list
 random_order=true # Randomize the order of tokens in this list
@@ -68,6 +77,7 @@ mints=[ # List of token mints to use
     "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # USDC
 ]
 
+# Transaction sender config (Optional - used to send non-jito transactions)
 [[tx_sender]]
 enabled=false # Enable or disable this transaction sender
 rpc_keys=["shyft"] # List of RPC keys to send transactions from
@@ -77,6 +87,7 @@ cooldown_duration="10s" # How long can this transaction sender wait before tryin
 skip_preflight=true # Default Solana "skipPreflight" transaction option
 max_retries=0 # Default Solana "maxRetries" transaction option
 
+# Swap config (Required - at least one required to execute swaps)
 [[swap]]
 enabled=true # Enable or disable this swap configuration
 mint="So11111111111111111111111111111111111111112" # Base mint to trade
