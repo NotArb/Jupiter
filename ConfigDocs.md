@@ -32,16 +32,16 @@ requests_per_second=10 # Maximum number of requests per second to this RPC
 thread_pool_size=3 # Number of threads for dispatching RPC requests
 
 # Jito configuration (At least one required for sending Jito transactions)
-# By default, swaps will execute on the least occupied enabled Jito dispatcher.
+# Swaps will execute on the enabled Jito dispatcher with the least amount of requests queued.
 [[jito]]
-enabled=false # Enable or disable Jito sending (default: true)
-url="https://mainnet.block-engine.jito.wtf" # URL of the Jito block engine
-http_timeout_ms=3000 # HTTP request timeout for Jito (in milliseconds)
+enabled=false # Enable or disable sending (default: true)
+url="https://mainnet.block-engine.jito.wtf" # URL of the block engine
+http_timeout_ms=3000 # HTTP request timeout (in milliseconds)
 http_pool_max_size=5 # Maximum number of HTTP connections allowed to be pooled for this dispatcher's requests (default: 5)
-requests_per_second=5 # Maximum number of requests per second to Jito
-thread_pool_size=5 # Number of threads for dispatching Jito requests
-queue_timeout_ms=7500 # Timeout for requests in the Jito queue to prevent overload
-proxy_host="" # All proxy settings are optional.
+requests_per_second=5 # Maximum number of requests per second allowed to be dispatched
+thread_pool_size=5 # Number of threads for dispatching requests
+queue_timeout_ms=7500 # Timeout for requests in the queue to prevent overload; ensures the queue doesn't grow faster than it is processed
+proxy_host="" # All proxy settings are optional
 proxy_port=8002
 proxy_user=""
 proxy_password=""
