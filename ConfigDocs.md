@@ -8,28 +8,30 @@ keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # Path to the keypa
 disable_http_pools=false # Disable HTTP pools for debugging purposes (will be removed in future)
 
 [swap_executor]
-max_threads=36 # Maximum number of threads for handling swap requests (defaults to the number of available processors)
+max_threads=10 # Maximum number of threads for handling swap requests (defaults to the number of available processors)
 
 [jupiter]
 url="http://0.0.0.0:8080/" # URL of your Jupiter server
 http_timeout_ms=3000 # HTTP request timeout for Jupiter (in milliseconds)
-http_pool_max_size=50 # Maximum number of HTTP connections in the pool for Jupiter requests
-requests_per_second=0 # Maximum number of requests per second to Jupiter (0 means no limit)
-thread_pool_size=0 # Number of threads for dispatching requests (0 means no limit)
+http_pool_max_size=50 # Maximum number of HTTP connections in the pool for this dispatcher's requests (default: 5)
+requests_per_second=0 # Maximum number of requests per second to Jupiter
+thread_pool_size=0 # Number of threads for dispatching requests
 unmetered=true # Ignore rate limits and send requests as fast as possible
 
-[[rpc]]
+[[rpc]] # This is just an example, we advise changing this from solana's public rpc.
 enabled=true # Enable or disable this RPC node configuration (default: true)
-key="shyft" # Unique key identifier for this RPC configuration
-url="" # URL and port of your RPC server
+key="solana-pub" # Unique key identifier for this RPC configuration
+url="https://api.mainnet-beta.solana.com" # URL and port of your RPC server
 http_timeout_ms=3000 # HTTP request timeout for RPC (in milliseconds)
-requests_per_second=30 # Maximum number of requests per second to this RPC
+http_pool_max_size=5 # Maximum number of HTTP connections in the pool for this dispatcher's requests (default: 5)
+requests_per_second=10 # Maximum number of requests per second to this RPC
 thread_pool_size=3 # Number of threads for dispatching RPC requests
 
 [[jito]]
 enabled=false # Enable or disable Jito sending (default: true)
 url="https://mainnet.block-engine.jito.wtf" # URL of the Jito block engine
 http_timeout_ms=3000 # HTTP request timeout for Jito (in milliseconds)
+http_pool_max_size=5 # Maximum number of HTTP connections in the pool for this dispatcher's requests (default: 5)
 requests_per_second=5 # Maximum number of requests per second to Jito
 thread_pool_size=5 # Number of threads for dispatching Jito requests
 queue_timeout_ms=7500 # Timeout for requests in the Jito queue to prevent overload
@@ -40,7 +42,7 @@ proxy_user=""
 proxy_password=""
 
 [blockhash_fetcher]
-rpc_keys=["shyft"] # List of RPC keys to fetch blockhashes from
+rpc_keys=["solana-pub"] # List of RPC keys to fetch blockhashes from
 commitment="confirmed" # Commitment level of the blockhash to fetch
 fetch_rate_ms=1200 # Interval for fetching the latest blockhash (in milliseconds)
 
@@ -48,8 +50,8 @@ fetch_rate_ms=1200 # Interval for fetching the latest blockhash (in milliseconds
 enabled=true # Enable or disable the Jupiter token fetcher
 fetch_ms=10000 # Interval for fetching tradable tokens from Jupiter (in milliseconds)
 max_per_cycle=5 # Maximum number of tokens to attempt a swap per cycle
-required_tags=[
-    ["birdeye-trending"], # Group of tags that must match for a token to attempt a swap
+required_tags=[ # Fetched tokens must match at least one group to be accepted.
+    ["birdeye-trending"],
     #["pump"],
     #["lst"],
     #["pump", "verified"]
