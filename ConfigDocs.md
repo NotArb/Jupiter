@@ -8,7 +8,7 @@ Here are the available configurations with brief info. The config file is in TOM
 keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # Path to the keypair file used for signing transactions
 disable_http_pools=false # Disable HTTP pools for debugging purposes (will be removed in future)
 
-# Swap executor configuration (Required)
+# Swap executor configuration (Required - this may be merged into bot_misc in the future)
 [swap_executor]
 max_threads=10 # Maximum number of threads for handling swap requests (defaults to the number of available processors)
 
@@ -41,8 +41,7 @@ http_pool_max_size=5 # Maximum number of HTTP connections in the pool for this d
 requests_per_second=5 # Maximum number of requests per second to Jito
 thread_pool_size=5 # Number of threads for dispatching Jito requests
 queue_timeout_ms=7500 # Timeout for requests in the Jito queue to prevent overload
-# Proxy settings for Jito dispatchers (optional)
-proxy_host=""
+proxy_host="" # All proxy settings are optional.
 proxy_port=8002
 proxy_user=""
 proxy_password=""
@@ -138,4 +137,4 @@ The following fields are used in the strategy configuration:
 - `jito_tip_percent`: The percentage of the tip to be given to Jito (0-100%).
 - `min_pref_jito_tip`: The minimum preferred Jito tip.
 - `max_pref_jito_tip`: The maximum preferred Jito tip.
-- `jito_only`: Restrict this strategy to use only Jito transactions.
+- `jito_only`: Restrict this strategy to use only Jito transactions. (Ths will most likely be changed!)
