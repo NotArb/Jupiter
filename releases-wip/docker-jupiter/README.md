@@ -20,7 +20,6 @@ Optionally, you can pass [VM Arguments](https://docs.oracle.com/en/java/javase/2
 Finally, build the docker image based on your platform:
 
 >**Unix** - Run the `build.sh` file.
-
 >**Windows** - Run the `run.bat` file. (COMING SOON)
 
 ### Docker Commands
