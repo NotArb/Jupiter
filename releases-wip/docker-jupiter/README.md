@@ -8,6 +8,8 @@ _Download the platform-specific package, which includes everything needed to run
 
 **Before continuing**, edit the `mount/jupiter-config.toml` file to your liking.<br>
 
+_To make Jupiter listen on a different port, you must edit the `PORT` value in the build script._
+
 **Unix:** Run the `build.sh` file.<br>
 
 **Windows:** Run the `run.bat` file. (COMING SOON)<br>
@@ -19,3 +21,4 @@ After successfully building the docker image, you can now use docker commands. H
 - `docker restart jupiter` - Restart the container.
 - `docker logs --follow jupiter` - View the container logs in real-time.
 - `docker update --cpus="123456" jupiter` - Update the CPU allocation for the container.
+- `docker inspect jupiter` - Display detailed information about the container
