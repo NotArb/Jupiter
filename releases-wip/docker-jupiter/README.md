@@ -16,6 +16,7 @@ Optionally, you can pass VM arguments to the build script. Here are some example
 >- `-XX:+UseG1GC` - Use the G1 garbage collector.
 >- `-XX:MaxGCPauseMillis=200` - Set the target maximum pause time for the G1 garbage collector.
 >- `-Dproperty=value` - Set a system property.
+
 Read more about VM arguments [here](https://docs.oracle.com/en/java/javase/22/docs/specs/man/java.html#standard-options-for-java).
 
 **Unix** - Run the `build.sh` file.
