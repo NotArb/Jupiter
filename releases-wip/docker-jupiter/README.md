@@ -9,7 +9,7 @@ _Download the platform-specific package, which includes everything needed to run
 
 >_To make Jupiter listen on a different port, you must edit the `PORT` value in the build script._
 
-Optionally, you can pass VM arguments to the build script. Here are some examples:
+Optionally, you can pass [VM Arguments](https://docs.oracle.com/en/java/javase/22/docs/specs/man/java.html#standard-options-for-java) to the build script. Here are some examples:
 >- `-Xms256m` - Set the initial heap size to 256 MB.
 >- `-Xmx512m` - Set the maximum heap size to 512 MB.
 >- `-XX:MaxPermSize=256m `- Set the maximum size for the permanent generation space.
@@ -17,11 +17,11 @@ Optionally, you can pass VM arguments to the build script. Here are some example
 >- `-XX:MaxGCPauseMillis=200` - Set the target maximum pause time for the G1 garbage collector.
 >- `-Dproperty=value` - Set a system property.
 
-Read more about VM arguments [here](https://docs.oracle.com/en/java/javase/22/docs/specs/man/java.html#standard-options-for-java).
+Finally, build the docker image based on your platform:
 
-Build the image based on your platform:
->**Unix** - Run the `build.sh` file.<br>
->**Windows** - Run the `run.bat` file. (COMING SOON)
+**Unix** - Run the `build.sh` file.
+
+**Windows** - Run the `run.bat` file. (COMING SOON)
 
 ### Docker Commands
 After successfully building the Docker image, you can use the following Docker commands:
