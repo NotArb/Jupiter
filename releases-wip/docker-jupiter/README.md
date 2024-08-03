@@ -23,7 +23,7 @@ Finally, build the docker image based on your platform:
 >**Windows** - Run the `run.bat` file. (COMING SOON)
 
 ### Docker Commands
-After successfully building the Docker image, you can use the following Docker commands:
+After successfully building the Docker image, you can use various Docker commands. Here are some examples:
 >- `docker start jupiter` - Start the container.
 >- `docker stop jupiter` - Stop the container.
 >- `docker restart jupiter` - Restart the container.
