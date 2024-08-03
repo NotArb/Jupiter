@@ -1,4 +1,5 @@
 ## NotArb Jupiter Management Docker Server
+**To use this package, you must first install Docker:** [Install Docker](https://docs.docker.com/engine/install/)
 
 _Download the platform-specific package, which includes everything needed to run the NotArb Jupiter Management Docker Server, from: https://download.notarb.org/_
 

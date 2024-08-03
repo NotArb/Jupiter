@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Define src path
-src_path=$(dirname "${BASH_SOURCE[0]}")
-
-# Remove trailing slash from src path if it exists
-src_path="${src_path%/}"
+# Ensure bot_path is defined
+if [ -z "$bot_path" ]; then
+    echo "Error: bot_path not defined"
+    exit 1
+fi
 
 # Ensure bot_path file exists
 if [ ! -f "$bot_path" ]; then
@@ -28,7 +28,7 @@ fi
 # Java exe check
 if [ -z "$java_exe_path" ]; then
     # Attempt to install Java if necessary
-    . "$src_path/install_java.sh"
+    . "$(dirname "${BASH_SOURCE[0]}")/install_java.sh"
 else
     echo "$java_exe_path"
     "$java_exe_path" --version
@@ -49,5 +49,5 @@ echo "bot_path=$bot_path"
 echo "config_path=$config_path"
 
 # Run bot
-exec "$java_exe_path" --enable-preview "$@" -Dcaller_script_dir="$(pwd)" -cp "$bot_path" org.notarb.launcher.Main "$config_path"
+exec "$java_exe_path" --enable-preview "$@" -Dcaller_script_dir="$(pwd)" -cp "$bot_path" org.notarb.launcher.Main "--jupiter-arb-config-path=$config_path"
 echo "Bot exited with code $?"

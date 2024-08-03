@@ -1,6 +1,6 @@
 # This program is essentially just a "manager" for the jupiter-swap-api process.
 [manager]
-jupiter_path="./mount/jupiter-swap-api" # if using docker, this must be a mounted path
+jupiter_path="/jupiter/jupiter-swap-api" # /jupiter is the docker container workdir
 auto_restart_minutes=10
 
 # These environmental variables are specific to Jupiter.
@@ -63,21 +63,11 @@ mints=[
     "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB", # usdt
     "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # usdc
     "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R", # ray
-    "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn", # jitosol
-    "mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So",  # msol
-    "7dHbWXmci3dT8UFYWYZweBLXgycu7Y3iL6trKn1Y7ARj", # stsol
-    "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs", # weth
-    "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh", # wbtc
     "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",  # jup
-    "HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3", # pyth
-    "HNTvzaqTmDxJbi3isreXtUn9MUJEJy1bp9bo1rpGEGhi", # aurasol
-    "jucy5XJ76pHVvtPZb5TKRcGQExkwit2P5s4vY8UzmpC",  # jucysol
-    "iSoLdL1Nqqo94A51EXr5iuBiUtHMAnxHJKaToGKphLq",  # isol
-    "bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1",  # bsol
 ]
 
 # Json mint filters are loaded on startup from the specific file provided in the path.
 # The format must be json, which is just ["mintA", "mintB", "mintC"] but in a file.
 [[json_mint_filter]]
 enabled=false
-path="./mount/example-mint-list.json" # if using docker, this must be a mounted path
+path="/jupiter/mount/test-mints.json" # /jupiter is the docker container workdir
