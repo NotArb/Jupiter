@@ -5,7 +5,7 @@
 FROM debian:bookworm-slim
 
 # Args need to come after FROM
-ARG JUPITER_URL="https://github.com/jup-ag/jupiter-swap-api/releases/download/v6.0.24/jupiter-swap-api-x86_64-unknown-linux-gnu.zip"
+ARG JUPITER_URL="https://github.com/jup-ag/jupiter-swap-api/releases/download/v6.0.25/jupiter-swap-api-x86_64-unknown-linux-gnu.zip"
 ARG JDK_AARCH64_URL="https://download.java.net/java/GA/jdk22.0.2/c9ecb94cd31b495da20a27d4581645e8/9/GPL/openjdk-22.0.2_linux-aarch64_bin.tar.gz"
 ARG JDK_X64_URL="https://download.java.net/java/GA/jdk22.0.2/c9ecb94cd31b495da20a27d4581645e8/9/GPL/openjdk-22.0.2_linux-x64_bin.tar.gz"
 
