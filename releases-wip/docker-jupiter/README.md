@@ -4,12 +4,15 @@ _Download the platform-specific package, which includes everything needed to run
 
 **Important:** To ensure files persist between Docker and your system, place any file you want to keep updated in the mount folder. For example, storing `jupiter-config.toml` in the mount folder allows you to apply configuration changes dynamically without rebuilding the Docker image.
 
-**Before continuing**, edit the `mount/jupiter-config.toml` file to your liking.
-
 ### Build Guide
 
-**Unix:** Run the `build.sh` file.
-**Windows:** Run the `run.bat` file. (COMING SOON)
+**Before continuing**, edit the `mount/jupiter-config.toml` file to your liking.
+
+#### Unix
+Run the `build.sh` file.
+
+#### Windows (COMING SOON)
+Run the `run.bat` file.
 
 After successfully building the docker image, you can now use docker commands. Here's a list of useful commands:
 
