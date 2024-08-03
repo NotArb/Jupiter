@@ -7,8 +7,8 @@ _Download the platform-specific package, which includes everything needed to run
 ### Build Guide
 
 **Before continuing**, edit the `mount/jupiter-config.toml` file to your liking.<br><br>
-**Unix:** Run the `build.sh` file.<br>
-**Windows:** Run the `run.bat` file. (COMING SOON)<br>
+    **Unix:** Run the `build.sh` file.<br>
+    **Windows:** Run the `run.bat` file. (COMING SOON)<br>
 
 After successfully building the docker image, you can now use docker commands. Here's a list of useful commands:
 
