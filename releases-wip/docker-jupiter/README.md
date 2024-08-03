@@ -19,11 +19,9 @@ Optionally, you can pass VM arguments to the build script. Here are some example
 - `-Dproperty=value` - Set a system property.
 Read more about VM arguments [here](https://docs.oracle.com/en/java/javase/22/docs/specs/man/java.html#standard-options-for-java).
 
-#### Unix
-Run the `build.sh` file.
+**Unix** - Run the `build.sh` file.
 
-#### Windows
-Run the `run.bat` file. (COMING SOON)
+**Windows** - Run the `run.bat` file. (COMING SOON)
 
 ### Docker Commands
 After successfully building the Docker image, you can use the following Docker commands:
