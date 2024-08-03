@@ -20,7 +20,7 @@ Optionally, you can pass VM arguments to the build script. Here are some example
 Read more about VM arguments [here](https://docs.oracle.com/en/java/javase/22/docs/specs/man/java.html#standard-options-for-java).
 
 Build the image based on your platform:
->**Unix** - Run the `build.sh` file.
+>**Unix** - Run the `build.sh` file.<br>
 >**Windows** - Run the `run.bat` file. (COMING SOON)
 
 ### Docker Commands
