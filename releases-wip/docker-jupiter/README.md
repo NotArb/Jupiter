@@ -7,7 +7,7 @@ _Download the platform-specific package, which includes everything needed to run
 ### Build Guide
 **Before continuing**, edit the `mount/jupiter-config.toml` file to your liking.
 
-To make Jupiter listen on a different port, you must edit the `PORT` value in the build script.
+>_To make Jupiter listen on a different port, you must edit the `PORT` value in the build script._
 
 Optionally, you can pass VM arguments to the build script. Here are some examples:
 - `-Xms256m` - Set the initial heap size to 256 MB.
