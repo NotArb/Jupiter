@@ -10,12 +10,12 @@ _Download the platform-specific package, which includes everything needed to run
 >_To make Jupiter listen on a different port, you must edit the `PORT` value in the build script._
 
 Optionally, you can pass VM arguments to the build script. Here are some examples:
-- `-Xms256m` - Set the initial heap size to 256 MB.
-- `-Xmx512m` - Set the maximum heap size to 512 MB.
-- `-XX:MaxPermSize=256m `- Set the maximum size for the permanent generation space.
-- `-XX:+UseG1GC` - Use the G1 garbage collector.
-- `-XX:MaxGCPauseMillis=200` - Set the target maximum pause time for the G1 garbage collector.
-- `-Dproperty=value` - Set a system property.
+>- `-Xms256m` - Set the initial heap size to 256 MB.
+>- `-Xmx512m` - Set the maximum heap size to 512 MB.
+>- `-XX:MaxPermSize=256m `- Set the maximum size for the permanent generation space.
+>- `-XX:+UseG1GC` - Use the G1 garbage collector.
+>- `-XX:MaxGCPauseMillis=200` - Set the target maximum pause time for the G1 garbage collector.
+>- `-Dproperty=value` - Set a system property.
 Read more about VM arguments [here](https://docs.oracle.com/en/java/javase/22/docs/specs/man/java.html#standard-options-for-java).
 
 **Unix** - Run the `build.sh` file.
