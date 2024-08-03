@@ -4,7 +4,7 @@ _Download the platform-specific package, which includes everything needed to run
 
 To ensure files **persist** between Docker and your system, any file you want to keep updated must be placed in the `mount` folder.
 > _Docker containers cannot access system files directly unless those files are mounted. We have configured the mount folder to be automatically mounted for your convenience. This setup allows you to easily share files between your host system and the Docker container, enabling you to apply updates without rebuilding the Docker image. For example, storing `jupiter-config.toml` in the mount folder allows you to modify configurations dynamically._<br><br>
-> Inside the container, the mount folder is accessible at `/jupiter/mount`
+> Inside the container, the mount folder is accessible at: `/jupiter/mount`
 
 ### Build Guide
 **Before continuing**, edit the `mount/jupiter-config.toml` file to your liking.
