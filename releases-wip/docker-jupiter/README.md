@@ -10,9 +10,8 @@ _Download the platform-specific package, which includes everything needed to run
 To make Jupiter listen on a different port, you must edit the `PORT` value in the build script.
 
 Optionally, you can pass VM arguments to the build script. Here are some examples:
-
-- `-Xmx512m` - Set the maximum heap size to 512 MB.
 - `-Xms256m` - Set the initial heap size to 256 MB.
+- `-Xmx512m` - Set the maximum heap size to 512 MB.
 - `-XX:MaxPermSize=256m `- Set the maximum size for the permanent generation space.
 - `-XX:+UseG1GC` - Use the G1 garbage collector.
 - `-XX:MaxGCPauseMillis=200` - Set the target maximum pause time for the G1 garbage collector.
