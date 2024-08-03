@@ -15,7 +15,6 @@ Optionally, you can pass [VM Arguments](https://docs.oracle.com/en/java/javase/2
 >- `-XX:MaxPermSize=256m `- Set the maximum size for the permanent generation space.
 >- `-XX:+UseG1GC` - Use the G1 garbage collector.
 >- `-XX:MaxGCPauseMillis=200` - Set the target maximum pause time for the G1 garbage collector.
->- `-Dproperty=value` - Set a system property.
 
 Finally, build the docker image based on your platform:
 
