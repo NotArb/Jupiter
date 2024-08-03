@@ -26,6 +26,6 @@ After successfully building the Docker image, you can use the following Docker c
 >- `docker start jupiter` - Start the container.
 >- `docker stop jupiter` - Stop the container.
 >- `docker restart jupiter` - Restart the container.
+>- `docker inspect jupiter` - Display detailed information about the container.
 >- `docker logs --follow jupiter` - View the container logs in real-time.
 >- `docker update --cpus="123456" jupiter` - Update the CPU allocation for the container.
->- `docker inspect jupiter` - Display detailed information about the container.
