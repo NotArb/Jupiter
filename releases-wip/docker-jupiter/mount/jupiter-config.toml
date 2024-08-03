@@ -1,5 +1,6 @@
 # This program is essentially just a "manager" for the jupiter-swap-api process.
 [manager]
+jupiter_path="./mount/jupiter-swap-api" # if using docker, this must be a mounted path
 auto_restart_minutes=10
 
 # These environmental variables are specific to Jupiter.
@@ -46,9 +47,10 @@ FILTER_MARKETS_WITH_MINTS="" # This will be ovewritten by mint filters defined b
 enabled=true
 skip_freezable=true # freezable tokens are generally rugs and won't be tradable long
 skip_mintable=false # a handful of stable coins are mintable, so defaulting to false
-skip_no_volume=true # some tokens don't have any daily volume data on jupiter, optionally skip them
+skip_no_volume=true # some tokens don't have any daily volume data on jupiter, optionally skip them (not skipping them will give you WAY more mints, which isn't always good)
 required_tags=[
-    ["birdeye-trending"],
+    ["birdeye-trending"], # trending
+    ["lst"], # stables
     #["verified", "pump"]
 ]
 
@@ -73,3 +75,9 @@ mints=[
     "iSoLdL1Nqqo94A51EXr5iuBiUtHMAnxHJKaToGKphLq",  # isol
     "bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1",  # bsol
 ]
+
+# Json mint filters are loaded on startup from the specific file provided in the path.
+# The format must be json, which is just ["mintA", "mintB", "mintC"] but in a file.
+[[json_mint_filter]]
+enabled=false
+path="./mount/example-mint-list.json" # if using docker, this must be a mounted path

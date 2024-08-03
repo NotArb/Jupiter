@@ -42,7 +42,7 @@ docker stop jupiter 2>/dev/null || true
 docker rm jupiter 2>/dev/null || true
 docker create --name jupiter --restart unless-stopped \
   -p $PORT:8080 \
-  -v "$script_dir/jupiter-config.toml:/jupiter/jupiter-config.toml" \
+  -v "$script_dir/mount:/jupiter/mount" \
   jupiter-image:latest
 
 echo "Jupiter container created!"

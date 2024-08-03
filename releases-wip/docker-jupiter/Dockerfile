@@ -64,4 +64,4 @@ ARG VM_ARGS
 ENV VM_ARGS=${VM_ARGS}
 
 # Run NotArb Jupiter Server Manager
-CMD ["sh", "-c", "exec java $VM_ARGS -cp /jupiter/NotArb org.notarb.launcher.Main --jupiter-server"]
+CMD ["sh", "-c", "exec java $VM_ARGS -cp /jupiter/NotArb org.notarb.launcher.Main --jupiter-config-path=/jupiter/mount/jupiter-config.toml"]
