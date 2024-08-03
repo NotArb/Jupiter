@@ -1,6 +1,6 @@
 ## NotArb Jupiter Management Server
 
-_This resource is included in the NotArb's official release packages: https://download.notarb.org/_
+_You can download a platform-specific package, which includes everything you need to run the NotArb Jupiter Management Server, from our official releases: https://download.notarb.org/_
 
 **Important:** To ensure files persist between Docker and your system, place any file you want to keep updated in the mount folder. For example, storing jupiter-config.toml in the mount folder allows you to apply configuration changes dynamically without rebuilding the Docker image.
 
