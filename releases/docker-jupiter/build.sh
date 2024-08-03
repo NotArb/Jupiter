@@ -23,11 +23,11 @@ if [ -z "$vm_args" ]; then
   vm_args="-Xmx512m"
 fi
 
-# Get this scripts directory
-script_dir=$(dirname "${BASH_SOURCE[0]}")
+# Get the absolute directory of the current script
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
-# Change our dir to the one that has the NotArb file
-cd "$script_dir" && cd ../
+# Move up one directory from the script's directory
+cd "$script_dir/.."
 
 # Build docker image
 docker build -t jupiter-image:latest \
@@ -42,7 +42,7 @@ docker stop jupiter 2>/dev/null || true
 docker rm jupiter 2>/dev/null || true
 docker create --name jupiter --restart unless-stopped \
   -p $PORT:8080 \
-  -v "$script_dir/mount:/jupiter/mount" \
+  --mount type=bind,source="$script_dir/mount",destination=/jupiter/mount \
   jupiter-image:latest
 
 echo "Jupiter container created!"

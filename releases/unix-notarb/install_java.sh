@@ -56,7 +56,7 @@ case "$os-$arch" in
 esac
 
 # Define src path
-src_path=$(dirname "${BASH_SOURCE[0]}")
+src_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 # Remove trailing slash from src path if it exists
 src_path="${src_path%/}"

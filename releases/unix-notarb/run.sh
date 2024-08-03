@@ -10,7 +10,7 @@ export config_path="../temp-config.toml"
 export java_exe_path=""
 
 # Move to the correct workdir to prevent path issues
-cd "$(dirname "${BASH_SOURCE[0]}")"
+cd "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Source the notarb_java.sh script with the specified VM arguments
 # We highly recommend you increase the -Xmx value to better fit your system. Refer to other VM args here:
