@@ -28,7 +28,7 @@ fi
 # Java exe check
 if [ -z "$java_exe_path" ]; then
     # Attempt to install Java if necessary
-    . "$(dirname "${BASH_SOURCE[0]}")/install_java.sh"
+    . "./install_java.sh"
 else
     echo "$java_exe_path"
     "$java_exe_path" --version

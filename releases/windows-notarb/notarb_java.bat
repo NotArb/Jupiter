@@ -29,7 +29,7 @@ if not exist %config_path% (
 rem Java exe check
 if not defined java_exe_path (
     rem Attempt to install Java if necessary
-    call "%~dp0install_java.bat"
+    call ".\install_java.bat"
 ) else (
     echo %java_exe_path%
     "%java_exe_path%" --version
