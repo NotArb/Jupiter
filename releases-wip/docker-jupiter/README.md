@@ -25,12 +25,9 @@ Read more about VM arguments [here](https://docs.oracle.com/en/java/javase/22/do
 
 ### Docker Commands
 After successfully building the Docker image, you can use the following Docker commands:
-
-markdown
-Copy code
-- `docker start jupiter` - Start the container.
-- `docker stop jupiter` - Stop the container.
-- `docker restart jupiter` - Restart the container.
-- `docker logs --follow jupiter` - View the container logs in real-time.
-- `docker update --cpus="123456" jupiter` - Update the CPU allocation for the container.
-- `docker inspect jupiter` - Display detailed information about the container.
+>- `docker start jupiter` - Start the container.
+>- `docker stop jupiter` - Stop the container.
+>- `docker restart jupiter` - Restart the container.
+>- `docker logs --follow jupiter` - View the container logs in real-time.
+>- `docker update --cpus="123456" jupiter` - Update the CPU allocation for the container.
+>- `docker inspect jupiter` - Display detailed information about the container.
