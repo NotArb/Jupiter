@@ -1,5 +1,5 @@
 ## NotArb Jupiter Management Docker Server
-**To use this package, you must first install Docker:** [Install Docker](https://docs.docker.com/engine/install/)
+**To use this package, you must first:** [Install Docker](https://docs.docker.com/engine/install/)
 
 _Download the platform-specific package, which includes everything needed to run the NotArb Jupiter Management Docker Server, from: https://download.notarb.org/_
 
@@ -21,8 +21,8 @@ Optionally, you can pass [VM Arguments](https://docs.oracle.com/en/java/javase/2
 
 Finally, build the docker image based on your platform:
 
-> **Unix** - Run the `build.sh` file.<br>
-> **Windows** - Run the `run.bat` file. (COMING SOON)
+> **Unix** - Run the `docker-jupiter/build.sh` file.<br>
+> **Windows** - Run the `docker-jupiter/run.bat` file. (COMING SOON)
 
 ### Docker Commands
 After successfully building the Docker image, you can use various Docker commands. Here are some examples:
