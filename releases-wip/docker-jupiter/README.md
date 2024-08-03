@@ -1,4 +1,4 @@
-## NotArb Jupiter Management Server
+## NotArb Jupiter Management Docker Server
 
 _Download the platform-specific package, which includes everything needed to run the NotArb Jupiter Management Server, from: https://download.notarb.org/_
 
