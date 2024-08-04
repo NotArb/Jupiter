@@ -9,9 +9,10 @@ All programs provided by NotArb are in Java, therefore you can run them purely f
 
 _This guide will be cleaned up in the future._
 
-# Examples
-- `JDK22` or later required.
-- `--enable-preview` vm arg may be required to run, depending on JDK version.
+**Minimum Java Version:** 22
+_Depdning on your Java version, `--enable-preview` VM arg may be required to run.'
+
+## Examples
 
 ### Jupiter Arbitrage Bot
 > java -cp /path/to/bot.jar org.notarb.launcher.Main --jupiter-arb-config-path=/path/to/bot-config.toml
