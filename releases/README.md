@@ -9,8 +9,8 @@ All programs provided by NotArb are in Java, therefore you can run them purely f
 
 _This guide will be cleaned up in the future._
 
-**Minimum Java Version:** 22
-_Depdning on your Java version, `--enable-preview` VM arg may be required to run.'
+**Minimum Java Version:** 22<br>
+_Depending on your Java version, `--enable-preview` VM arg may be required to run.'_
 
 ## Examples
 
