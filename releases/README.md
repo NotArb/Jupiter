@@ -18,4 +18,4 @@ _This guide will be cleaned up in the future._
 > java -cp /path/to/bot.jar org.notarb.launcher.Main --jupiter-arb-config-path=/path/to/bot-config.toml
 
 ### Jupiter Management Server
-> java -cp /path/to/bot.jar org.notarb.launcher.Main --jupiter-config-path=/path/to/jupiter-config.toml"
+> java -cp /path/to/bot.jar org.notarb.launcher.Main --jupiter-config-path=/path/to/jupiter-config.toml
