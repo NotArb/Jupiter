@@ -51,7 +51,7 @@ ENTRYPOINT ["/usr/bin/tini", "--"]
 ARG VM_ARGS
 
 # Set VM_ARGS to env to allow passing to command below.
-ENV VM_ARGS=${VM_ARGS}
+ENV VM_ARGS=$VM_ARGS
 
 # Run NotArb Jupiter Server Manager
 CMD ["sh", "-c", "exec java $VM_ARGS -cp /jupiter/NotArb org.notarb.launcher.Main --jupiter-config-path=/jupiter/mount/jupiter-config.toml"]
