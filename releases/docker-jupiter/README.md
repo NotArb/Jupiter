@@ -15,9 +15,6 @@ To ensure files **persist** between Docker and your system, any file you want to
 Optionally, you can pass [VM Arguments](https://docs.oracle.com/en/java/javase/22/docs/specs/man/java.html#standard-options-for-java) to the build script. Here are some examples:
 > - `-Xms256m` - Set the initial heap size to 256 MB.
 > - `-Xmx512m` - Set the maximum heap size to 512 MB.
-> - `-XX:MaxPermSize=256m `- Set the maximum size for the permanent generation space.
-> - `-XX:+UseG1GC` - Use the G1 garbage collector.
-> - `-XX:MaxGCPauseMillis=200` - Set the target maximum pause time for the G1 garbage collector.
 
 Finally, build the docker image based on your platform:
 
