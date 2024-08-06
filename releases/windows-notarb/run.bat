@@ -16,5 +16,5 @@ rem Call the notarb_java.bat script with the specified VM arguments
 rem We highly recommend you increase the -Xmx value to better fit your system. Refer to other VM args here:
 rem https://docs.oracle.com/en/java/javase/22/docs/specs/man/java.html#standard-options-for-java
 call ".\notarb_java.bat" ^
-    -Xms256m -Xmx1024m ^
-    -XX:+UseG1GC -XX:MaxGCPauseMillis=200
+    -Xms256m -Xmx2048m ^
+    -XX:+UseSerialGC
