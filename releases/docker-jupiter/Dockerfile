@@ -16,15 +16,15 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /jupiter
 
 # Create a temporary directory (shouldn't have to, just in case)
-RUN mkdir -p /tmp
+RUN mkdir -p /tmp && chmod 1777 /tmp
 
 # Copy NotArb files to /tmp
-COPY NotArb-* /tmp/
+COPY notarb-* /tmp/
 
 # Filter and move the latest NotArb file, remove any remaining
-RUN latest_file=$(ls -v /tmp/NotArb-* | tail -n 1) && \
-    mv "$latest_file" /jupiter/NotArb && \
-    rm -rf /tmp/NotArb-*
+RUN latest_file=$(ls -v /tmp/notarb-* | tail -n 1) && \
+    mv "$latest_file" /jupiter/notarb && \
+    rm -rf /tmp/notarb-*
 
 # Download Jupiter and mark the file as executable
 RUN echo "Downloading Jupiter: ${JUPITER_URL}" && \
@@ -54,4 +54,4 @@ ARG VM_ARGS
 ENV VM_ARGS=$VM_ARGS
 
 # Run NotArb Jupiter Server Manager
-CMD ["sh", "-c", "exec java $VM_ARGS -cp /jupiter/NotArb org.notarb.launcher.Main --jupiter-config-path=/jupiter/mount/jupiter-config.toml"]
+CMD ["sh", "-c", "exec java $VM_ARGS -cp /jupiter/notarb org.notarb.launcher.Main --jupiter-config-path=/jupiter/mount/jupiter-config.toml"]
