@@ -28,4 +28,4 @@ After successfully building the Docker image, you can use various Docker command
 > - `docker restart jupiter` - Restart the container.
 > - `docker stats jupiter` - Display stats about the container.
 > - `docker logs --follow jupiter` - View the container logs in real-time.
-> - `docker update --cpus="123456" jupiter` - Update the CPU allocation for the container.
+> - `docker update --cpus 123456 jupiter` - Update the CPU allocation for the container.

@@ -59,4 +59,4 @@ echo "-> docker stop jupiter"
 echo "-> docker restart jupiter"
 echo "-> docker stats jupiter"
 echo "-> docker logs --follow jupiter"
-echo '-> docker update --cpus="123456" jupiter'
+echo '-> docker update --cpus 123456 jupiter'
