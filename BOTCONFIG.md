@@ -45,6 +45,7 @@ http_pool_max_size=5 # Maximum number of HTTP connections allowed to be pooled f
 requests_per_second=5 # Maximum number of requests per second allowed to be dispatched
 thread_pool_size=5 # Number of threads for dispatching requests
 queue_timeout_ms=7500 # Timeout for requests in the queue to prevent overload; ensures the queue doesn't grow faster than it is processed
+always_queue=false # Set to true to make transaction requets always queue to this dispatcher no matter what. (The default behavior is to choose a dispatcher with the least amount of requests queued)
 proxy_host="" # All proxy settings are optional
 proxy_port=8002
 proxy_user=""
@@ -55,6 +56,15 @@ proxy_password=""
 rpc_keys=["solana-pub"] # List of RPC keys to fetch blockhashes from
 commitment="confirmed" # Commitment level of the blockhash to fetch
 fetch_rate_ms=1200 # Interval for fetching the latest blockhash (in milliseconds)
+
+# Simulation mode (Optional)
+[simulation_mode]
+enabled=false # Enable or disable sending (default: false)
+rpc_key="solana-pub"
+skip_known_jupiter_errors=true # When true, known Jupiter errors will be skipped from output
+skip_successful_responses=false # When true, successful responses will be skipped from output
+skip_no_profit_responses=false # When true, no profit responses will be skipped from output
+force_blockhash=true # When true, the "replaceRecentBlockhash=true" Solana variable will be set
 
 # Jupiter token fetcher (Optional)
 # Note: Enabling this may result in opening multiple token accounts, which can affect your balance due to account creation fees.
@@ -98,8 +108,8 @@ max_spend=0.01
 cu_limit=250_000 
 min_profit_type="bps" # Accepted types: solana, lamports, bps, percent
 min_profit_value=20 # Minimum profit required; note that the actual profit may vary by the time the transaction lands. Consider starting with a higher value to be safe.
-min_priority_fee_lamports=190 
-max_priority_fee_lamports=190 
+min_priority_fee_lamports=190 # Alternatively you can use min_priority_fee_sol
+max_priority_fee_lamports=190 # Alternatively you can use max_priority_fee_sol
 ntx_senders=[ # Normal transaction senders
     { rpc_key="solana-pub", skip_preflight=true, max_retries=0 },
 ]
@@ -114,12 +124,16 @@ The following fields can be used in strategy configuration:
 - `wrap_unwrap_sol`: Whether to automatically wrap and unwrap SOL for transactions.
 - `min_spend`: The minimum amount to spend per swap operation.
 - `max_spend`: The maximum amount to spend per swap operation.
-- `min_profit_type`: The type of profit calculation: "solana", "lamports", "percent", or "bps"
-- `min_profit_value`: The minimum profit required based on min_profit_type to send a transaction.
+- `min_gain_bps`: The minimum _estimated_ token gain [bps](https://www.investopedia.com/ask/answers/what-basis-point-bps) to allow a swap transaction to send.
+- `min_gain_percent`: The minimum _estimated_ token gain percentage to allow a swap transaction to send.
+- `min_gain_lamports`: The minimum _estimated_ token gain converted to lamports to allow a swap transaction to send.
+- `min_gain_sol`: The minimum _estimated_ token gain converted to solana to allow a swap transaction to send.
 - `auto_priority_fee`: Use Jupiter's auto priority fee feature. (Your min/max will still be respected)
 - `min_priority_fee_lamports`: The minimum priority fee for transactions in lamports.
+  - Alternatively, you can use `min_priority_fee_sol` which will do the lamport conversion for you.
 - `max_priority_fee_lamports`: The maximum priority fee for transactions in lamports.
-- `max_swap_routes`: The maximum number of swap routes that can be utilized.
+    - Alternatively, you can use `max_priority_fee_sol` which will do the lamport conversion for you.
+- `max_swap_routes`: The maximum number of swap routes allowed for a transaction to send.
 - `cu_limit`: The cu limit to set per transaction. (If you're unsure, leave unset.)
 - `entry_only_direct_routes`: Restrict the entry swaps to direct routes only.
 - `entry_restrict_intermediate_tokens`: Restrict the use of intermediate tokens during entry swaps.
@@ -140,8 +154,11 @@ The following fields can be used in strategy configuration:
 - `exit_exclude_dexes`: A list of DEXes to exclude from exit swaps.
 - `exit_max_price_impact`: The maximum price impact allowed for exit swaps (as a percentage).
 - `jito_enabled`: Enable or disable Jito sending for the specific strategy.
-- `jito_tip_percent`: The percentage of profit to tip to Jito. (0-100)
-- `min_pref_jito_tip`: The minimum preferred Jito tip.
-- `max_pref_jito_tip`: The maximum preferred Jito tip.
+- `jito_tip_percent`: (1-100) When > 0, Jito transactions will be sent with dynamic tipping based on true profit.
+- `min_jito_tip_lamports`: The minimum _preferred_ dynamic Jito tip.
+    - Alternatively, you can use `min_jito_tip_sol` which will do the lamport conversion for you.
+- `max_jito_tip_lamports`: The maximum _preferred_ dynamic Jito tip.
+    - Alternatively, you can use `max_jito_tip_sol` which will do the lamport conversion for you.
+- `jito_static_tip_lamports`: When > 0, Jito transactions will be sent with a static tip, similar to how priority fee works where the amount is predefined. (This will send alongside dynamic Jito transactions)
 - `ntx_senders`: A list of normal transaction senders, which consist of rpc_key, skip_preflight, and max_retries.
 - `ntx_cooldown`: The amount of time to wait before trying to send another normal transaction from the given strategy.
