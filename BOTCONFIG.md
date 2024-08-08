@@ -161,5 +161,6 @@ The following fields can be used in strategy configuration:
 - `max_jito_tip_lamports`: The maximum _preferred_ dynamic Jito tip.
     - Alternatively, you can use `max_jito_tip_sol` which will do the lamport conversion for you.
 - `jito_static_tip_lamports`: When > 0, Jito transactions will be sent with a static tip, similar to how priority fee works where the amount is predefined. (This will send alongside dynamic Jito transactions)
+  - Alternatively, you can use `jito_static_tip_sol` which will do the lamport conversion for you.
 - `ntx_senders`: A list of normal transaction senders, which consist of rpc_key, skip_preflight, and max_retries.
 - `ntx_cooldown`: The amount of time to wait before trying to send another normal transaction from the given strategy.
