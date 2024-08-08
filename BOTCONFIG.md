@@ -129,6 +129,7 @@ The following fields can be used in strategy configuration:
 - `min_gain_lamports`: The minimum _estimated_ token gain converted to lamports to allow a swap transaction to send.
 - `min_gain_sol`: The minimum _estimated_ token gain converted to solana to allow a swap transaction to send.
 - `auto_priority_fee`: Use Jupiter's auto priority fee feature. (Your min/max will still be respected)
+  - Warning: This uses an extra RPC call from Jupiter.
 - `min_priority_fee_lamports`: The minimum priority fee for transactions in lamports.
   - Alternatively, you can use `min_priority_fee_sol` which will do the lamport conversion for you.
 - `max_priority_fee_lamports`: The maximum priority fee for transactions in lamports.
