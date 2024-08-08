@@ -110,7 +110,7 @@ min_profit_type="bps" # Accepted types: solana, lamports, bps, percent
 min_profit_value=20 # Minimum profit required; note that the actual profit may vary by the time the transaction lands. Consider starting with a higher value to be safe.
 min_priority_fee_lamports=190 # Alternatively you can use min_priority_fee_sol
 max_priority_fee_lamports=190 # Alternatively you can use max_priority_fee_sol
-ntx_senders=[ # Normal transaction senders
+ntx_senders=[ # Normal transaction senders list
     { rpc_key="solana-pub", skip_preflight=true, max_retries=0 },
 ]
 ntx_cooldown="5s"
