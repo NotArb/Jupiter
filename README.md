@@ -25,7 +25,7 @@ Currently, this service is only available via Docker, with potential support for
 - **Dependency Management**: Automatically downloads and installs required dependencies, such as the `jupiter-swap-api`, ensuring users have everything they need to get started quickly.
 - **Configurable via `jupiter-config.toml`**: Allows users to pass any ENV variables to the `jupiter-swap-api` and set up configurations such as the auto-restart timer and filters.
 
-  [jupiter-config.toml](https://github.com/NotArb/Jupiter/blob/main/releases-wip/docker-jupiter/jupiter-config.toml)
+  [jupiter-config.toml](https://github.com/NotArb/Jupiter/blob/main/releases/docker-jupiter/jupiter-config.toml)
 
 
 ### Jupiter Arb Bot (ALPHA)
