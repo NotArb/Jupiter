@@ -17,7 +17,7 @@ max_swap_threads=0 # Maximum number of threads for handling swap requests (defau
 max_jito_threads=0 # Maximum number of threads for dispatching Jito requests. (defaults to number of available processors / 2)
 
 # Jupiter configuration (Required)
-[jupiter] # Also referred to as a http dispatcher
+[jupiter]
 url="http://0.0.0.0:8080/" # URL of your Jupiter server
 http_timeout_ms=3000 # HTTP request timeout for Jupiter (in milliseconds)
 http_pool_max_size=50 # Maximum number of HTTP connections allowed to be pooled for this dispatcher's requests (default: 5)
@@ -27,7 +27,7 @@ unmetered=true # Ignore rate limits and send requests as fast as possible
 
 # RPC configuration (At least one required for blockhash fetching)
 # This is just an example, we advise changing this from solana's public rpc.
-[[rpc]] # Also referred to as a http dispatcher
+[[rpc]]
 enabled=true # Enable or disable this RPC node configuration (default: true)
 key="solana-pub" # Unique key identifier for this RPC configuration
 url="https://api.mainnet-beta.solana.com" # URL and port of your RPC server
@@ -38,13 +38,12 @@ thread_pool_size=3 # Number of threads for dispatching RPC requests
 
 # Jito configuration (At least one required for sending Jito transactions)
 # Swaps will execute on the enabled Jito dispatcher with the least amount of requests queued.
-[[jito]] # Also referred to as a http dispatcher
+[[jito]]
 enabled=false # Enable or disable sending (default: true)
 url="https://mainnet.block-engine.jito.wtf" # URL of the block engine
 http_timeout_ms=3000 # HTTP request timeout (in milliseconds)
 http_pool_max_size=5 # Maximum number of HTTP connections allowed to be pooled for this dispatcher's requests (default: 5)
 requests_per_second=5 # Maximum number of requests per second allowed to be dispatched
-thread_pool_size=5 # Number of threads for dispatching requests
 queue_timeout_ms=7500 # Timeout for requests in the queue to prevent overload; ensures the queue doesn't grow faster than it is processed
 always_queue=false # Set to true to make transaction requets always queue to this dispatcher no matter what. (The default behavior is to choose a dispatcher with the least amount of requests queued)
 proxy_host="" # All proxy settings are optional
