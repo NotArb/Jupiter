@@ -1,3 +1,6 @@
+# For more in-depth information on configuration, please visit:
+# https://config.notarb.org/
+
 [bot_misc] # required
 keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # required for signing transactions
 max_swap_threads=0 # Leave at 0 if not sure.
