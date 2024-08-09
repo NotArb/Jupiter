@@ -40,8 +40,8 @@ force_blockhash=true
 enabled=true
 url="https://ny.mainnet.block-engine.jito.wtf"
 http_timeout_ms=3000
-http_pool_max_size=50
-requests_per_second=50
+http_pool_max_size=5
+requests_per_second=5
 queue_timeout_ms=7500
 
 [[jito]] # required at least 1 enabled if using Jito
