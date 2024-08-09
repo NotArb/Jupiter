@@ -1,0 +1,100 @@
+# For more in-depth information on configuration, please visit:
+# https://config.notarb.org/
+
+[bot_misc] # required
+keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # required for signing transactions
+max_swap_threads=0 # Leave at 0 if not sure.
+max_jito_threads=0 # Leave at 0 if not sure.
+
+[jupiter] # required
+url="http://127.0.0.1:8080/"
+http_timeout_ms=3000
+http_pool_max_size=50 # scale up as needed, 50 should be a fair starting point
+requests_per_second=0 # ignored if unmetered is true
+thread_pool_size=0 # ignored if unmetered is true
+unmetered=true # set true if your jupiter server isn't rate limited
+
+[[rpc]]
+key="reader" # change this to any name you'd like, it's used as an identifier throughout this file
+url="https://api.mainnet-beta.solana.com" # change this to your rpc's url
+http_timeout_ms=5000
+requests_per_second=10
+thread_pool_size=1
+
+[[rpc]]
+key="sender-1" # change this to any name you'd like, it's used as an identifier throughout this file
+url="https://api.mainnet-beta.solana.com" # change this to your rpc's url
+http_timeout_ms=5000
+requests_per_second=10
+thread_pool_size=1
+
+[[rpc]]
+key="sender-2" # change this to any name you'd like, it's used as an identifier throughout this file
+url="https://api.mainnet-beta.solana.com" # change this to your rpc's url
+http_timeout_ms=5000
+requests_per_second=10
+thread_pool_size=1
+
+[blockhash_fetcher] # required
+rpc_keys=["reader"]
+commitment="confirmed"
+fetch_rate_ms=1200 # the rate at which latest blockhash fetch tasks should execute
+
+[simulation_mode] # optional
+enabled=false
+rpc_key="your-rpc-identifier"
+skip_known_jupiter_errors=true
+skip_successful_responses=false
+skip_no_profit_responses=false
+force_blockhash=true
+
+[[token_list]] # at least 1 mint supplier required - for more in depth mint suppliers, please refer to https://config.notarb.org/
+enabled=true
+random_order=true
+max_per_cycle=5 # limits this supplier to 5 tokens before moving on to the next available supplier (doesn't have any effect if this is the only mint supplier active)
+mints=[
+    "So11111111111111111111111111111111111111112",  # sol
+    "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB", # usdt
+    "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # usdc
+    "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R", # ray
+    "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn", # jitosol
+    "mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So",  # msol
+    "7dHbWXmci3dT8UFYWYZweBLXgycu7Y3iL6trKn1Y7ARj", # stsol
+    "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs", # weth
+    "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh", # wbtc
+    "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",  # jup
+    "HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3", # pyth
+    "HNTvzaqTmDxJbi3isreXtUn9MUJEJy1bp9bo1rpGEGhi", # aurasol
+    "jucy5XJ76pHVvtPZb5TKRcGQExkwit2P5s4vY8UzmpC",  # jucysol
+    "iSoLdL1Nqqo94A51EXr5iuBiUtHMAnxHJKaToGKphLq",  # isol
+    "bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1",  # bsol
+]
+
+####################################
+#        Define your swaps!        #
+####################################
+
+#########
+#  SOL  #
+#########
+[[swap]]
+enabled=true
+mint="So11111111111111111111111111111111111111112"
+decimals=9 # having to assign this will be removed in future
+
+[swap.strategy_defaults]
+wrap_unwrap_sol=false
+entry_min_slippage_bps=2500
+entry_max_slippage_bps=10000
+exit_min_slippage_bps=2500
+exit_max_slippage_bps=10000
+
+[[swap.strategy]]
+min_spend=2
+max_spend=6
+min_gain_sol=0.05
+ntx_senders=[
+    { rpc_key="sender-1", skip_preflight=true, max_retries=0 },
+    { rpc_key="sender-2", skip_preflight=true, max_retries=0 },
+]
+ntx_cooldown="1s"

@@ -9,10 +9,10 @@ max_jito_threads=0 # Leave at 0 if not sure.
 [jupiter] # required
 url="http://127.0.0.1:8080/"
 http_timeout_ms=3000
-http_pool_max_size=50
-requests_per_second=0
-thread_pool_size=0
-unmetered=true
+http_pool_max_size=50 # scale up as needed, 50 should be a fair starting point
+requests_per_second=0 # ignored if unmetered is true
+thread_pool_size=0 # ignored if unmetered is true
+unmetered=true # set true if your jupiter server isn't rate limited
 
 [[rpc]] # required at least 1 (needed for blockhash_fetcher below, and for non-jito tx sending)
 key="solana-pub" # change this to any name you'd like, it's used as an identifier throughout this file
@@ -28,7 +28,7 @@ fetch_rate_ms=1200 # the rate at which latest blockhash fetch tasks should execu
 
 [simulation_mode] # optional
 enabled=false
-rpc_key="helius"
+rpc_key="your-rpc-identifier"
 skip_known_jupiter_errors=true
 skip_successful_responses=false
 skip_no_profit_responses=false
@@ -76,23 +76,12 @@ http_pool_max_size=5
 requests_per_second=5
 queue_timeout_ms=15_000
 
-[jupiter_token_fetcher] # optional, but at least 1 mint supplier required
-enabled=true # if enabled, be sure your jupiter server has the same mints available otherwise you'll get untradable errors
-fetch_ms=10_000 # jupiter allows the endpoint for tradable tokens to be fetched 30 times a minute per IP, keep that in mind if running same host bots
-max_per_cycle=25 # limits this supplier to 25 tokens before moving on to the next available one (doesn't have any effect if this is the only mint supplier active)
-skip_freezable=true
-skip_mintable=true
-skip_no_volume=true
-required_tags=[
-    ["birdeye-trending"],
-    #["pump", "community"],
-    #["pump", "verified"]
-]
+####################################################################################################
 
-[[token_list]] # optional, but at least 1 mint supplier required
+[[token_list]] # at least 1 mint supplier required - for more in depth mint suppliers, please refer to https://config.notarb.org/
 enabled=true
 random_order=true
-max_per_cycle=5
+max_per_cycle=5 # limits this supplier to 5 tokens before moving on to the next available supplier (doesn't have any effect if this is the only mint supplier active)
 mints=[
     "So11111111111111111111111111111111111111112",  # sol
     "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB", # usdt
@@ -109,34 +98,6 @@ mints=[
     "jucy5XJ76pHVvtPZb5TKRcGQExkwit2P5s4vY8UzmpC",  # jucysol
     "iSoLdL1Nqqo94A51EXr5iuBiUtHMAnxHJKaToGKphLq",  # isol
     "bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1",  # bsol
-]
-
-[[token_list]] # list of high volume (mostly) meme coins - update this periodically if tokens fall off
-enabled=true
-random_order=true
-max_per_cycle=5
-mints=[
-    "6Qd6mmFR84jzg24S3851TWNGeTTFrfPko76UiHyRMDMT", # solarba
-    "6ogzHhzdrQr9Pgv6hZ2MNze7UrzBMAFyBBWUYp1Fhitx", # retardio
-    "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263", # bonk
-    "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr", # popcat
-    "3B5wuUrMEi5yATD7on46hKfej3pfmd7t1RKgrsN3pump", # billy
-    "GiG7Hr61RVm4CSUxJmgiCoySFQtdiwxtqf64MsRppump", # scf
-    "5mbK36SZ7J19An8jFochhQS4of8g6BwUjbeCSxBSoWdp", # michi
-    "BVG3BJH4ghUPJT9mCi7JbziNwx3dqRTzgo9x5poGpump", # rocky
-    "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",  # mew
-    "8wXtPeU6557ETkp9WHFY1n1EcU6NxDvbAggHGsMYiHsB", # gme
-    "5z3EqYQo9HiCEs3R84RCDMu2n7anpDMxRhdK8PSWmrRC", # ponke
-    "A5gVj5j16U4vCTMXQYYrhkmWgx6gej4nAeZRNQMLUAfy", # djcat
-    "HhJpBhRRn4g56VsyLuT8DL5Bv31HkXqsrahTTUCZeZg4", # myro
-    "WENWENvqqNya429ubCdR81ZmD69brwQaaBYY6p3LCpk",  # wen
-    "CTJf74cTo3cw8acFP1YXF3QpsQUUBGBjh2k2e8xsZ6UL", # neiro
-    "A8C3xuqscfmyLrte3VmTqrAq8kgMASius9AFNANwpump", # fwog
-    "RzELnKoeNvZjSPF5rbDRz7ay3TehqepNjRBRrpspump",  # buck
-    "GfLkhUs8cGAkCdZ1smJgj7cfejkm6ApnzgDHu6uipnXg", # chair
-    "GYKmdfcUmZVrqfcH1g579BGjuzSRijj3LBuwv79rpump", # wdog
-    "6Qd6mmFR84jzg24S3851TWNGeTTFrfPko76UiHyRMDMT", # solarba
-    "7G5DM7Jy7TMWKgH313tA3vF6AqHpbHP4TWZzpTVLWv9c", # rtr
 ]
 
 ####################################
