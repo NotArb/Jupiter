@@ -79,7 +79,7 @@ queue_timeout_ms=15_000
 [jupiter_token_fetcher] # optional, but at least 1 token supplier required
 enabled=true # if enabled, be sure your jupiter server has the same mints available otherwise you'll get untradable errors
 fetch_ms=10_000 # jupiter allows the endpoint for tradable tokens to be fetched 30 times a minute per IP, keep that in mind if running same host bots
-max_per_cycle=25
+max_per_cycle=25 # limits this supplier to 25 tokens before moving on to the next available one (doesn't have any effect if this is the only mint supplier active)
 skip_freezable=true
 skip_mintable=true
 skip_no_volume=true
