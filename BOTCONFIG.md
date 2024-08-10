@@ -93,8 +93,7 @@ mints=[ # List of token mints to use
 # Swap config (At least one required to find swaps)
 [[swap]]
 enabled=true # Enable or disable this swap configuration (default: true)
-mint="So11111111111111111111111111111111111111112" # Base mint to trade
-decimals=9 # Number of decimals for the base mint (important for price calculations)
+mint="So11111111111111111111111111111111111111112" # Base mint to trade (can also do symbols: SOL, USDC, USDT)
 
 [swap.strategy_defaults] # Default strategy configuration for all of this swap's strategies
 wrap_unwrap_sol=false 
