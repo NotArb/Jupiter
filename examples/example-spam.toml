@@ -15,34 +15,34 @@ thread_pool_size=0 # ignored if unmetered is true
 unmetered=true # set true if your jupiter server isn't rate limited
 
 [[rpc]]
-key="reader" # change this to any name you'd like, it's used as an identifier throughout this file
+id="reader" # change this to any name you'd like, it's used as an identifier throughout this file
 url="https://api.mainnet-beta.solana.com" # change this to your rpc's url
 http_timeout_ms=5000
 requests_per_second=10
 thread_pool_size=1
 
 [[rpc]]
-key="sender-1" # change this to any name you'd like, it's used as an identifier throughout this file
+id="sender-1" # change this to any name you'd like, it's used as an identifier throughout this file
 url="https://api.mainnet-beta.solana.com" # change this to your rpc's url
 http_timeout_ms=5000
 requests_per_second=10
 thread_pool_size=1
 
 [[rpc]]
-key="sender-2" # change this to any name you'd like, it's used as an identifier throughout this file
+id="sender-2" # change this to any name you'd like, it's used as an identifier throughout this file
 url="https://api.mainnet-beta.solana.com" # change this to your rpc's url
 http_timeout_ms=5000
 requests_per_second=10
 thread_pool_size=1
 
 [blockhash_fetcher] # required
-rpc_keys=["reader"]
+rpcs=["reader"]
 commitment="confirmed"
 fetch_rate_ms=1200 # the rate at which latest blockhash fetch tasks should execute
 
 [simulation_mode] # optional
 enabled=false
-rpc_key="your-rpc-identifier"
+rpc="your-rpc-identifier"
 skip_known_jupiter_errors=true
 skip_successful_responses=false
 skip_no_profit_responses=false
@@ -68,6 +68,8 @@ mints=[
     "jucy5XJ76pHVvtPZb5TKRcGQExkwit2P5s4vY8UzmpC",  # jucysol
     "iSoLdL1Nqqo94A51EXr5iuBiUtHMAnxHJKaToGKphLq",  # isol
     "bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1",  # bsol
+    "5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm", # inf
+    "jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v",  # jupsol
 ]
 
 ####################################
@@ -94,7 +96,7 @@ min_spend=2
 max_spend=6
 min_gain_sol=0.05
 ntx_senders=[
-    { rpc_key="sender-1", skip_preflight=true, max_retries=0 },
-    { rpc_key="sender-2", skip_preflight=true, max_retries=0 },
+    { rpc="sender-1", skip_preflight=true, max_retries=0 },
+    { rpc="sender-2", skip_preflight=true, max_retries=0 },
 ]
 ntx_cooldown="1s"
