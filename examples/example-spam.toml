@@ -42,7 +42,7 @@ fetch_rate_ms=1200 # the rate at which latest blockhash fetch tasks should execu
 
 [simulation_mode] # optional
 enabled=false
-rpc="your-rpc-identifier"
+rpc="your-rpc-id"
 skip_known_jupiter_errors=true
 skip_successful_responses=false
 skip_no_profit_responses=false
