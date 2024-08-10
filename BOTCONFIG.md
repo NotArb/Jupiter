@@ -29,7 +29,7 @@ unmetered=true # Ignore rate limits and send requests as fast as possible
 # This is just an example, we advise changing this from solana's public rpc.
 [[rpc]]
 enabled=true # Enable or disable this RPC node configuration (default: true)
-key="solana-pub" # Unique key identifier for this RPC configuration
+id="solana-pub" # Unique custom identifier for this RPC configuration
 url="https://api.mainnet-beta.solana.com" # URL and port of your RPC server
 http_timeout_ms=3000 # HTTP request timeout for RPC (in milliseconds)
 http_pool_max_size=5 # Maximum number of HTTP connections allowed to be pooled for this dispatcher's requests (default: 5)
@@ -53,14 +53,14 @@ proxy_password=""
 
 # Blockhash fetcher (Required)
 [blockhash_fetcher] # Needed to ensure transactions have the latest blockhash to land
-rpc_keys=["solana-pub"] # List of RPC keys to fetch blockhashes from
+rpcs=["solana-pub"] # List of RPC ids to fetch blockhashes from
 commitment="confirmed" # Commitment level of the blockhash to fetch
 fetch_rate_ms=1200 # Interval for fetching the latest blockhash (in milliseconds)
 
 # Simulation mode (Optional)
 [simulation_mode]
 enabled=false # Enable or disable sending (default: false)
-rpc_key="solana-pub"
+rpc="solana-pub"
 skip_known_jupiter_errors=true # When true, known Jupiter errors will be skipped from output
 skip_successful_responses=false # When true, successful responses will be skipped from output
 skip_no_profit_responses=false # When true, no profit responses will be skipped from output
@@ -111,7 +111,7 @@ min_profit_value=20 # Minimum profit required; note that the actual profit may v
 min_priority_fee_lamports=190 # Alternatively you can use min_priority_fee_sol
 max_priority_fee_lamports=190 # Alternatively you can use max_priority_fee_sol
 ntx_senders=[ # Normal transaction senders list
-    { rpc_key="solana-pub", skip_preflight=true, max_retries=0 },
+    { rpc="solana-pub", skip_preflight=true, max_retries=0 },
 ]
 ntx_cooldown="5s"
 # Refer to Strategy Fields below #
@@ -162,5 +162,5 @@ The following fields can be used in strategy configuration:
     - Alternatively, you can use `jito_max_tip_sol` which will do the lamport conversion for you.
 - `jito_static_tip_lamports`: When > 0, Jito transactions will be sent with a static tip, similar to how priority fee works where the amount is predefined. (This will send alongside dynamic Jito transactions)
   - Alternatively, you can use `jito_static_tip_sol` which will do the lamport conversion for you.
-- `ntx_senders`: A list of normal transaction senders, which consist of rpc_key, skip_preflight, and max_retries.
+- `ntx_senders`: A list of normal transaction senders, which consist of rpc, skip_preflight, and max_retries.
 - `ntx_cooldown`: The amount of time to wait before trying to send another normal transaction from the given strategy.
