@@ -19,7 +19,7 @@ id="reader" # change this to any name you'd like, it's used as an identifier thr
 url="https://api.mainnet-beta.solana.com" # change this to your rpc's url
 http_timeout_ms=5000
 requests_per_second=10
-thread_pool_size=1
+thread_pool_size=1 # if only using for the blockhash fetcher, there's no need to set higher than 1
 
 [[rpc]]
 id="sender-1" # change this to any name you'd like, it's used as an identifier throughout this file
