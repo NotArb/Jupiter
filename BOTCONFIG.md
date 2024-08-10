@@ -74,9 +74,9 @@ enabled=true # Enable or disable the Jupiter token fetcher (default: true)
 fetch_ms=10000 # Interval for fetching tradable tokens from Jupiter (in milliseconds)
 max_per_cycle=5 # Maximum number of tokens to attempt a swap per cycle
 required_tags=[ # Fetched tokens must match at least one group to be accepted.
-    ["birdeye-trending"],
-    #["pump", "verified"],
-    ["lst"],
+    ["birdeye-trending"], 
+    ["pump", "verified"],
+    ["pump", "community"],
 ] # Juptier token tags can be found here: https://station.jup.ag/docs/token-list/token-list-api
 
 # Json mint list configuration (Optional)
