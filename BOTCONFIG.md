@@ -79,6 +79,13 @@ required_tags=[ # Fetched tokens must match at least one group to be accepted.
     ["lst"],
 ] # Juptier token tags can be found here: https://station.jup.ag/docs/token-list/token-list-api
 
+# Json mint list configuration (Optional)
+[[json_mint_list]]
+enabled=false
+max_per_cylce=5 # optional
+random_order=true # optional
+path="/path/to/mints.json"
+
 # Token list configuration (Optional, but required if no other token suppliers are enabled)
 [[token_list]] # Also referred to as a token supplier
 enabled=true # Enable or disable this token list (default: true)
