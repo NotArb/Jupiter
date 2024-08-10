@@ -111,8 +111,7 @@ mints=[
 #########
 [[swap]]
 enabled=true
-mint="So11111111111111111111111111111111111111112"
-decimals=9 # having to assign this will be removed in future
+mint="SOL"
 
 [swap.strategy_defaults]
 wrap_unwrap_sol=false
@@ -137,8 +136,7 @@ jito_tip_percent=40
 ##########
 [[swap]]
 enabled=false
-mint="EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
-decimals=6 # having to assign this will be removed in future
+mint="USDC"
 
 [swap.strategy_defaults]
 wrap_unwrap_sol=false
