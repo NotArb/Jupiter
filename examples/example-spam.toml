@@ -37,8 +37,7 @@ thread_pool_size=1
 
 [blockhash_fetcher] # required
 rpcs=["reader"]
-commitment="confirmed"
-fetch_rate_ms=1200 # the rate at which latest blockhash fetch tasks should execute
+fetch_rate_ms=400 # the rate at which latest blockhash fetch tasks should execute
 
 [simulation_mode] # optional
 enabled=false

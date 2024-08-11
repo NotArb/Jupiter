@@ -54,8 +54,7 @@ proxy_password=""
 # Blockhash fetcher (Required)
 [blockhash_fetcher] # Needed to ensure transactions have the latest blockhash to land
 rpcs=["solana-pub"] # List of RPC ids to fetch blockhashes from
-commitment="confirmed" # Commitment level of the blockhash to fetch
-fetch_rate_ms=1200 # Interval for fetching the latest blockhash (in milliseconds)
+fetch_rate_ms=400 # Interval for fetching the latest blockhash (in milliseconds)
 
 # Simulation mode (Optional)
 [simulation_mode]
