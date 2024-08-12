@@ -5,6 +5,7 @@
 keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # required for signing transactions
 max_swap_threads=0 # Leave at 0 if not sure.
 max_jito_threads=0 # Leave at 0 if not sure.
+max_spam_threads=0 # Leave at 0 if not sure.
 
 [jupiter] # required
 url="http://127.0.0.1:8080/"
@@ -15,39 +16,26 @@ thread_pool_size=0 # ignored if unmetered is true
 unmetered=true # set true if your jupiter server isn't rate limited
 
 [[rpc]]
-id="reader" # change this to any name you'd like, it's used as an identifier throughout this file
-url="https://api.mainnet-beta.solana.com" # change this to your rpc's url
-http_timeout_ms=5000
-requests_per_second=10
-thread_pool_size=1 # if only using for the blockhash fetcher, there's no need to set higher than 1
-
-[[rpc]]
 id="sender-1" # change this to any name you'd like, it's used as an identifier throughout this file
 url="https://api.mainnet-beta.solana.com" # change this to your rpc's url
 http_timeout_ms=5000
 requests_per_second=10
-thread_pool_size=1
 
 [[rpc]]
 id="sender-2" # change this to any name you'd like, it's used as an identifier throughout this file
 url="https://api.mainnet-beta.solana.com" # change this to your rpc's url
 http_timeout_ms=5000
 requests_per_second=10
-thread_pool_size=1
-
-[blockhash_fetcher] # required
-rpcs=["reader"]
-fetch_rate_ms=400 # the rate at which latest blockhash fetch tasks should execute
 
 [simulation_mode] # optional
 enabled=false
-rpc="your-rpc-id"
+rpc="sender-1"
 skip_known_jupiter_errors=true
 skip_successful_responses=false
 skip_no_profit_responses=false
 force_blockhash=true
 
-[[token_list]] # at least 1 mint supplier required - for more in depth mint suppliers, please refer to https://config.notarb.org/
+[[static_mint_list]] # at least 1 mint supplier required - for more in depth mint suppliers, please refer to https://config.notarb.org/
 enabled=true
 random_order=true
 max_per_cycle=5 # limits this supplier to 5 tokens before moving on to the next available supplier (doesn't have any effect if this is the only mint supplier active)
@@ -93,8 +81,9 @@ exit_max_slippage_bps=10000
 min_spend=2
 max_spend=6
 min_gain_sol=0.05
-ntx_senders=[
+spam_senders=[
     { rpc="sender-1", skip_preflight=true, max_retries=0 },
     { rpc="sender-2", skip_preflight=true, max_retries=0 },
 ]
-ntx_cooldown="1s"
+spam_unique=false # defaults to false, but set true if you want to try sending unique transactions to each sender
+spam_cooldown="1s" # examples: 100ms, 5s, 2m

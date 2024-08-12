@@ -13,8 +13,9 @@ This guide provides detailed instructions on configuring your NotArb bot using t
 [bot_misc]
 keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # Path to the keypair file used for signing transactions
 disable_http_pools=false # Disable HTTP pools for debugging purposes (will be removed in future)
-max_swap_threads=0 # Maximum number of threads for handling swap requests (defaults to the number of available processors / 2)
-max_jito_threads=0 # Maximum number of threads for dispatching Jito requests. (defaults to number of available processors / 2)
+max_swap_threads=0 # Maximum number of threads for handling swap requests (if left 0, the bot will automatically determine an optimal amount)
+max_jito_threads=0 # Maximum number of threads for dispatching Jito requests. (if left 0, the bot will automatically determine an optimal amount)
+max_spam_threads=0 # Maximum number of threads for dispatching Spam requests. (if left 0, the bot will automatically determine an optimal amount)
 
 # Jupiter configuration (Required)
 [jupiter]
@@ -25,16 +26,16 @@ requests_per_second=0 # Maximum number of requests per second to Jupiter
 thread_pool_size=0 # Number of threads for dispatching requests
 unmetered=true # Ignore rate limits and send requests as fast as possible
 
-# RPC configuration (At least one required for blockhash fetching)
+# RPC configuration (Only required if using for spam sending)
 # This is just an example, we advise changing this from solana's public rpc.
 [[rpc]]
 enabled=true # Enable or disable this RPC node configuration (default: true)
 id="solana-pub" # Unique custom identifier for this RPC configuration
 url="https://api.mainnet-beta.solana.com" # URL and port of your RPC server
-http_timeout_ms=3000 # HTTP request timeout for RPC (in milliseconds)
-http_pool_max_size=5 # Maximum number of HTTP connections allowed to be pooled for this dispatcher's requests (default: 5)
+http_timeout_ms=1000 # HTTP request timeout for RPC (in milliseconds)
+http_pool_max_size=10 # Maximum number of HTTP connections allowed to be pooled for this dispatcher's requests (default: 5)
 requests_per_second=10 # Maximum number of requests per second to this RPC
-thread_pool_size=3 # Number of threads for dispatching RPC requests
+queue_timeout_ms=1000 # Timeout for requests in the queue; good if you don't want to allow potential arbs to send after waiting too long
 
 # Jito configuration (At least one required for sending Jito transactions)
 # Swaps will execute on the enabled Jito dispatcher with the least amount of requests queued.
@@ -51,11 +52,6 @@ proxy_port=8002
 proxy_user=""
 proxy_password=""
 
-# Blockhash fetcher (Required)
-[blockhash_fetcher] # Needed to ensure transactions have the latest blockhash to land
-rpcs=["solana-pub"] # List of RPC ids to fetch blockhashes from
-fetch_rate_ms=400 # Interval for fetching the latest blockhash (in milliseconds)
-
 # Simulation mode (Optional)
 [simulation_mode]
 enabled=false # Enable or disable sending (default: false)
@@ -68,7 +64,7 @@ force_blockhash=true # When true, the "replaceRecentBlockhash=true" Solana varia
 # Jupiter token fetcher (Optional)
 # Note: Enabling this may result in opening multiple token accounts, which can affect your balance due to account creation fees.
 # Token accounts are only opened once. Adjust your filters to limit the number of tokens if this is a concern.
-[jupiter_token_fetcher] # Also referred to as a token supplier
+[jupiter_token_fetcher]
 enabled=true # Enable or disable the Jupiter token fetcher (default: true)
 fetch_ms=10000 # Interval for fetching tradable tokens from Jupiter (in milliseconds)
 max_per_cycle=5 # Maximum number of tokens to attempt a swap per cycle
@@ -85,8 +81,8 @@ max_per_cylce=5 # optional
 random_order=true # optional
 path="/path/to/mints.json"
 
-# Token list configuration (Optional, but required if no other token suppliers are enabled)
-[[token_list]] # Also referred to as a token supplier
+# Static mint list configuration (Optional, but required if no other token suppliers are enabled)
+[[static_mint_list]]
 enabled=true # Enable or disable this token list (default: true)
 random_order=true # Randomize the order of tokens in this list
 max_per_cycle=5 # Maximum number of tokens to attempt a swap per cycle
@@ -115,10 +111,10 @@ min_profit_type="bps" # Accepted types: solana, lamports, bps, percent
 min_profit_value=20 # Minimum profit required; note that the actual profit may vary by the time the transaction lands. Consider starting with a higher value to be safe.
 min_priority_fee_lamports=190 # Alternatively you can use min_priority_fee_sol
 max_priority_fee_lamports=190 # Alternatively you can use max_priority_fee_sol
-ntx_senders=[ # Normal transaction senders list
+spam_senders=[ # Normal transaction senders list
     { rpc="solana-pub", skip_preflight=true, max_retries=0 },
 ]
-ntx_cooldown="5s"
+spam_cooldown="5s"
 # Refer to Strategy Fields below #
 ```
 
@@ -167,5 +163,6 @@ The following fields can be used in strategy configuration:
     - Alternatively, you can use `jito_max_tip_sol` which will do the lamport conversion for you.
 - `jito_static_tip_lamports`: When > 0, Jito transactions will be sent with a static tip, similar to how priority fee works where the amount is predefined. (This will send alongside dynamic Jito transactions)
   - Alternatively, you can use `jito_static_tip_sol` which will do the lamport conversion for you.
-- `ntx_senders`: A list of normal transaction senders, which consist of rpc, skip_preflight, and max_retries.
-- `ntx_cooldown`: The amount of time to wait before trying to send another normal transaction from the given strategy.
+- `spam_senders`: A list of normal transaction senders, which consist of rpc, skip_preflight, and max_retries.
+- `spam_unique`: Defaults to false, but when enabled, sends unique transactions for all spam senders listed.
+- `spam_cooldown`: The amount of time to wait before trying to send another normal transaction from the given strategy.

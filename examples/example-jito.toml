@@ -5,6 +5,7 @@
 keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # required for signing transactions
 max_swap_threads=0 # Leave at 0 if not sure.
 max_jito_threads=0 # Leave at 0 if not sure.
+max_spam_threads=0 # Not needed for Jito.
 
 [jupiter] # required
 url="http://127.0.0.1:8080/"
@@ -13,25 +14,6 @@ http_pool_max_size=50 # scale up as needed, 50 should be a fair starting point
 requests_per_second=0 # ignored if unmetered is true
 thread_pool_size=0 # ignored if unmetered is true
 unmetered=true # set true if your jupiter server isn't rate limited
-
-[[rpc]] # required at least 1 (needed for blockhash_fetcher below, and for non-jito tx sending)
-id="solana-pub" # change this to any name you'd like, it's used as an identifier throughout this file
-url="https://api.mainnet-beta.solana.com" # although solana's pub endpoint will work, we recommend changing
-http_timeout_ms=5000
-requests_per_second=10
-thread_pool_size=1 # if only using for the blockhash fetcher, there's no need to set higher than 1
-
-[blockhash_fetcher] # required
-rpcs=["solana-pub"]
-fetch_rate_ms=400 # the rate at which latest blockhash fetch tasks should execute
-
-[simulation_mode] # optional
-enabled=false
-rpc="your-rpc-id"
-skip_known_jupiter_errors=true
-skip_successful_responses=false
-skip_no_profit_responses=false
-force_blockhash=true
 
 ####################################################################################################
 
@@ -77,7 +59,7 @@ queue_timeout_ms=15_000
 
 ####################################################################################################
 
-[[token_list]] # at least 1 mint supplier required - for more in depth mint suppliers, please refer to https://config.notarb.org/
+[[static_mint_list]] # at least 1 mint supplier required - for more in depth mint suppliers, please refer to https://config.notarb.org/
 enabled=true
 random_order=true
 max_per_cycle=5 # limits this supplier to 5 tokens before moving on to the next available supplier (doesn't have any effect if this is the only mint supplier active)
