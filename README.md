@@ -1,5 +1,7 @@
 # NotArb (UNDER DEVELOPMENT)
 
+[![](https://dcbadge.limes.pink/api/server/mYfAQnBfqy)](https://discord.notarb.org)
+
 **NotArb** is a versatile platform designed to optimize token trading and arbitrage operations on the Solana blockchain. It offers two main components:
 
 - A Docker-based Jupiter management server with features designed to enhance token trading efficiency.
