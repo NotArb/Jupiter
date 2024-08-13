@@ -1,4 +1,4 @@
-# NotArb (UNDER DEVELOPMENT)
+# NotArb
 
 [![](https://dcbadge.limes.pink/api/server/mYfAQnBfqy)](https://discord.notarb.org)
 
