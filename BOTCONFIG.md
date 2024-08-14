@@ -174,7 +174,7 @@ spam_cooldown="5s"
   - Alternatively, you can use `jito_min_tip_sol` which will do the lamport conversion for you.
 - `jito_max_tip_lamports`: The maximum _preferred_ dynamic Jito tip.
   - Alternatively, you can use `jito_max_tip_sol` which will do the lamport conversion for you.
-- `jito_static_tip_lamports`: When > 0, Jito transactions will be sent with a static tip, similar to how priority fee works where the amount is predefined. (This will send alongside dynamic Jito transactions)
+- `jito_static_tip_lamports`: When > 0, Jito transactions will be sent with a predefined static tip. (This will send alongside dynamic Jito transactions)
   - Alternatively, you can use `jito_static_tip_sol` which will do the lamport conversion for you.
 
 
