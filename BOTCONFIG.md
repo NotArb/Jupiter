@@ -123,7 +123,7 @@ spam_cooldown="5s"
 #### 1.0. Fields that will directly affect the results of Jupiter entry/exit quotes:
 - `min_spend`: The minimum amount to spend per swap operation.
 - `max_spend`: The maximum amount to spend per swap operation.
-- `wrap_unwrap_sol`: Whether to automatically wrap and unwrap SOL for transactions.
+- `wrap_unwrap_sol`: Whether to automatically wrap and unwrap SOL for transactions. (default: true)
 - `auto_priority_fee`: Use Jupiter's auto priority fee feature. (This will use an additional rpc call on Jupiter)
 - `min_priority_fee_lamports`: The minimum priority fee for transactions in lamports.
   - Alternatively, you can use `min_priority_fee_sol` which will do the lamport conversion for you.
