@@ -167,7 +167,7 @@ spam_cooldown="5s"
 
 
 
-#### 4.0. Jito specific fields
+#### 4.0. Jito specific fields:
 - `jito_enabled`: Enable or disable Jito sending for the specific strategy.
 - `jito_tip_percent`: (1-100) When > 0, Jito transactions will be sent with dynamic tipping based on true profit.
 - `jito_min_tip_lamports`: The minimum _preferred_ dynamic Jito tip.
@@ -179,7 +179,7 @@ spam_cooldown="5s"
 
 
 
-#### 5.0. Spam specific fields
+#### 5.0. Spam specific fields:
 - `spam_senders`: A list of normal transaction senders, which consist of rpc, skip_preflight, and max_retries.
 - `spam_unique`: Defaults to false, but when enabled, sends unique transactions for all spam senders listed.
 - `spam_cooldown`: The amount of time to wait before trying to send another normal transaction from the given strategy. (Examples: "100ms", "5s")
