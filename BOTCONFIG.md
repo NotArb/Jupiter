@@ -151,6 +151,7 @@ spam_cooldown="5s"
 - `exit_exclude_dexes`: A list of DEXes to exclude from exit swaps.
 
 
+
 #### 2.0. Fields that will determine if a transaction will be skipped, after quotes are acquired:
 - `min_gain_bps`: The minimum _estimated_ token gain [bps](https://www.investopedia.com/ask/answers/what-basis-point-bps) to allow a swap transaction to send.
 - `min_gain_percent`: The minimum _estimated_ token gain percentage to allow a swap transaction to send.
@@ -160,11 +161,13 @@ spam_cooldown="5s"
 - `max_swap_routes`: The maximum number of swap routes allowed for a transaction to send.
 - `max_price_impact`: The maximum price impact allowed. (Price impact is returned from Jupiter quotes. Price impact is represented as a percentage. Ex: 0.05 = 5%)
 
-<br>
+
+
 #### 3.0. Fields that will directly affect the building of transactions:
 - `cu_limit`: The cu limit to set per transaction. (If you're unsure, leave unset.)
 
-<br>
+
+
 #### 4.0. Jito specific fields
 - `jito_enabled`: Enable or disable Jito sending for the specific strategy.
 - `jito_tip_percent`: (1-100) When > 0, Jito transactions will be sent with dynamic tipping based on true profit.
@@ -175,7 +178,8 @@ spam_cooldown="5s"
 - `jito_static_tip_lamports`: When > 0, Jito transactions will be sent with a static tip, similar to how priority fee works where the amount is predefined. (This will send alongside dynamic Jito transactions)
   - Alternatively, you can use `jito_static_tip_sol` which will do the lamport conversion for you.
 
-<br>
+
+
 #### 5.0. Spam specific fields
 - `spam_senders`: A list of normal transaction senders, which consist of rpc, skip_preflight, and max_retries.
 - `spam_unique`: Defaults to false, but when enabled, sends unique transactions for all spam senders listed.
