@@ -120,7 +120,7 @@ spam_cooldown="5s"
 
 ## Strategy Fields
 
-#### Fields that will directly affect the results of a Jupiter quote:
+#### Fields that will directly affect the results of Jupiter entry/exit quotes:
 - `min_spend`: The minimum amount to spend per swap operation.
 - `max_spend`: The maximum amount to spend per swap operation.
 - `wrap_unwrap_sol`: Whether to automatically wrap and unwrap SOL for transactions.
