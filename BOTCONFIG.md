@@ -155,6 +155,7 @@ spam_cooldown="5s"
 #### 2.0. Fields that will determine if a transaction will be skipped, after quotes are acquired:
 - `max_swap_routes`: The maximum number of swap routes allowed.
 - `max_price_impact`: The maximum price impact allowed. (Price impact is returned from Jupiter quotes. Price impact is represented as a percentage. Ex: 0.05 = 5%)
+##### 2.1. Gain requirements:
 - `min_gain_bps`: The minimum _estimated_ token gain [bps](https://www.investopedia.com/ask/answers/what-basis-point-bps) required.
 - `min_gain_percent`: The minimum _estimated_ token gain percentage required.
 - `min_gain_lamports`: The minimum _estimated_ token gain converted to lamports required.
@@ -169,11 +170,13 @@ spam_cooldown="5s"
 
 #### 4.0. Jito specific fields:
 - `jito_enabled`: Enable or disable Jito sending for the specific strategy.
+##### 4.1. Dynamic Jito tipping:
 - `jito_tip_percent`: (1-100) When > 0, Jito transactions will be sent with dynamic tipping based on true profit.
 - `jito_min_tip_lamports`: The minimum _preferred_ dynamic Jito tip.
   - Alternatively, you can use `jito_min_tip_sol` which will do the lamport conversion for you.
 - `jito_max_tip_lamports`: The maximum _preferred_ dynamic Jito tip.
   - Alternatively, you can use `jito_max_tip_sol` which will do the lamport conversion for you.
+##### 4.2. Static Jito tipping:
 - `jito_static_tip_lamports`: When > 0, Jito transactions will be sent with a predefined static tip. (This will send alongside dynamic Jito transactions)
   - Alternatively, you can use `jito_static_tip_sol` which will do the lamport conversion for you.
 
