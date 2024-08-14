@@ -120,7 +120,7 @@ spam_cooldown="5s"
 
 ## Strategy Fields
 
-#### Fields that will directly affect the results of Jupiter entry/exit quotes:
+#### 1.0 Fields that will directly affect the results of Jupiter entry/exit quotes:
 - `min_spend`: The minimum amount to spend per swap operation.
 - `max_spend`: The maximum amount to spend per swap operation.
 - `wrap_unwrap_sol`: Whether to automatically wrap and unwrap SOL for transactions.
@@ -129,7 +129,7 @@ spam_cooldown="5s"
   - Alternatively, you can use `min_priority_fee_sol` which will do the lamport conversion for you.
 - `max_priority_fee_lamports`: The maximum priority fee for transactions in lamports.
   - Alternatively, you can use `max_priority_fee_sol` which will do the lamport conversion for you.
-##### Entry specific:
+##### 1.1 Entry specific:
 - `entry_only_direct_routes`: Restrict the entry swaps to direct routes only.
 - `entry_restrict_intermediate_tokens`: Restrict the use of intermediate tokens during entry swaps.
 - `entry_min_slippage_bps`: The minimum slippage allowed for entry swaps (in basis points).
@@ -139,7 +139,7 @@ spam_cooldown="5s"
   - Limit total accounts instead with `total_max_accounts`
 - `entry_dexes`: A list of DEXes allowed for entry swaps.
 - `entry_exclude_dexes`: A list of DEXes to exclude from entry swaps.
-##### Exit specific: (The same as above, but specific to exit quotes)
+##### 1.2 Exit specific: (The same as above, but specific to exit quotes)
 - `exit_only_direct_routes`: Restrict the exit swaps to direct routes only.
 - `exit_restrict_intermediate_tokens`: Restrict the use of intermediate tokens during exit swaps.
 - `exit_min_slippage_bps`: The minimum slippage allowed for exit swaps (in basis points).
