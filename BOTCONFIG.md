@@ -129,6 +129,8 @@ spam_cooldown="5s"
   - Alternatively, you can use `min_priority_fee_sol` which will do the lamport conversion for you.
 - `max_priority_fee_lamports`: The maximum priority fee for transactions in lamports.
   - Alternatively, you can use `max_priority_fee_sol` which will do the lamport conversion for you.
+_When auto_priority_fee is unset or false, your priority fee will be a random value between your min/max, if set._
+  
 ##### Entry specific:
 - `entry_only_direct_routes`: Restrict the entry swaps to direct routes only.
 - `entry_restrict_intermediate_tokens`: Restrict the use of intermediate tokens during entry swaps.
