@@ -136,7 +136,7 @@ spam_cooldown="5s"
 - `entry_min_slippage_bps`: The minimum slippage allowed for entry swaps (in basis points).
 - `entry_max_slippage_bps`: The maximum slippage allowed for entry swaps (in basis points).
 - `entry_max_accounts`: The maximum number of accounts that can be used for entry swaps.
-  - Limit total accounts instead with `total_max_accounts`
+  - Alternatively, you can use `total_max_accounts` to limit total accounts instead.
 - `entry_dexes`: A list of DEXes allowed for entry swaps.
 - `entry_exclude_dexes`: A list of DEXes to exclude from entry swaps.
 ##### 1.2. Exit specific: (The same as above, but specific to exit quotes)
@@ -146,7 +146,7 @@ spam_cooldown="5s"
 - `exit_min_slippage_bps`: The minimum slippage allowed for exit swaps (in basis points).
 - `exit_max_slippage_bps`: The maximum slippage allowed for exit swaps (in basis points).
 - `exit_max_accounts`: The maximum number of accounts that can be used for exit swaps.
-  - Limit total accounts instead with `total_max_accounts`
+  - Alternatively, you can use `total_max_accounts` to limit total accounts instead.
 - `exit_dexes`: A list of DEXes allowed for exit swaps.
 - `exit_exclude_dexes`: A list of DEXes to exclude from exit swaps.
 
