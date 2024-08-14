@@ -175,6 +175,6 @@ spam_cooldown="5s"
   - Alternatively, you can use `jito_static_tip_sol` which will do the lamport conversion for you.
 ---
 #### 5.0. Spam specific fields:
-- `spam_senders`: A list of normal transaction senders, which consist of rpc, skip_preflight, and max_retries.
+- `spam_senders`: A list of spam transaction senders, which consist of rpc, skip_preflight, and max_retries.
 - `spam_unique`: Defaults to false, but when enabled, sends unique transactions for all spam senders listed.
 - `spam_cooldown`: The amount of time to wait before trying to send another normal transaction from the given strategy. (Examples: "100ms", "5s")
