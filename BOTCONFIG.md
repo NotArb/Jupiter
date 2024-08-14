@@ -26,7 +26,7 @@ requests_per_second=0 # Maximum number of requests per second to Jupiter
 thread_pool_size=0 # Number of threads for dispatching requests
 unmetered=true # Ignore rate limits and send requests as fast as possible
 
-# RPC configuration (Only required if using for spam sending)
+# RPC configuration (Only required if using for spam sending or simulation mode)
 # This is just an example, we advise changing this from solana's public rpc.
 [[rpc]]
 enabled=true # Enable or disable this RPC node configuration (default: true)
