@@ -159,7 +159,6 @@ spam_cooldown="5s"
 - `min_gain_percent`: The minimum _estimated_ token gain percentage to allow a swap transaction to send.
 - `min_gain_lamports`: The minimum _estimated_ token gain converted to lamports to allow a swap transaction to send.
 - `min_gain_sol`: The minimum _estimated_ token gain converted to solana to allow a swap transaction to send.
-  - Warning: This uses an extra RPC call from Jupiter.
 
 
 
