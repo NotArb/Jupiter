@@ -153,13 +153,13 @@ spam_cooldown="5s"
 
 
 #### 2.0. Fields that will determine if a transaction will be skipped, after quotes are acquired:
+- `max_swap_routes`: The maximum number of swap routes allowed for a transaction to send.
+- `max_price_impact`: The maximum price impact allowed. (Price impact is returned from Jupiter quotes. Price impact is represented as a percentage. Ex: 0.05 = 5%)
 - `min_gain_bps`: The minimum _estimated_ token gain [bps](https://www.investopedia.com/ask/answers/what-basis-point-bps) to allow a swap transaction to send.
 - `min_gain_percent`: The minimum _estimated_ token gain percentage to allow a swap transaction to send.
 - `min_gain_lamports`: The minimum _estimated_ token gain converted to lamports to allow a swap transaction to send.
 - `min_gain_sol`: The minimum _estimated_ token gain converted to solana to allow a swap transaction to send.
   - Warning: This uses an extra RPC call from Jupiter.
-- `max_swap_routes`: The maximum number of swap routes allowed for a transaction to send.
-- `max_price_impact`: The maximum price impact allowed. (Price impact is returned from Jupiter quotes. Price impact is represented as a percentage. Ex: 0.05 = 5%)
 
 
 
