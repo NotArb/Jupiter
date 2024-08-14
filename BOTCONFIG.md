@@ -159,7 +159,7 @@ spam_cooldown="5s"
 - `min_gain_lamports`: The minimum _estimated_ token gain converted to lamports required.
 - `min_gain_sol`: The minimum _estimated_ token gain converted to solana required.
 ---
-### 3.0. Fields that will directly affect the building of transactions:
+#### 3.0. Fields that will directly affect the building of transactions:
 - `cu_limit`: The cu limit to set per transaction. (If you're unsure, leave unset.)
 ---
 #### 4.0. Jito specific fields:
