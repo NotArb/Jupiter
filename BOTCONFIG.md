@@ -163,7 +163,7 @@ spam_cooldown="5s"
 - `cu_limit`: The cu limit to set per transaction. (If you're unsure, leave unset.)
 ---
 #### 4.0. Jito specific fields:
-- `jito_enabled`: Enable or disable Jito sending for the specific strategy.
+- `jito_enabled`: Enable or disable Jito sending.
 ##### 4.1. Dynamic Jito tipping:
 - `jito_tip_percent`: (1-100) When > 0, Jito transactions will be sent with dynamic tipping based on true profit.
 - `jito_min_tip_lamports`: The minimum _preferred_ dynamic Jito tip.
