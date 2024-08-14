@@ -120,7 +120,7 @@ spam_cooldown="5s"
 
 ## Strategy Fields
 
-#### 1.0. Fields that will directly affect the results of Jupiter entry/exit quotes:
+### 1.0. Fields that will directly affect the results of Jupiter entry/exit quotes:
 - `wrap_unwrap_sol`: Whether to automatically wrap and unwrap SOL for transactions. (default: true)
 - `min_spend`: The minimum amount to spend per swap operation.
 - `max_spend`: The maximum amount to spend per swap operation.
@@ -152,7 +152,7 @@ spam_cooldown="5s"
 
 
 
-#### 2.0. Fields that will determine if a transaction will be skipped, after quotes are acquired:
+### 2.0. Fields that will determine if a transaction will be skipped, after quotes are acquired:
 - `max_swap_routes`: The maximum number of swap routes allowed.
 - `max_price_impact`: The maximum price impact allowed. (Price impact is returned from Jupiter quotes. Price impact is represented as a percentage. Ex: 0.05 = 5%)
 ##### 2.1. Gain requirements:
@@ -163,7 +163,7 @@ spam_cooldown="5s"
 
 
 
-#### 3.0. Fields that will directly affect the building of transactions:
+### 3.0. Fields that will directly affect the building of transactions:
 - `cu_limit`: The cu limit to set per transaction. (If you're unsure, leave unset.)
 
 
