@@ -120,7 +120,7 @@ spam_cooldown="5s"
 
 ## Strategy Fields
 
-### 1.0. Fields that will directly affect the results of Jupiter entry/exit quotes:
+#### 1.0. Fields that will directly affect the results of Jupiter entry/exit quotes:
 - `wrap_unwrap_sol`: Whether to automatically wrap and unwrap SOL for transactions. (default: true)
 - `min_spend`: The minimum amount to spend per swap operation.
 - `max_spend`: The maximum amount to spend per swap operation.
@@ -149,10 +149,8 @@ spam_cooldown="5s"
   - Alternatively, you can use `total_max_accounts` to limit total accounts instead.
 - `exit_dexes`: A list of DEXes allowed for exit swaps.
 - `exit_exclude_dexes`: A list of DEXes to exclude from exit swaps.
-
-
-
-### 2.0. Fields that will determine if a transaction will be skipped, after quotes are acquired:
+---
+#### 2.0. Fields that will determine if a transaction will be skipped, after quotes are acquired:
 - `max_swap_routes`: The maximum number of swap routes allowed.
 - `max_price_impact`: The maximum price impact allowed. (Price impact is returned from Jupiter quotes. Price impact is represented as a percentage. Ex: 0.05 = 5%)
 ##### 2.1. Gain requirements:
@@ -160,14 +158,10 @@ spam_cooldown="5s"
 - `min_gain_percent`: The minimum _estimated_ token gain percentage required.
 - `min_gain_lamports`: The minimum _estimated_ token gain converted to lamports required.
 - `min_gain_sol`: The minimum _estimated_ token gain converted to solana required.
-
-
-
+---
 ### 3.0. Fields that will directly affect the building of transactions:
 - `cu_limit`: The cu limit to set per transaction. (If you're unsure, leave unset.)
-
-
-
+---
 #### 4.0. Jito specific fields:
 - `jito_enabled`: Enable or disable Jito sending for the specific strategy.
 ##### 4.1. Dynamic Jito tipping:
@@ -179,9 +173,7 @@ spam_cooldown="5s"
 ##### 4.2. Static Jito tipping:
 - `jito_static_tip_lamports`: When > 0, Jito transactions will be sent with a predefined static tip. (This will send alongside dynamic Jito transactions)
   - Alternatively, you can use `jito_static_tip_sol` which will do the lamport conversion for you.
-
-
-
+---
 #### 5.0. Spam specific fields:
 - `spam_senders`: A list of normal transaction senders, which consist of rpc, skip_preflight, and max_retries.
 - `spam_unique`: Defaults to false, but when enabled, sends unique transactions for all spam senders listed.
