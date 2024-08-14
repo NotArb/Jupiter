@@ -132,9 +132,9 @@ spam_cooldown="5s"
 ##### 1.1. Entry specific:
 - `entry_only_direct_routes`: Restrict the entry swaps to direct routes only.
 - `entry_restrict_intermediate_tokens`: Restrict the use of intermediate tokens during entry swaps.
+- `entry_max_auto_slippage_bps`: The maximum automatic slippage for entry swaps (in basis points).
 - `entry_min_slippage_bps`: The minimum slippage allowed for entry swaps (in basis points).
 - `entry_max_slippage_bps`: The maximum slippage allowed for entry swaps (in basis points).
-- `entry_max_auto_slippage_bps`: The maximum automatic slippage for entry swaps (in basis points).
 - `entry_max_accounts`: The maximum number of accounts that can be used for entry swaps.
   - Limit total accounts instead with `total_max_accounts`
 - `entry_dexes`: A list of DEXes allowed for entry swaps.
@@ -142,9 +142,9 @@ spam_cooldown="5s"
 ##### 1.2. Exit specific: (The same as above, but specific to exit quotes)
 - `exit_only_direct_routes`: Restrict the exit swaps to direct routes only.
 - `exit_restrict_intermediate_tokens`: Restrict the use of intermediate tokens during exit swaps.
+- `exit_max_auto_slippage_bps`: The maximum automatic slippage for exit swaps (in basis points).
 - `exit_min_slippage_bps`: The minimum slippage allowed for exit swaps (in basis points).
 - `exit_max_slippage_bps`: The maximum slippage allowed for exit swaps (in basis points).
-- `exit_max_auto_slippage_bps`: The maximum automatic slippage for exit swaps (in basis points).
 - `exit_max_accounts`: The maximum number of accounts that can be used for exit swaps.
   - Limit total accounts instead with `total_max_accounts`
 - `exit_dexes`: A list of DEXes allowed for exit swaps.
