@@ -120,49 +120,59 @@ spam_cooldown="5s"
 
 ## Strategy Fields
 
-The following fields can be used in strategy configuration:
-
-- `wrap_unwrap_sol`: Whether to automatically wrap and unwrap SOL for transactions.
+#### Fields that will directly affect the results of a Jupiter quote:
 - `min_spend`: The minimum amount to spend per swap operation.
 - `max_spend`: The maximum amount to spend per swap operation.
-- `min_gain_bps`: The minimum _estimated_ token gain [bps](https://www.investopedia.com/ask/answers/what-basis-point-bps) to allow a swap transaction to send.
-- `min_gain_percent`: The minimum _estimated_ token gain percentage to allow a swap transaction to send.
-- `min_gain_lamports`: The minimum _estimated_ token gain converted to lamports to allow a swap transaction to send.
-- `min_gain_sol`: The minimum _estimated_ token gain converted to solana to allow a swap transaction to send.
-- `auto_priority_fee`: Use Jupiter's auto priority fee feature. (Your min/max will still be respected)
-  - Warning: This uses an extra RPC call from Jupiter.
+- `wrap_unwrap_sol`: Whether to automatically wrap and unwrap SOL for transactions.
+- `auto_priority_fee`: Use Jupiter's auto priority fee feature. (This will use an additional rpc call on Jupiter)
 - `min_priority_fee_lamports`: The minimum priority fee for transactions in lamports.
   - Alternatively, you can use `min_priority_fee_sol` which will do the lamport conversion for you.
 - `max_priority_fee_lamports`: The maximum priority fee for transactions in lamports.
-    - Alternatively, you can use `max_priority_fee_sol` which will do the lamport conversion for you.
-- `max_swap_routes`: The maximum number of swap routes allowed for a transaction to send.
-- `cu_limit`: The cu limit to set per transaction. (If you're unsure, leave unset.)
-- `entry_only_direct_routes`: Restrict the entry swaps to direct routes only.
+  - Alternatively, you can use `max_priority_fee_sol` which will do the lamport conversion for you.
+##### Entry specific:
+- `entry_only_direct_routes` | `exit_only_direct_routes`: Restrict the entry swaps to direct routes only.
 - `entry_restrict_intermediate_tokens`: Restrict the use of intermediate tokens during entry swaps.
 - `entry_min_slippage_bps`: The minimum slippage allowed for entry swaps (in basis points).
 - `entry_max_slippage_bps`: The maximum slippage allowed for entry swaps (in basis points).
 - `entry_max_auto_slippage_bps`: The maximum automatic slippage for entry swaps (in basis points).
 - `entry_max_accounts`: The maximum number of accounts that can be used for entry swaps.
+  - Limit total accounts instead with `total_max_accounts`
 - `entry_dexes`: A list of DEXes allowed for entry swaps.
 - `entry_exclude_dexes`: A list of DEXes to exclude from entry swaps.
-- `entry_max_price_impact`: The maximum price impact allowed for entry swaps (as a percentage).
+##### Exit specific:
 - `exit_only_direct_routes`: Restrict the exit swaps to direct routes only.
 - `exit_restrict_intermediate_tokens`: Restrict the use of intermediate tokens during exit swaps.
 - `exit_min_slippage_bps`: The minimum slippage allowed for exit swaps (in basis points).
 - `exit_max_slippage_bps`: The maximum slippage allowed for exit swaps (in basis points).
 - `exit_max_auto_slippage_bps`: The maximum automatic slippage for exit swaps (in basis points).
 - `exit_max_accounts`: The maximum number of accounts that can be used for exit swaps.
+  - Limit total accounts instead with `total_max_accounts`
 - `exit_dexes`: A list of DEXes allowed for exit swaps.
 - `exit_exclude_dexes`: A list of DEXes to exclude from exit swaps.
-- `exit_max_price_impact`: The maximum price impact allowed for exit swaps (as a percentage).
+
+#### Fields that will determine if a transaction will be skipped, after quotes are acquired:
+- `min_gain_bps`: The minimum _estimated_ token gain [bps](https://www.investopedia.com/ask/answers/what-basis-point-bps) to allow a swap transaction to send.
+- `min_gain_percent`: The minimum _estimated_ token gain percentage to allow a swap transaction to send.
+- `min_gain_lamports`: The minimum _estimated_ token gain converted to lamports to allow a swap transaction to send.
+- `min_gain_sol`: The minimum _estimated_ token gain converted to solana to allow a swap transaction to send.
+  - Warning: This uses an extra RPC call from Jupiter.
+- `max_swap_routes`: The maximum number of swap routes allowed for a transaction to send.
+- `max_price_impact`: The maximum price impact allowed. (Price impact is returned from Jupiter quotes. Price impact is represented as a percentage. Ex: 0.05 = 5%)
+
+#### Fields that will directly affect the building of transactions:
+- `cu_limit`: The cu limit to set per transaction. (If you're unsure, leave unset.)
+
+#### Jito specific fields
 - `jito_enabled`: Enable or disable Jito sending for the specific strategy.
 - `jito_tip_percent`: (1-100) When > 0, Jito transactions will be sent with dynamic tipping based on true profit.
 - `jito_min_tip_lamports`: The minimum _preferred_ dynamic Jito tip.
-    - Alternatively, you can use `jito_min_tip_sol` which will do the lamport conversion for you.
+  - Alternatively, you can use `jito_min_tip_sol` which will do the lamport conversion for you.
 - `jito_max_tip_lamports`: The maximum _preferred_ dynamic Jito tip.
-    - Alternatively, you can use `jito_max_tip_sol` which will do the lamport conversion for you.
+  - Alternatively, you can use `jito_max_tip_sol` which will do the lamport conversion for you.
 - `jito_static_tip_lamports`: When > 0, Jito transactions will be sent with a static tip, similar to how priority fee works where the amount is predefined. (This will send alongside dynamic Jito transactions)
   - Alternatively, you can use `jito_static_tip_sol` which will do the lamport conversion for you.
+
+#### Spam specific fields
 - `spam_senders`: A list of normal transaction senders, which consist of rpc, skip_preflight, and max_retries.
 - `spam_unique`: Defaults to false, but when enabled, sends unique transactions for all spam senders listed.
-- `spam_cooldown`: The amount of time to wait before trying to send another normal transaction from the given strategy.
+- `spam_cooldown`: The amount of time to wait before trying to send another normal transaction from the given strategy. (Examples: "100ms", "5s")
