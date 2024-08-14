@@ -129,15 +129,26 @@ spam_cooldown="5s"
   - Alternatively, you can use `min_priority_fee_sol` which will do the lamport conversion for you.
 - `max_priority_fee_lamports`: The maximum priority fee for transactions in lamports.
   - Alternatively, you can use `max_priority_fee_sol` which will do the lamport conversion for you.
-- `entry_only_direct_routes` | `exit_only_direct_routes`: Restrict the entry swaps to direct routes only.
-- `entry_restrict_intermediate_tokens` | `exit_restrict_intermediate_tokens`: Restrict the use of intermediate tokens during entry swaps.
-- `entry_min_slippage_bps` | `exit_min_slippage_bps`: The minimum slippage allowed for entry swaps (in basis points).
-- `entry_max_slippage_bps` | `exit_max_slippage_bps`: The maximum slippage allowed for entry swaps (in basis points).
-- `entry_max_auto_slippage_bps` | `exit_max_auto_slippage_bps`: The maximum automatic slippage for entry swaps (in basis points).
-- `entry_max_accounts` | `exit_max_accounts`: The maximum number of accounts that can be used for entry swaps.
+##### Entry specific:
+- `entry_only_direct_routes`: Restrict the entry swaps to direct routes only.
+- `entry_restrict_intermediate_tokens`: Restrict the use of intermediate tokens during entry swaps.
+- `entry_min_slippage_bps`: The minimum slippage allowed for entry swaps (in basis points).
+- `entry_max_slippage_bps`: The maximum slippage allowed for entry swaps (in basis points).
+- `entry_max_auto_slippage_bps`: The maximum automatic slippage for entry swaps (in basis points).
+- `entry_max_accounts`: The maximum number of accounts that can be used for entry swaps.
   - Limit total accounts instead with `total_max_accounts`
-- `entry_dexes` | `exit_dexes`: A list of DEXes allowed for entry swaps.
-- `entry_exclude_dexes` | `exit_exclude_dexes`: A list of DEXes to exclude from entry swaps.
+- `entry_dexes`: A list of DEXes allowed for entry swaps.
+- `entry_exclude_dexes`: A list of DEXes to exclude from entry swaps.
+##### Exit specific: (The same as above, but specific to exit quotes)
+- `exit_only_direct_routes`: Restrict the exit swaps to direct routes only.
+- `exit_restrict_intermediate_tokens`: Restrict the use of intermediate tokens during exit swaps.
+- `exit_min_slippage_bps`: The minimum slippage allowed for exit swaps (in basis points).
+- `exit_max_slippage_bps`: The maximum slippage allowed for exit swaps (in basis points).
+- `exit_max_auto_slippage_bps`: The maximum automatic slippage for exit swaps (in basis points).
+- `exit_max_accounts`: The maximum number of accounts that can be used for exit swaps.
+  - Limit total accounts instead with `total_max_accounts`
+- `exit_dexes`: A list of DEXes allowed for exit swaps.
+- `exit_exclude_dexes`: A list of DEXes to exclude from exit swaps.
 
 #### Fields that will determine if a transaction will be skipped, after quotes are acquired:
 - `min_gain_bps`: The minimum _estimated_ token gain [bps](https://www.investopedia.com/ask/answers/what-basis-point-bps) to allow a swap transaction to send.
