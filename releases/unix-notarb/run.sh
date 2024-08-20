@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # The path to the bot file (required)
-export bot_path="../notarb-0.1.39-alpha"
+export bot_path="../notarb-0.1.40-alpha"
 
 # The path to the bot config file (required)
 export config_path="../temp-config.toml"
