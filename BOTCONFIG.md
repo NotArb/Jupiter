@@ -111,7 +111,7 @@ min_gain_bps=20 # Minimum _estimated_ gain required in bps; note that the actual
 min_priority_fee_lamports=190 # Alternatively you can use min_priority_fee_sol
 max_priority_fee_lamports=190 # Alternatively you can use max_priority_fee_sol
 spam_senders=[ # Normal transaction senders list
-    { rpc="solana-pub", skip_preflight=true, max_retries=0 },
+    { rpc="solana-pub", skip_preflight=true, max_retries=0, unique=false },
 ]
 spam_cooldown="5s"
 # Refer to Strategy Fields below #
@@ -175,5 +175,4 @@ spam_cooldown="5s"
 ---
 #### 5.0. Spam specific fields:
 - `spam_senders`: A list of spam transaction senders, which consist of rpc, skip_preflight, and max_retries.
-- `spam_unique`: When enabled, sends unique transactions for all spam senders listed. (default: false)
 - `spam_cooldown`: The amount of time to wait before trying to send another normal transaction from the given strategy. (Examples: "100ms", "5s")
