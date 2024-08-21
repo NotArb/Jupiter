@@ -85,5 +85,4 @@ spam_senders=[
     { rpc="sender-1", skip_preflight=true, max_retries=0 },
     { rpc="sender-2", skip_preflight=true, max_retries=0 },
 ]
-spam_unique=false # defaults to false, but set true if you want to try sending unique transactions to each sender
 spam_cooldown="1s" # examples: 100ms, 5s, 2m
