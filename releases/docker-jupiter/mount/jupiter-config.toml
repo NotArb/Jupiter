@@ -35,7 +35,7 @@ RPC_URL="your.url"
 #YELLOWSTONE_GRPC_ENDPOINT="" # only enable if you intend to use grpc
 #YELLOWSTONE_GRPC_X_TOKEN=""  # only enable if you intend to use grpc
 ALLOW_CIRCULAR_ARBITRAGE="true"
-ENABLE_NEW_DEXES="true"
+ENABLE_NEW_DEXES="false"
 FILTER_MARKETS_WITH_MINTS="" # This will be ovewritten by mint filters defined below.
 
 # The dynamic mint filter fetches tradable tokens from Jupiter's Token API during startup.
