@@ -13,18 +13,15 @@ This guide provides detailed instructions on configuring your NotArb bot using t
 [bot_misc]
 keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # Path to the keypair file used for signing transactions
 disable_http_pools=false # Disable HTTP pools for debugging purposes (will be removed in future)
-max_swap_threads=0 # Maximum number of threads for handling swap requests (if left 0, the bot will automatically determine an optimal amount)
-max_jito_threads=0 # Maximum number of threads for dispatching Jito requests. (if left 0, the bot will automatically determine an optimal amount)
-max_spam_threads=0 # Maximum number of threads for dispatching Spam requests. (if left 0, the bot will automatically determine an optimal amount)
+swap_threads=0 # Number of threads for handling swap requests (if left 0, the bot will automatically determine an optimal amount)
+jito_threads=0 # Number of threads for dispatching Jito requests. (if left 0, the bot will automatically determine an optimal amount)
+spam_threads=0 # Number of threads for dispatching Spam requests. (if left 0, the bot will automatically determine an optimal amount)
 
 # Jupiter configuration (Required)
 [jupiter]
 url="http://0.0.0.0:8080/" # URL of your Jupiter server
 http_timeout_ms=3000 # HTTP request timeout for Jupiter (in milliseconds)
 http_pool_max_size=50 # Maximum number of HTTP connections allowed to be pooled for this dispatcher's requests (default: 5)
-requests_per_second=0 # Maximum number of requests per second to Jupiter
-thread_pool_size=0 # Number of threads for dispatching requests
-unmetered=true # Ignore rate limits and send requests as fast as possible
 
 # RPC configuration (Only required for spam sending and simulation mode)
 # This is just an example, we advise changing this from solana's public rpc.
@@ -106,7 +103,7 @@ jito_enabled=true
 enabled=true
 min_spend=0.001 
 max_spend=0.01
-cu_limit=250_000 
+cu_limit=250_000
 min_gain_bps=20 # Minimum _estimated_ gain required in bps; note that the actual profit may vary by the time the transaction lands. Consider starting with a higher value to be safe.
 min_priority_fee_lamports=190 # Alternatively you can use min_priority_fee_sol
 max_priority_fee_lamports=190 # Alternatively you can use max_priority_fee_sol
