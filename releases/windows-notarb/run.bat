@@ -1,7 +1,7 @@
 @echo off
 
 rem The path to the bot file (required)
-set "bot_path=..\notarb-0.1.42-alpha"
+set "bot_path=..\notarb-0.1.43-alpha"
 
 rem The path to the bot config file (required)
 set "config_path=..\temp-config.toml"
