@@ -3,17 +3,14 @@
 
 [bot_misc] # required
 keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # required for signing transactions
-max_swap_threads=0 # Leave at 0 if not sure.
-max_jito_threads=0 # Leave at 0 if not sure.
-max_spam_threads=0 # Leave at 0 if not sure.
+swap_threads=0 # Leave at 0 if not sure.
+jito_threads=0 # Leave at 0 if not sure.
+spam_threads=0 # Leave at 0 if not sure.
 
 [jupiter] # required
 url="http://127.0.0.1:8080/"
-http_timeout_ms=3000
+http_timeout_ms=3000 # swaps make 3 jupiter requests, this is how long 1 request can take before timing out
 http_pool_max_size=50 # scale up as needed, 50 should be a fair starting point
-requests_per_second=0 # ignored if unmetered is true
-thread_pool_size=0 # ignored if unmetered is true
-unmetered=true # set true if your jupiter server isn't rate limited
 
 [[rpc]]
 id="sender-1" # change this to any name you'd like, it's used as an identifier throughout this file
@@ -72,10 +69,10 @@ mint="SOL"
 
 [swap.strategy_defaults]
 wrap_unwrap_sol=false
-entry_min_slippage_bps=2500
-entry_max_slippage_bps=10000
-exit_min_slippage_bps=2500
-exit_max_slippage_bps=10000
+entry_min_slippage_bps=5
+entry_max_slippage_bps=5
+exit_min_slippage_bps=5
+exit_max_slippage_bps=5
 
 [[swap.strategy]]
 min_spend=2
