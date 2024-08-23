@@ -2,6 +2,7 @@
 [manager]
 jupiter_path="/jupiter/jupiter-swap-api" # /jupiter is the docker container workdir
 auto_restart_minutes=10
+startup_cmd=[] # optional, used to run a command before every start/restart ex: ["bash", "update_mints.sh"]
 
 # These environmental variables are specific to Jupiter.
 # For a complete list of available variables, use the jupiter-swap-api --help command.

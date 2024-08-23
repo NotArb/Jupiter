@@ -16,13 +16,13 @@ http_pool_max_size=50 # scale up as needed, 50 should be a fair starting point
 id="sender-1" # change this to any name you'd like, it's used as an identifier throughout this file
 url="https://api.mainnet-beta.solana.com" # change this to your rpc's url
 http_timeout_ms=5000
-requests_per_second=10
+queue_timeout_ms=25
 
 [[rpc]]
 id="sender-2" # change this to any name you'd like, it's used as an identifier throughout this file
 url="https://api.mainnet-beta.solana.com" # change this to your rpc's url
 http_timeout_ms=5000
-requests_per_second=10
+queue_timeout_ms=25
 
 [simulation_mode] # optional
 enabled=false
