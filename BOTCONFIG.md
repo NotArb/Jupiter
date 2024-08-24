@@ -31,7 +31,6 @@ id="solana-pub" # Unique custom identifier for this RPC configuration
 url="https://api.mainnet-beta.solana.com" # URL and port of your RPC server
 http_timeout_ms=1000 # HTTP request timeout for RPC (in milliseconds)
 http_pool_max_size=10 # Maximum number of HTTP connections allowed to be pooled for this dispatcher's requests (default: 5)
-requests_per_second=10 # Maximum number of requests per second to this RPC
 queue_timeout_ms=1000 # Timeout for requests in the queue; good if you don't want to allow potential arbs to send after waiting too long
 
 # Jito configuration (At least one required for sending Jito transactions)
