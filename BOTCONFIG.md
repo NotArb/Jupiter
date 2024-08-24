@@ -73,7 +73,7 @@ required_tags=[ # Fetched tokens must match at least one group to be accepted.
 # Json mint list configuration (Optional)
 [[json_mint_list]]
 enabled=false
-max_per_cylce=5 # optional
+max_per_cycle=5 # optional
 random_order=true # optional
 path="/path/to/mints.json"
 
