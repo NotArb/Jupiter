@@ -57,6 +57,15 @@ skip_successful_responses=false # When true, successful responses will be skippe
 skip_no_profit_responses=false # When true, no profit responses will be skipped from output
 force_blockhash=true # When true, the "replaceRecentBlockhash=true" Solana variable will be set
 
+# Wsol Unwrapper (Optional)
+[wsol_unwrapper]
+enabled=false # Enable or disable sending (default: false)
+rpc="your-rpc-id" # the rpc used for the balance check & rebalance transaction
+check_minutes=1 # interval in minutes to check if an unwrap is required
+min_sol=0.5 # triggers an unwrap when your sol balance is less than this number
+unwrap_sol=1 # aims to leave at least this amount of sol unwrapped
+priority_fee_lamports=0 # optional, but can help tx land
+
 # Jupiter token fetcher (Optional)
 # Note: Enabling this may result in opening multiple token accounts, which can affect your balance due to account creation fees.
 # Token accounts are only opened once. Adjust your filters to limit the number of tokens if this is a concern.
