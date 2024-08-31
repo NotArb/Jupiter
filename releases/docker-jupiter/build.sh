@@ -45,6 +45,7 @@ docker stop jupiter 2>/dev/null || true
 docker rm jupiter 2>/dev/null || true
 docker create --name jupiter --restart unless-stopped \
   -p $PORT:8080 \
+  -p 8888:8888 \
   --mount type=bind,source="./mount",destination="/jupiter/mount" \
   jupiter-image:latest
 

@@ -2,7 +2,7 @@
 [manager]
 jupiter_path="/jupiter/jupiter-swap-api" # /jupiter is the docker container workdir
 auto_restart_minutes=10
-startup_cmd=[] # optional, used to run a command before every start/restart ex: ["bash", "update_mints.sh"]
+startup_cmd=["bash", "/jupiter/mount/startup_script.sh"] # optional, used to run a command before every start/restart ex: ["bash", "update_mints.sh"]
 
 # These environmental variables are specific to Jupiter.
 # For a complete list of available variables, use the jupiter-swap-api --help command.
@@ -31,7 +31,7 @@ startup_cmd=[] # optional, used to run a command before every start/restart ex: 
 RUST_LOG="info"
 RUST_BACKTRACE="full"
 HOST="0.0.0.0"
-PORT="8080" # Do not change this! To use a different port, change PORT in build.sh
+PORT="8080" # If using Docker, do not change this. To use a different port, change PORT in build.sh
 RPC_URL="your.url"
 #YELLOWSTONE_GRPC_ENDPOINT=""
 #YELLOWSTONE_GRPC_X_TOKEN=""
