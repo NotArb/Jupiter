@@ -5,30 +5,56 @@
 keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # required for signing transactions
 swap_threads=0 # Leave at 0 if not sure.
 jito_threads=0 # Leave at 0 if not sure.
-spam_threads=0 # Leave at 0 if not sure.
+spam_threads=0 # Not needed for Jito.
 
 [jupiter] # required
 url="http://127.0.0.1:8080/"
 http_timeout_ms=3000 # swaps make 3 jupiter requests, this is how long 1 request can take before timing out
 http_pool_max_size=50 # scale up as needed, 50 should be a fair starting point
 
-[[rpc]]
-id="sender-1" # change this to any name you'd like, it's used as an identifier throughout this file
-url="https://api.mainnet-beta.solana.com" # change this to your rpc's url
-http_timeout_ms=5000
+####################################################################################################
 
-[[rpc]]
-id="sender-2" # change this to any name you'd like, it's used as an identifier throughout this file
-url="https://api.mainnet-beta.solana.com" # change this to your rpc's url
-http_timeout_ms=5000
+[[jito]] # required at least 1 enabled if using Jito
+enabled=true
+url="https://ny.mainnet.block-engine.jito.wtf"
+http_timeout_ms=3000
+http_pool_max_size=5
+requests_per_second=5
+queue_timeout_ms=7500
 
-[simulation_mode] # optional
-enabled=false
-rpc="sender-1"
-skip_known_jupiter_errors=true
-skip_successful_responses=false
-skip_no_profit_responses=false
-force_blockhash=true
+[[jito]] # required at least 1 enabled if using Jito
+enabled=true
+url="https://slc.mainnet.block-engine.jito.wtf"
+http_timeout_ms=3000
+http_pool_max_size=5
+requests_per_second=5
+queue_timeout_ms=7500
+
+[[jito]] # required at least 1 enabled if using Jito
+enabled=true
+url="https://frankfurt.mainnet.block-engine.jito.wtf"
+http_timeout_ms=3000
+http_pool_max_size=5
+requests_per_second=5
+queue_timeout_ms=10_000
+
+[[jito]] # required at least 1 enabled if using Jito
+enabled=true
+url="https://amsterdam.mainnet.block-engine.jito.wtf"
+http_timeout_ms=3000
+http_pool_max_size=5
+requests_per_second=5
+queue_timeout_ms=12_500
+
+[[jito]] # required at least 1 enabled if using Jito
+enabled=true
+url="https://tokyo.mainnet.block-engine.jito.wtf"
+http_timeout_ms=3000
+http_pool_max_size=5
+requests_per_second=5
+queue_timeout_ms=15_000
+
+####################################################################################################
 
 [[static_mint_list]] # at least 1 mint supplier required - for more in depth mint suppliers, please refer to https://config.notarb.org/
 enabled=true
@@ -67,18 +93,43 @@ mint="SOL"
 
 [swap.strategy_defaults]
 wrap_unwrap_sol=false
-entry_min_slippage_bps=5
-entry_max_slippage_bps=5
-exit_min_slippage_bps=5
-exit_max_slippage_bps=5
+entry_min_slippage_bps=2500
+entry_max_slippage_bps=10000
+exit_min_slippage_bps=2500
+exit_max_slippage_bps=10000
+jito_enabled=true
 
 [[swap.strategy]]
-min_spend=2
-max_spend=6
-min_gain_sol=0.05
-spam_senders=[
-    { rpc="sender-1", skip_preflight=true, max_retries=0 },
-    { rpc="sender-2", skip_preflight=true, max_retries=0 },
-]
-spam_max_opportunity_age_ms=1500
-spam_cooldown="1s" # examples: 100ms, 5s, 2m
+min_spend=0.0001
+max_spend=0.01
+jito_static_tip_lamports=5000
+
+[[swap.strategy]]
+min_spend=0.5
+max_spend=1
+jito_tip_percent=40
+
+##########
+#  USDC  #
+##########
+[[swap]]
+enabled=false
+mint="USDC"
+
+[swap.strategy_defaults]
+wrap_unwrap_sol=false
+entry_min_slippage_bps=50
+entry_max_slippage_bps=500
+exit_min_slippage_bps=50
+exit_max_slippage_bps=500
+jito_enabled=true
+
+[[swap.strategy]]
+min_spend=5
+max_spend=50
+jito_static_tip_lamports=5000
+
+[[swap.strategy]]
+min_spend=10
+max_spend=100
+jito_tip_percent=40

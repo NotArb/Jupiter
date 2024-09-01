@@ -1,8 +1,8 @@
 # This program is essentially just a "manager" for the jupiter-swap-api process.
 [manager]
-jupiter_path="/jupiter/jupiter-swap-api" # /jupiter is the docker container workdir
-auto_restart_minutes=10
-startup_cmd=["bash", "/jupiter/mount/startup_script.sh"] # optional, used to run a command before every start/restart ex: ["bash", "update_mints.sh"]
+jupiter_path="" # leave empty to auto install
+startup_cmd=["bash", "./jupiter-startup-script.sh"] # optional, used to run a command before every start/restart.
+auto_restart_minutes=10 # set to 0 or remove this line to disable auto restarts (restarts on failure will still happen)
 
 # These environmental variables are specific to Jupiter.
 # For a complete list of available variables, use the jupiter-swap-api --help command.
@@ -31,7 +31,7 @@ startup_cmd=["bash", "/jupiter/mount/startup_script.sh"] # optional, used to run
 RUST_LOG="info"
 RUST_BACKTRACE="full"
 HOST="0.0.0.0"
-PORT="8080" # If using Docker, do not change this. To use a different port, change PORT in build.sh
+PORT="8080"
 RPC_URL="your.url"
 #YELLOWSTONE_GRPC_ENDPOINT=""
 #YELLOWSTONE_GRPC_X_TOKEN=""
@@ -45,7 +45,7 @@ FILTER_MARKETS_WITH_MINTS="" # This will be ovewritten by mint filters defined b
 # Optionally, tokens can also be filtered by "required_tags". These tags are organized into groups,
 # and a token only needs to match at least one group to be accepted.
 # Find all of Jupiter's token tags here: https://station.jup.ag/docs/token-list/token-list-api
-[dynamic_mint_filter]
+[dynamic_mint_filter] # removing in the future in favor of url mint filters
 enabled=true
 skip_freezable=true # freezable tokens are generally rugs and won't be tradable long
 skip_mintable=false # a handful of stable coins are mintable, so defaulting to false
@@ -81,8 +81,16 @@ mints=[
     "5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm", # inf
 ]
 
-# Json mint filters are loaded on startup from the specific file provided in the path.
-# The format must be json, which is just ["mintA", "mintB", "mintC"] but in a file.
-[[json_mint_filter]]
+# Load mints from a url. Must be txt or json format.
+# - txt should be a mint address per line with # used for comments
+# - json should be a single json list [ mint1, mint2, mint3 ]
+[[url_mint_filter]]
 enabled=false
-path="/jupiter/mount/test-mints.json" # /jupiter is the docker container workdir
+url="http://yourmints.com/mints.txt OR http://yourmints.com/mints.json"
+
+# Load mints from a file. Must be txt or json format.
+# - txt should be a mint address per line with # used for comments
+# - json should be a single json list [ mint1, mint2, mint3 ]
+[[file_mint_filter]]
+enabled=false
+path="/path/to/mints.json OR /path/to/mints.txt"
