@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # The path to the bot config file (required)
-export bot_config_path="./config-bot.toml"
+export bot_config_path="./bot-config.toml"
 
 # Move to the correct workdir to prevent path issues
 cd "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

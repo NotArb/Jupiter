@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # The path to the jupiter config file (required)
-export jupiter_config_path="./config-jupiter.toml"
+export jupiter_config_path="./jupiter-config.toml"
 
 # Move to the correct workdir to prevent path issues
 cd "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
