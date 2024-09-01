@@ -4,7 +4,7 @@
 libs_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
 # The path to the bot file (required)
-bot_path="$libs_path/notarb-0.1.49-alpha"
+bot_path="$libs_path/notarb-0.1.50-alpha"
 
 # Ensure bot_path file exists
 if [ ! -f "$bot_path" ]; then
