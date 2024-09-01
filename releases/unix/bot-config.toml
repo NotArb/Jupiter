@@ -1,0 +1,135 @@
+# For more in-depth information on configuration, please visit:
+# https://config.notarb.org/
+
+[bot_misc] # required
+keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # required for signing transactions
+swap_threads=0 # Leave at 0 if not sure.
+jito_threads=0 # Leave at 0 if not sure.
+spam_threads=0 # Not needed for Jito.
+
+[jupiter] # required
+url="http://127.0.0.1:8080/"
+http_timeout_ms=3000 # swaps make 3 jupiter requests, this is how long 1 request can take before timing out
+http_pool_max_size=50 # scale up as needed, 50 should be a fair starting point
+
+####################################################################################################
+
+[[jito]] # required at least 1 enabled if using Jito
+enabled=true
+url="https://ny.mainnet.block-engine.jito.wtf"
+http_timeout_ms=3000
+http_pool_max_size=5
+requests_per_second=5
+queue_timeout_ms=7500
+
+[[jito]] # required at least 1 enabled if using Jito
+enabled=true
+url="https://slc.mainnet.block-engine.jito.wtf"
+http_timeout_ms=3000
+http_pool_max_size=5
+requests_per_second=5
+queue_timeout_ms=7500
+
+[[jito]] # required at least 1 enabled if using Jito
+enabled=true
+url="https://frankfurt.mainnet.block-engine.jito.wtf"
+http_timeout_ms=3000
+http_pool_max_size=5
+requests_per_second=5
+queue_timeout_ms=10_000
+
+[[jito]] # required at least 1 enabled if using Jito
+enabled=true
+url="https://amsterdam.mainnet.block-engine.jito.wtf"
+http_timeout_ms=3000
+http_pool_max_size=5
+requests_per_second=5
+queue_timeout_ms=12_500
+
+[[jito]] # required at least 1 enabled if using Jito
+enabled=true
+url="https://tokyo.mainnet.block-engine.jito.wtf"
+http_timeout_ms=3000
+http_pool_max_size=5
+requests_per_second=5
+queue_timeout_ms=15_000
+
+####################################################################################################
+
+[[static_mint_list]] # at least 1 mint supplier required - for more in depth mint suppliers, please refer to https://config.notarb.org/
+enabled=true
+random_order=true
+max_per_cycle=5 # limits this supplier to 5 tokens before moving on to the next available supplier (doesn't have any effect if this is the only mint supplier active)
+mints=[
+    "So11111111111111111111111111111111111111112",  # sol
+    "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB", # usdt
+    "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # usdc
+    "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R", # ray
+    "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn", # jitosol
+    "mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So",  # msol
+    "7dHbWXmci3dT8UFYWYZweBLXgycu7Y3iL6trKn1Y7ARj", # stsol
+    "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs", # weth
+    "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh", # wbtc
+    "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",  # jup
+    "HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3", # pyth
+    "HNTvzaqTmDxJbi3isreXtUn9MUJEJy1bp9bo1rpGEGhi", # aurasol
+    "jucy5XJ76pHVvtPZb5TKRcGQExkwit2P5s4vY8UzmpC",  # jucysol
+    "iSoLdL1Nqqo94A51EXr5iuBiUtHMAnxHJKaToGKphLq",  # isol
+    "bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1",  # bsol
+    "5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm", # inf
+    "jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v",  # jupsol
+]
+
+####################################
+#        Define your swaps!        #
+####################################
+
+#########
+#  SOL  #
+#########
+[[swap]]
+enabled=true
+mint="SOL"
+
+[swap.strategy_defaults]
+wrap_unwrap_sol=false
+entry_min_slippage_bps=2500
+entry_max_slippage_bps=10000
+exit_min_slippage_bps=2500
+exit_max_slippage_bps=10000
+jito_enabled=true
+
+[[swap.strategy]]
+min_spend=0.0001
+max_spend=0.01
+jito_static_tip_lamports=5000
+
+[[swap.strategy]]
+min_spend=0.5
+max_spend=1
+jito_tip_percent=40
+
+##########
+#  USDC  #
+##########
+[[swap]]
+enabled=false
+mint="USDC"
+
+[swap.strategy_defaults]
+wrap_unwrap_sol=false
+entry_min_slippage_bps=2500
+entry_max_slippage_bps=10000
+exit_min_slippage_bps=2500
+exit_max_slippage_bps=10000
+jito_enabled=true
+
+[[swap.strategy]]
+min_spend=5
+max_spend=50
+jito_static_tip_lamports=5000
+
+[[swap.strategy]]
+min_spend=10
+max_spend=100
+jito_tip_percent=40
