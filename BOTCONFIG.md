@@ -22,6 +22,7 @@ spam_threads=0 # Number of threads for dispatching Spam requests. (if left 0, th
 url="http://0.0.0.0:8080/" # URL of your Jupiter server
 http_timeout_ms=3000 # HTTP request timeout for Jupiter (in milliseconds)
 http_pool_max_size=50 # Maximum number of HTTP connections allowed to be pooled for this dispatcher's requests (default: 5)
+http_pool_keep_alive="10m" # Maximum amount of time to a pooled HTTP connection can be idle for. (default: "5m")
 
 # RPC configuration (Only required for spam sending and simulation mode)
 # This is just an example, we advise changing this from solana's public rpc.
@@ -31,7 +32,7 @@ id="solana-pub" # Unique custom identifier for this RPC configuration
 url="https://api.mainnet-beta.solana.com" # URL and port of your RPC server
 http_timeout_ms=1000 # HTTP request timeout for RPC (in milliseconds)
 http_pool_max_size=10 # Maximum number of HTTP connections allowed to be pooled for this dispatcher's requests (default: 5)
-queue_timeout_ms=1000 # Timeout for requests in the queue; good if you don't want to allow potential arbs to send after waiting too long
+http_pool_keep_alive="10m" # Maximum amount of time to a pooled HTTP connection can be idle for. (default: "5m")
 
 # Jito configuration (At least one required for sending Jito transactions)
 # Swaps will execute on the enabled Jito dispatcher with the least amount of requests queued.
@@ -118,6 +119,7 @@ max_priority_fee_lamports=190 # Alternatively you can use max_priority_fee_sol
 spam_senders=[ # Normal transaction senders list
     { rpc="solana-pub", skip_preflight=true, max_retries=0, unique=false },
 ]
+spam_max_opportunity_age_ms=1500 # The maximum amount of time allowed from when the opportunity was found. (default: 1000) (The name of this may change in the future)
 spam_cooldown="5s"
 # Refer to Strategy Fields below #
 ```
@@ -180,4 +182,5 @@ spam_cooldown="5s"
 ---
 #### 5.0. Spam specific fields:
 - `spam_senders`: A list of spam transaction senders, which consist of rpc, skip_preflight, and max_retries.
+- `spam_max_opportunity_age_ms`: The maximum amount of time allowed from when the opportunity was found.
 - `spam_cooldown`: The amount of time to wait before trying to send another normal transaction from the given strategy. (Examples: "100ms", "5s")
