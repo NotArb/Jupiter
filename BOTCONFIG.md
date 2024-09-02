@@ -119,7 +119,7 @@ max_priority_fee_lamports=190 # Alternatively you can use max_priority_fee_sol
 spam_senders=[ # Normal transaction senders list
     { rpc="solana-pub", skip_preflight=true, max_retries=0, unique=false },
 ]
-spam_max_opportunity_age_ms=1500 # The maximum amount of time allowed from when the opportunity was found. (default: 1000) (The name of this may change in the future)
+spam_max_opportunity_age_ms=100 # The maximum amount of time allowed from when the opportunity was found. (default: 1000) (The name of this may change in the future)
 spam_cooldown="5s"
 # Refer to Strategy Fields below #
 ```
