@@ -93,10 +93,6 @@ mint="SOL"
 
 [swap.strategy_defaults]
 wrap_unwrap_sol=false
-entry_min_slippage_bps=2500
-entry_max_slippage_bps=10000
-exit_min_slippage_bps=2500
-exit_max_slippage_bps=10000
 jito_enabled=true
 
 [[swap.strategy]]
@@ -118,10 +114,6 @@ mint="USDC"
 
 [swap.strategy_defaults]
 wrap_unwrap_sol=false
-entry_min_slippage_bps=2500
-entry_max_slippage_bps=10000
-exit_min_slippage_bps=2500
-exit_max_slippage_bps=10000
 jito_enabled=true
 
 [[swap.strategy]]

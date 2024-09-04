@@ -67,10 +67,6 @@ mint="SOL"
 
 [swap.strategy_defaults]
 wrap_unwrap_sol=false
-entry_min_slippage_bps=5
-entry_max_slippage_bps=5
-exit_min_slippage_bps=5
-exit_max_slippage_bps=5
 
 [[swap.strategy]]
 min_spend=2
