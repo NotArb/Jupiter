@@ -17,7 +17,7 @@
 
 ### Jupiter Management Server
 
-This service is only available on Linux.
+Jupiter is only available on Unix systems, specifically Linux (x64) and Mac (x64 or aarch64)
 - **Auto-Restart Feature**: Ensures the server automatically restarts if it stops due to failure.
 - **Timed Restart Feature**: Optionally, the server can be configured to restart at regular intervals, providing additional stability.
 - **Dynamic/Static Mint Filters**:
