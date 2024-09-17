@@ -2,7 +2,6 @@
 
 [![](https://dcbadge.limes.pink/api/server/mYfAQnBfqy)](https://discord.notarb.org)
 
-_NotArb is only available to be run on Unix systems._<br>
 [Download NotArb](https://download.notarb.org/)
 
 **NotArb** is a versatile platform designed to optimize token trading and arbitrage operations on the Solana blockchain. It offers two main components:
