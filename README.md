@@ -2,9 +2,12 @@
 
 [![](https://dcbadge.limes.pink/api/server/mYfAQnBfqy)](https://discord.notarb.org)
 
+_NotArb is only available to be run on Unix systems._<br>
+[Download NotArb](https://download.notarb.org/)
+
 **NotArb** is a versatile platform designed to optimize token trading and arbitrage operations on the Solana blockchain. It offers two main components:
 
-- A Docker-based Jupiter management server with features designed to enhance token trading efficiency.
+- A Jupiter management server with features designed to enhance token trading efficiency.
 - A bot that performs arbitrage operations using Jupiter on the Solana blockchain.
 
 #### Warnings
@@ -15,7 +18,7 @@
 
 ### Jupiter Management Server
 
-Currently, this service is only available via Docker, with potential support for other platforms in the future.
+This service is only available on Linux.
 - **Auto-Restart Feature**: Ensures the server automatically restarts if it stops due to failure.
 - **Timed Restart Feature**: Optionally, the server can be configured to restart at regular intervals, providing additional stability.
 - **Dynamic/Static Mint Filters**:
