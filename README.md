@@ -2,8 +2,6 @@
 
 [![](https://dcbadge.limes.pink/api/server/mYfAQnBfqy)](https://discord.notarb.org)
 
-[Download NotArb](https://download.notarb.org/)
-
 **NotArb** is a versatile platform designed to optimize token trading and arbitrage operations on the Solana blockchain. It offers two main components:
 
 - A Jupiter management server with features designed to enhance token trading efficiency.
@@ -12,6 +10,8 @@
 #### Warnings
   - Never use NotArb files that you did not directly download from our official GitHub page.
   - Never put private keys on shared or unsecured hosts.
+
+[Download NotArb](https://download.notarb.org/)
 
 ## Features
 
