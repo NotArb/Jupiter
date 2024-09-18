@@ -80,12 +80,12 @@ required_tags=[ # Fetched tokens must match at least one group to be accepted.
     ["pump", "community"],
 ] # Juptier token tags can be found here: https://station.jup.ag/docs/token-list/token-list-api
 
-# Json mint list configuration (Optional)
-[[json_mint_list]]
+# File mint list configuration (Optional)
+[[file_mint_list]]
 enabled=false
 max_per_cycle=5 # optional
 random_order=true # optional
-path="/path/to/mints.json"
+path="/path/to/mints.json OR /path/to/mints.txt"
 
 # Static mint list configuration (Optional, but required if no other token suppliers are enabled)
 [[static_mint_list]]
