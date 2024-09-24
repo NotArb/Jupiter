@@ -6,27 +6,29 @@ auto_restart_minutes=10 # set to 0 or remove this line to disable auto restarts 
 
 # These environmental variables are specific to Jupiter.
 # For a complete list of available variables, use the jupiter-swap-api --help command.
-# Env's available as of Aug 1, 2024:
-# - `MARKET_CACHE`: Jupiter market cache file path or URL, check production Jupiter cache for format https://cache.jup.ag/markets?v=3. Note: the params field is required for some AMMs and is AMM type specific.
-# - `RPC_URL`: RPC URL for polling and fetching user accounts.
-# - `YELLOWSTONE_GRPC_ENDPOINT`: Yellowstone gRPC endpoint e.g. https://jupiter.rpcpool.com.
-# - `YELLOWSTONE_GRPC_X_TOKEN`: Yellowstone gRPC x token, the token after the hostname.
-# - `YELLOWSTONE_GRPC_ENABLE_PING`: Enable pinging the grpc server, useful for a load balanced Yellowstone GRPC endpoint https://github.com/rpcpool/yellowstone-grpc/issues/225.
-# - `SNAPSHOT_POLL_INTERVAL_MS`: Interval after which AMMs related account should be fetched, in yellowstone grpc mode, there will be a periodic poll to snapshot the confirmed state of AMM accounts. Default to 200 ms for poll mode and 30000 ms for yellowstone grpc mode.
-# - `ENABLE_EXTERNAL_AMM_LOADING`: Enable loading external AMMs from keyedUiAccounts in swap related endpoints.
-# - `DISABLE_SWAP_CACHE_LOADING`: Disable loading caches necessary for swap related features to function properly, such as address lookup tables. This is useful for quote only APIs.
-# - `ALLOW_CIRCULAR_ARBITRAGE`: Allow arbitrage quote and swap, where input mint is equal to output mint.
-# - `JUPITER_EUROPA_URL`: Jupiter europa URL, for getting new markets at runtime.
-# - `SENTRY_DSN`: Sentry DSN to send error to.
-# - `EXPOSE_QUOTE_AND_SIMULATE`: Enable exposing quote and simulate endpoints.
-# - `HOST`: The host. Default: 0.0.0.0.
-# - `PORT`: A port number on which to start the application. Default: 8080.
-# - `ENABLE_DEPRECATED_INDEXED_ROUTE_MAPS`: Enable computing and serving the /indexed-route-map. Deprecated and not recommended to be enabled due to the high overhead.
-# - `DEXES`: List of dexes to include, other dexes won't be loaded.
-# - `EXCLUDE_DEXES`: List of dexes to exclude, from all dexes, excluded dexes won't be loaded.
-# - `ENABLE_NEW_DEXES`: Enable new dexes that have been recently integrated.
-# - `ENABLE_DIAGNOSTIC`: Enable the /diagnostic endpoint to quote.
-# - `FILTER_MARKETS_WITH_MINTS`: List of mints to filter markets to include, markets which do not have at least 2 mints from this set will be excluded.
+# Env's available as of Sep 23, 2024: (v6.0.27)
+# - `MARKET_CACHE`: Jupiter europa URL, file path or remote file path, check production Jupiter cache for format https://cache.jup.ag/markets?v=4. Will default to the associated market mode default when not specified Note: the params field is required for some AMMs and is AMM type specific
+# - `MARKET_MODE`: Switch between market modes, file and remote will not receive new markets from Europa [default: europa] [possible values: europa, remote, file]
+# - `RPC_URL`: RPC URL for polling and fetching user accounts
+# - `YELLOWSTONE_GRPC_ENDPOINT`: Yellowstone gRPC endpoint e.g. https://jupiter.rpcpool.com
+# - `YELLOWSTONE_GRPC_X_TOKEN`: Yellowstone gRPC x token, the token after the hostname
+# - `YELLOWSTONE_GRPC_ENABLE_PING`: Enable pinging the grpc server, useful for a load balanced Yellowstone GRPC endpoint https://github.com/rpcpool/yellowstone-grpc/issues/225
+# - `SNAPSHOT_POLL_INTERVAL_MS`: Interval after which AMMs related account should be fetched, in yellowstone grpc mode, there will be a periodic poll to snapshot the confirmed state of AMM accounts Default to 200 ms for poll mode and 30000 ms for yellowstone grpc mode
+# - `ENABLE_EXTERNAL_AMM_LOADING`: Enable loading external AMMs from keyedUiAccounts in swap related endpoints
+# - `DISABLE_SWAP_CACHE_LOADING`: Disable loading caches necessary for swap related features to function properly, such as address lookup tables... This is useful for quote only APIs
+# - `ALLOW_CIRCULAR_ARBITRAGE`: Allow arbitrage quote and swap, where input mint is equal to output mint
+# - `JUPITER_EUROPA_URL`: Jupiter europa URL, for getting new markets at runtime
+# - `SENTRY_DSN`: Sentry DSN to send error to
+# - `DEX_PROGRAM_IDS`: List of DEX program ids to include, other program ids won't be loaded, you can get program ids from https://quote-api.jup.ag/v6/program-id-to-label
+# - `FILTER_MARKETS_WITH_MINTS`: List of mints to filter markets to include, markets which do not have at least 2 mints from this set will be excluded
+# - `HOST`: The host [default: 0.0.0.0]
+# - `PORT`: A port number on which to start the application [default: 8080]
+# - `METRICS_PORT`: Port for Prometheus metrics endpoint `/metrics`
+# - `EXPOSE_QUOTE_AND_SIMULATE`: ?
+# - `ENABLE_DEPRECATED_INDEXED_ROUTE_MAPS`: Enable computating and serving the /indexed-route-map Deprecated and not recommended to be enabled due to the high overhead [env: ENABLE_DEPRECATED_INDEXED_ROUTE_MAPS=]
+# - `ENABLE_NEW_DEXES`: Enable new dexes that have been recently integrated
+# - `ENABLE_DIAGNOSTIC`: Enable the /diagnostic endpoint to quote
+# - `ENABLE_ADD_MARKET`: Enable the /add-market endpoint to hot load a new market
 [env]
 RUST_LOG="info"
 RUST_BACKTRACE="full"
@@ -37,8 +39,8 @@ RPC_URL="your.url"
 #YELLOWSTONE_GRPC_X_TOKEN=""
 #YELLOWSTONE_GRPC_ENABLE_PING="true"
 ALLOW_CIRCULAR_ARBITRAGE="true"
-ENABLE_NEW_DEXES="false"
 MARKET_MODE="remote"
+ENABLE_NEW_DEXES="false"
 FILTER_MARKETS_WITH_MINTS="" # This will be ovewritten by mint filters defined below.
 
 # The dynamic mint filter fetches tradable tokens from Jupiter's Token API during startup.
