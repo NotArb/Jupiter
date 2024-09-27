@@ -11,12 +11,12 @@ sleep 1
 # Start new jupiter screen
 echo "Starting jupiter screen process..."
 screen -dmS "jupiter"
-screen -S "jupiter" -X stuff "bash run-jupiter.sh\n"
+screen -S "jupiter" -X stuff "bash ./run-jupiter.sh\n"
 
 # Start new notarb screen
 echo "Starting notarb screen process..."
 screen -dmS "notarb"
-screen -S "notarb" -X stuff "bash run-bot.sh\n"
+screen -S "notarb" -X stuff "bash ./run-bot.sh\n"
 
 # Print info
 echo "New screen processes started, view them with:"
