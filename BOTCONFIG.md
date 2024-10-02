@@ -150,6 +150,7 @@ spam_cooldown="5s"
 - `exit_exclude_dexes`: A list of DEXes to exclude from exit swaps.
 ---
 #### 2.0. Fields that will determine if a transaction will be skipped, after quotes are acquired:
+- `min_swap_routes`: The minimum number of swap routes allowed. (Should never be less than 2)
 - `max_swap_routes`: The maximum number of swap routes allowed.
 - `max_price_impact`: The maximum price impact allowed. (Price impact is returned from Jupiter quotes. Price impact is represented as a percentage. Ex: 0.05 = 5%)
 ##### 2.1. Gain requirements:
