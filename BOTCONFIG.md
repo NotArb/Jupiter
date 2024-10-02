@@ -166,8 +166,6 @@ spam_cooldown="5s"
 - `jito_enabled`: Enable or disable Jito sending.
 ##### 4.1. Dynamic Jito tipping:
 - `jito_tip_percent`: (1-100) When > 0, Jito transactions will be sent with dynamic tipping based on true profit.
-- `jito_min_tip_lamports`: The minimum _preferred_ dynamic Jito tip.
-  - Alternatively, you can use `jito_min_tip_sol` which will do the lamport conversion for you.
 - `jito_max_tip_lamports`: The maximum _preferred_ dynamic Jito tip.
   - Alternatively, you can use `jito_max_tip_sol` which will do the lamport conversion for you.
 ##### 4.2. Static Jito tipping: (Sent alongside dynamic Jito transactions)
