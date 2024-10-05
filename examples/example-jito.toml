@@ -56,6 +56,15 @@ queue_timeout_ms=15_000
 
 ####################################################################################################
 
+[jupiter_token_fetcher] # at least 1 mint supplier required - for more in depth mint suppliers, please refer to https://config.notarb.org/
+enabled=true
+fetch_ms=10_000
+max_per_cycle=10
+required_tags=[
+    ["pump", "verified"],
+    ["birdeye-trending"],
+] # Juptier token tags can be found here: https://station.jup.ag/docs/token-list/token-list-api
+
 [[static_mint_list]] # at least 1 mint supplier required - for more in depth mint suppliers, please refer to https://config.notarb.org/
 enabled=true
 random_order=true

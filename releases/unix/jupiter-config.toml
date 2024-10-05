@@ -41,6 +41,10 @@ RPC_URL="your.url"
 ALLOW_CIRCULAR_ARBITRAGE="true"
 MARKET_MODE="remote"
 ENABLE_NEW_DEXES="false"
+EXCLUDE_DEX_PROGRAM_IDS=[ # Optional
+    "MoonCVVNZFSYkqNXP6bxHLPL6QQJiMagDL3qcqUQTrG",  # Moonshot
+    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",  # Pump.fun
+]
 FILTER_MARKETS_WITH_MINTS="" # This will be ovewritten by mint filters defined below.
 
 # The dynamic mint filter fetches tradable tokens from Jupiter's Token API during startup.
@@ -54,9 +58,7 @@ skip_freezable=true # freezable tokens are generally rugs and won't be tradable 
 skip_mintable=false # a handful of stable coins are mintable, so defaulting to false
 skip_no_volume=true # some tokens don't have any daily volume data on jupiter, optionally skip them (not skipping them will give you WAY more mints, which isn't always good)
 required_tags=[
-    ["pump"],
-    ["verified"],
-    ["community"],
+    ["verified", "pump"],
     ["birdeye-trending"],
 ]
 
