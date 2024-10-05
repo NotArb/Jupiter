@@ -54,6 +54,12 @@ mints=[
     "jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v",  # jupsol
 ]
 
+[[file_mint_list]]
+enabled=false
+random_order=true
+max_per_cycle=5
+path="/path/to/mints.txt OR /path/to/mints.json"
+
 ####################################
 #        Define your swaps!        #
 ####################################
