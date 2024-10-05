@@ -41,7 +41,7 @@ RPC_URL="your.url"
 ALLOW_CIRCULAR_ARBITRAGE="true"
 MARKET_MODE="remote"
 ENABLE_NEW_DEXES="false"
-EXCLUDE_DEX_PROGRAM_IDS=[ # Optional
+EXCLUDE_DEX_PROGRAM_IDS=[
     "MoonCVVNZFSYkqNXP6bxHLPL6QQJiMagDL3qcqUQTrG",  # Moonshot
     "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",  # Pump.fun
 ]
