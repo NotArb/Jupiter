@@ -73,6 +73,7 @@ mint="SOL"
 
 [swap.strategy_defaults]
 wrap_unwrap_sol=false
+coldown="1s" # examples: 100ms, 5s, 2m
 
 [[swap.strategy]]
 min_spend=2
@@ -83,4 +84,3 @@ spam_senders=[
     { rpc="sender-2", skip_preflight=true, max_retries=0 },
 ]
 spam_max_opportunity_age_ms=1500
-spam_cooldown="1s" # examples: 100ms, 5s, 2m

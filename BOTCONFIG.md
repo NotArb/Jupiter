@@ -106,6 +106,7 @@ mint="So11111111111111111111111111111111111111112" # Base mint to trade (can als
 [swap.strategy_defaults] # Default strategy configuration for all of this swap's strategies
 wrap_unwrap_sol=false 
 jito_enabled=true
+cooldown="5s"
 # Refer to Strategy Fields below #
 
 [[swap.strategy]]
@@ -120,7 +121,6 @@ spam_senders=[ # Normal transaction senders list
     { rpc="solana-pub", skip_preflight=true, max_retries=0, unique=false },
 ]
 spam_max_opportunity_age_ms=100 # The maximum amount of time allowed from when the opportunity was found. (default: 1000) (The name of this may change in the future)
-spam_cooldown="5s"
 # Refer to Strategy Fields below #
 ```
 
@@ -150,6 +150,7 @@ spam_cooldown="5s"
 - `exit_exclude_dexes`: A list of DEXes to exclude from exit swaps.
 ---
 #### 2.0. Fields that will determine if a transaction will be skipped, after quotes are acquired:
+- `cooldown`: The waiting period before attempting the same token opportunity again for the given strategy. (default: "5s")
 - `min_swap_routes`: The minimum number of swap routes allowed. (Should never be less than 2)
 - `max_swap_routes`: The maximum number of swap routes allowed.
 - `max_price_impact`: The maximum price impact allowed. (Price impact is returned from Jupiter quotes. Price impact is represented as a percentage. Ex: 0.05 = 5%)
@@ -175,4 +176,3 @@ spam_cooldown="5s"
 #### 5.0. Spam specific fields:
 - `spam_senders`: A list of spam transaction senders, which consist of rpc, skip_preflight, and max_retries.
 - `spam_max_opportunity_age_ms`: The maximum amount of time allowed from when the opportunity was found.
-- `spam_cooldown`: The amount of time to wait before trying to send another normal transaction from the given strategy. (Examples: "100ms", "5s")
