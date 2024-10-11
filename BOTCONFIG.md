@@ -106,7 +106,7 @@ mint="So11111111111111111111111111111111111111112" # Base mint to trade (can als
 [swap.strategy_defaults] # Default strategy configuration for all of this swap's strategies
 wrap_unwrap_sol=false 
 jito_enabled=true
-cooldown="5s"
+cooldown="3s"
 # Refer to Strategy Fields below #
 
 [[swap.strategy]]
@@ -150,7 +150,7 @@ spam_max_opportunity_age_ms=100 # The maximum amount of time allowed from when t
 - `exit_exclude_dexes`: A list of DEXes to exclude from exit swaps.
 ---
 #### 2.0. Fields that will determine if a transaction will be skipped, after quotes are acquired:
-- `cooldown`: The waiting period before attempting the same token opportunity again for the given strategy. (default: "5s")
+- `cooldown`: The waiting period before attempting the same token opportunity again for the given strategy. (default: "3s")
 - `min_swap_routes`: The minimum number of swap routes allowed. (Should never be less than 2)
 - `max_swap_routes`: The maximum number of swap routes allowed.
 - `max_price_impact`: The maximum price impact allowed. (Price impact is returned from Jupiter quotes. Price impact is represented as a percentage. Ex: 0.05 = 5%)
