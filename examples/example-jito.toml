@@ -112,7 +112,7 @@ jito_static_tip_lamports=5000
 [[swap.strategy]]
 min_spend=0.5
 max_spend=1
-jito_tip_percent=40
+jito_dynamic_tip_percent=40
 
 ##########
 #  USDC  #
@@ -133,4 +133,4 @@ jito_static_tip_lamports=5000
 [[swap.strategy]]
 min_spend=10
 max_spend=100
-jito_tip_percent=40
+jito_dynamic_tip_percent=40
