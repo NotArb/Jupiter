@@ -165,13 +165,14 @@ spam_max_opportunity_age_ms=100 # The maximum amount of time allowed from when t
 ---
 #### 4.0. Jito specific fields:
 - `jito_enabled`: Enable or disable Jito sending.
-##### 4.1. Dynamic Jito tipping:
-- `jito_tip_percent`: (1-100) When > 0, Jito transactions will be sent with dynamic tipping based on true profit.
-- `jito_max_tip_lamports`: The maximum dynamic Jito tip.
+- `jito_unwrap_tip`: When true, WSOL will be unwrapped on-chain to pay your Jito tip. This is only applicable when your base is Solana.
+- `jito_dynamic_tip_percent`: (1-100) When > 0, Jito transactions will be sent with dynamic tips based on true profit.
+- `jito_static_tip_percent`: (1-100) When > 0, Jito transactions will be sent with static tips based on quoted profit.
+- `jito_max_tip_lamports`: The maximum Jito tip allowed when using tip percentages.
   - Alternatively, you can use `jito_max_tip_sol` which will do the lamport conversion for you.
-##### 4.2. Static Jito tipping: (Sent alongside dynamic Jito transactions)
 - `jito_static_tip_lamports`: When > 0, Jito transactions will be sent with a predefined static tip.
   - Alternatively, you can use `jito_static_tip_sol` which will do the lamport conversion for you.
+  - Using `jito_static_tip_percent` will override this field.
 ---
 #### 5.0. Spam specific fields:
 - `spam_senders`: A list of spam transaction senders, which consist of rpc, skip_preflight, and max_retries.
