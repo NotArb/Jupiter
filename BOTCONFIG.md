@@ -64,7 +64,7 @@ enabled=false # Enable or disable sending (default: false)
 rpc="your-rpc-id" # the rpc used for the balance check & rebalance transaction
 check_minutes=1 # interval in minutes to check if an unwrap is required
 min_sol=0.5 # triggers an unwrap when your sol balance is less than this number
-unwrap_sol=1 # aims to leave at least this amount of sol unwrapped
+unwrap_sol=1 # unwraps this amount of wsol
 priority_fee_lamports=0 # optional, but can help tx land
 
 # Jupiter token fetcher (Optional)
