@@ -10,5 +10,5 @@ cd "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # We highly recommend you increase the -Xmx value to better fit your system. Refer to other VM args here:
 # https://docs.oracle.com/en/java/javase/22/docs/specs/man/java.html#standard-options-for-java
 . "./libs/notarb_java.sh" \
-    -Xmx1024m \
+    -Xmx2048m \
     -XX:+UseSerialGC
