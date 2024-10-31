@@ -81,12 +81,10 @@ mints=[
     "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh", # wbtc
     "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",  # jup
     "HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3", # pyth
-    "HNTvzaqTmDxJbi3isreXtUn9MUJEJy1bp9bo1rpGEGhi", # aurasol
     "jucy5XJ76pHVvtPZb5TKRcGQExkwit2P5s4vY8UzmpC",  # jucysol
-    "iSoLdL1Nqqo94A51EXr5iuBiUtHMAnxHJKaToGKphLq",  # isol
     "bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1",  # bsol
-    "5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm", # inf
     "jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v",  # jupsol
+    "5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm", # inf
 ]
 
 ####################################
@@ -112,7 +110,7 @@ jito_static_tip_lamports=5000
 [[swap.strategy]]
 min_spend=0.5
 max_spend=1
-jito_tip_percent=40
+jito_dynamic_tip_percent=40
 
 ##########
 #  USDC  #
@@ -133,4 +131,4 @@ jito_static_tip_lamports=5000
 [[swap.strategy]]
 min_spend=10
 max_spend=100
-jito_tip_percent=40
+jito_dynamic_tip_percent=40
