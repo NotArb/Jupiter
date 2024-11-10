@@ -1,0 +1,78 @@
+{
+  "error":"Missing ATA in map for CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump",
+  "inAmount": "5941774252",
+  "inputMint": "So11111111111111111111111111111111111111112",
+  "otherAmountThreshold": "0",
+  "outAmount": "5941774252",
+  "outputMint": "So11111111111111111111111111111111111111112",
+  "routePlan": [
+    {
+      "percent": 100,
+      "swapInfo": {
+        "ammKey": "D6NdKrKNQPmRZCCnG1GqXtF7MMoHB7qR6GU5TkG59Qz1",
+        "feeAmount": "237",
+        "feeMint": "So11111111111111111111111111111111111111112",
+        "inAmount": "5941774252",
+        "inputMint": "So11111111111111111111111111111111111111112",
+        "label": "Whirlpool",
+        "outAmount": "480568009",
+        "outputMint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+      }
+    },
+    {
+      "percent": 100,
+      "swapInfo": {
+        "ammKey": "D39QbGSiymeKR1eegDk5ztADUKWL5aFAz6BSpGEptBFc",
+        "feeAmount": "0",
+        "feeMint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+        "inAmount": "480568009",
+        "inputMint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+        "label": "SolFi",
+        "outAmount": "1206460119",
+        "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+      }
+    },
+    {
+      "percent": 10,
+      "swapInfo": {
+        "ammKey": "2RXUayuMQjkGQqGrhp8tCNJgFmZJWwCeQSUtvqCpLAJb",
+        "feeAmount": "31322",
+        "feeMint": "CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump",
+        "inAmount": "150590443",
+        "inputMint": "CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump",
+        "label": "Whirlpool",
+        "outAmount": "120639798",
+        "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+      }
+    },
+    {
+      "percent": 10,
+      "swapInfo": {
+        "ammKey": "9BFiCXcXjqNRyGsPUyqzM8jb54NDgXamqpr9SRgHwwv1",
+        "feeAmount": "17830",
+        "feeMint": "So11111111111111111111111111111111111111112",
+        "inAmount": "120639798",
+        "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "label": "Obric V2",
+        "outAmount": "594319042",
+        "outputMint": "So11111111111111111111111111111111111111112"
+      }
+    },
+    {
+      "percent": 90,
+      "swapInfo": {
+        "ammKey": "3nQAMo837oPuGCGELcw2wo7C9hUUchsMWCneiPHFFdur",
+        "feeAmount": "0",
+        "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "inAmount": "1085665014",
+        "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "label": "SolFi",
+        "outAmount": "5348418047",
+        "outputMint": "So11111111111111111111111111111111111111112"
+      }
+    }
+  ],
+  "slippageBps": 10000,
+  "swapMode": "ExactIn",
+  "priceImpactPct": "0.0"
+}

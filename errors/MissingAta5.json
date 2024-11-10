@@ -1,0 +1,91 @@
+{
+  "error":"Missing ATA in map for 7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs",
+  "inAmount": "6413021362",
+  "inputMint": "So11111111111111111111111111111111111111112",
+  "otherAmountThreshold": "0",
+  "outAmount": "6413021362",
+  "outputMint": "So11111111111111111111111111111111111111112",
+  "routePlan": [
+    {
+      "percent": 90,
+      "swapInfo": {
+        "ammKey": "6a3m2EgFFKfsFuQtP4LJJXPcAe3TQYXNyHUjjZpUxYgd",
+        "feeAmount": "230",
+        "feeMint": "So11111111111111111111111111111111111111112",
+        "inAmount": "5771719226",
+        "inputMint": "So11111111111111111111111111111111111111112",
+        "label": "Whirlpool",
+        "outAmount": "304989591",
+        "outputMint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4"
+      }
+    },
+    {
+      "percent": 100,
+      "swapInfo": {
+        "ammKey": "5cuy7pMhTPhVZN9xuhgSbykRb986siGJb6vnEtkuBrSU",
+        "feeAmount": "153828",
+        "feeMint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+        "inAmount": "304989591",
+        "inputMint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+        "label": "Meteora DLMM",
+        "outAmount": "1171025192",
+        "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+      }
+    },
+    {
+      "percent": 10,
+      "swapInfo": {
+        "ammKey": "8M5rjeDQKW4w4rmWFQLTqCYVuA1rMe9Z2QQ2SZResD9M",
+        "feeAmount": "71392",
+        "feeMint": "So11111111111111111111111111111111111111112",
+        "inAmount": "641302136",
+        "inputMint": "So11111111111111111111111111111111111111112",
+        "label": "Meteora DLMM",
+        "outAmount": "130144495",
+        "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+      }
+    },
+    {
+      "percent": 80,
+      "swapInfo": {
+        "ammKey": "AU971DrPyhhrpRnmEBp5pDTWL2ny7nofb5vYBjDJkR2E",
+        "feeAmount": "1",
+        "feeMint": "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs",
+        "inAmount": "33087200",
+        "inputMint": "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs",
+        "label": "Whirlpool",
+        "outAmount": "1040550479",
+        "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+      }
+    },
+    {
+      "percent": 19,
+      "swapInfo": {
+        "ammKey": "93p87uhcHXKvD3t2dAiupnjV71PUCmrJYcM4uJKwdb1o",
+        "feeAmount": "38471",
+        "feeMint": "So11111111111111111111111111111111111111112",
+        "inAmount": "260044812",
+        "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "label": "Obric V2",
+        "outAmount": "1282340345",
+        "outputMint": "So11111111111111111111111111111111111111112"
+      }
+    },
+    {
+      "percent": 81,
+      "swapInfo": {
+        "ammKey": "3nQAMo837oPuGCGELcw2wo7C9hUUchsMWCneiPHFFdur",
+        "feeAmount": "0",
+        "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "inAmount": "1040550479",
+        "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "label": "SolFi",
+        "outAmount": "5131176983",
+        "outputMint": "So11111111111111111111111111111111111111112"
+      }
+    }
+  ],
+  "slippageBps": 10000,
+  "swapMode": "ExactIn",
+  "priceImpactPct": "0.0"
+}

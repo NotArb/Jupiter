@@ -1,0 +1,81 @@
+{
+  "type": "jito_dynamic",
+  "quote": {
+    "inAmount": "6189027951",
+    "inputMint": "So11111111111111111111111111111111111111112",
+    "otherAmountThreshold": "0",
+    "outAmount": "6189027951",
+    "outputMint": "So11111111111111111111111111111111111111112",
+    "routePlan": [
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "93p87uhcHXKvD3t2dAiupnjV71PUCmrJYcM4uJKwdb1o",
+          "feeAmount": "30208",
+          "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "inAmount": "6189027951",
+          "inputMint": "So11111111111111111111111111111111111111112",
+          "label": "Obric V2",
+          "outAmount": "1258641837",
+          "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      },
+      {
+        "percent": 19,
+        "swapInfo": {
+          "ammKey": "Fzh8TzjHJTTydAPLEkHjtuNB99f2r6hdYn5mbJtNC9pL",
+          "feeAmount": "528627",
+          "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "inAmount": "251726516",
+          "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "label": "Raydium CLMM",
+          "outAmount": "1076258776",
+          "outputMint": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "6BVnCYbEQZXkDZuQyaKTQMPs4HjpKcd7poMxKnRNEX32",
+          "feeAmount": "65",
+          "feeMint": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+          "inAmount": "251654509",
+          "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "label": "Phoenix",
+          "outAmount": "324935",
+          "outputMint": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "5BxVERzPHzvGrHGqiKcy5Pz5WwbRq3VZ2YMLq5dbGMoW",
+          "feeAmount": "134",
+          "feeMint": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+          "inAmount": "324935",
+          "inputMint": "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh",
+          "label": "Meteora DLMM",
+          "outAmount": "1238177841",
+          "outputMint": "So11111111111111111111111111111111111111112"
+        }
+      },
+      {
+        "percent": 80,
+        "swapInfo": {
+          "ammKey": "BoeMUkCLHchTD31HdXsbDExuZZfcUppSLpYtV3LZTH6U",
+          "feeAmount": "430431",
+          "feeMint": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+          "inAmount": "4304306912",
+          "inputMint": "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn",
+          "label": "Meteora DLMM",
+          "outAmount": "4951591867",
+          "outputMint": "So11111111111111111111111111111111111111112"
+        }
+      }
+    ],
+    "slippageBps": 10000,
+    "swapMode": "ExactIn",
+    "priceImpactPct": "0.0"
+  },
+  "response": "{\"jsonrpc\":\"2.0\",\"result\":{\"context\":{\"apiVersion\":\"2.0.15\",\"slot\":300493328},\"value\":{\"accounts\":null,\"err\":{\"InstructionError\":[2,{\"Custom\":6010}]},\"innerInstructions\":null,\"logs\":[\"Program ComputeBudget111111111111111111111111111111 invoke [1]\",\"Program ComputeBudget111111111111111111111111111111 success\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H invoke [1]\",\"Program log: Instruction: PreSwapUnique\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H consumed 4091 of 749850 compute units\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [1]\",\"Program log: Instruction: Route\",\"Program obriQD1zbpyLz95G5n7nJe6a4DPjpFwa5XYPoNm113y invoke [2]\",\"Program log: Instruction: Swap\",\"Program log: price_x: 20314400\",\"Program log: price_y: 100000\",\"Program log: ref_x: 20304036\",\"Program log: diff: 5\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: Transfer\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4736 of 684137 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: Transfer\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4645 of 676525 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program obriQD1zbpyLz95G5n7nJe6a4DPjpFwa5XYPoNm113y consumed 55182 of 722162 compute units\",\"Program obriQD1zbpyLz95G5n7nJe6a4DPjpFwa5XYPoNm113y success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [2]\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 471 of 664638 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 success\",\"Program CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK invoke [2]\",\"Program log: Instruction: Swap\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: Transfer\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4645 of 592688 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: Transfer\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4645 of 584905 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program data: QMbN6CYIceLeyxjFzhYcr2scJTsJyXT2A+DUfv7r7z4mwGQXYN+EASQF8rQi5bRjs6yPB4rhDm5tS3SNsgIH3ZVUcs94R8KRMPtqz7YYO7ASCjAyCAffkY011eeV8b3wv32SCcUfc0Aot08yVm2fRNvazjk6hpEs1UoUg8QzBg2OPn0CyP8uDh0lPA4AAAAAAAAAAAAAAAAZD+c8AAAAAAAAAAAAAAAAAWeVH7aeZw0SAgAAAAAAAABWkp8w7gAAAAAAAAAAAAAA3DgAAA==\",\"Program CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK consumed 82789 of 656509 compute units\",\"Program CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [2]\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 471 of 571332 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 success\",\"Program log: AnchorError occurred. Error Code: InvalidRoutePlan. Error Number: 6010. Error Message: Invalid route plan.\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 178052 of 745759 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 failed: custom program error: 0x177a\"],\"replacementBlockhash\":{\"blockhash\":\"5uqQyXuSZaVJQ2sCLyCSqt3aiEbA4gyq6AXLE69RLiYs\",\"lastValidBlockHeight\":279031448},\"returnData\":null,\"unitsConsumed\":182293}},\"id\":4325072402110615}\n"
+}

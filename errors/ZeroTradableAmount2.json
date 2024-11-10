@@ -1,0 +1,81 @@
+{
+  "type": "jito_dynamic",
+  "quote": {
+    "inAmount": "25785125",
+    "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+    "otherAmountThreshold": "0",
+    "outAmount": "25785125",
+    "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+    "routePlan": [
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "4GCZjhhiXsT558eRfgbR52njPRp4zdbDT8pxPQw2Vwgs",
+          "feeAmount": "77354",
+          "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "inAmount": "25785125",
+          "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "label": "Saros",
+          "outAmount": "111910144123",
+          "outputMint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "3kg9FUEWgMMvMA5tg6sA7wJ4NsNQnDruhbqPstDWUe21",
+          "feeAmount": "0",
+          "feeMint": "So11111111111111111111111111111111111111112",
+          "inAmount": "111910144123",
+          "inputMint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "label": "OpenBook V2",
+          "outAmount": "127230479",
+          "outputMint": "So11111111111111111111111111111111111111112"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "8erNF5u3CHrqZJXtkfY8CjSxFYF1yqHmN8uDbAhk6tWM",
+          "feeAmount": "6",
+          "feeMint": "So11111111111111111111111111111111111111112",
+          "inAmount": "127230479",
+          "inputMint": "So11111111111111111111111111111111111111112",
+          "label": "Whirlpool",
+          "outAmount": "60719986",
+          "outputMint": "HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "2cjhAWS2BDHdrbKa2gWQBPBuroGQZ3fGc5Ave6fmTVWu",
+          "feeAmount": "151799",
+          "feeMint": "HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3",
+          "inAmount": "60719986",
+          "inputMint": "HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3",
+          "label": "Meteora",
+          "outAmount": "8282631179",
+          "outputMint": "jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "BRLLmdtPGuuFn3BU6orYw4KHaohAEptBToi3dwRUnHQZ",
+          "feeAmount": "12916",
+          "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "inAmount": "8282631179",
+          "inputMint": "jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL",
+          "label": "Phoenix",
+          "outAmount": "25819028",
+          "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      }
+    ],
+    "slippageBps": 10000,
+    "swapMode": "ExactIn",
+    "priceImpactPct": "0.0"
+  },
+  "response": "{\"jsonrpc\":\"2.0\",\"result\":{\"context\":{\"apiVersion\":\"2.0.15\",\"slot\":300494564},\"value\":{\"accounts\":null,\"err\":{\"InstructionError\":[2,{\"Custom\":6035}]},\"innerInstructions\":null,\"logs\":[\"Program ComputeBudget111111111111111111111111111111 invoke [1]\",\"Program ComputeBudget111111111111111111111111111111 success\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H invoke [1]\",\"Program log: Instruction: PreSwapUnique\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H consumed 4090 of 749850 compute units\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [1]\",\"Program log: Instruction: Route\",\"Program SSwapUtytfBdBn1b9NUGG6foMVPtcWgpRU32HToDUZr invoke [2]\",\"Program log: Instruction: Swap\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: Transfer\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4645 of 706236 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: MintTo\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4492 of 677292 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: Transfer\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4645 of 669842 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program SSwapUtytfBdBn1b9NUGG6foMVPtcWgpRU32HToDUZr consumed 57462 of 722076 compute units\",\"Program SSwapUtytfBdBn1b9NUGG6foMVPtcWgpRU32HToDUZr success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [2]\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 471 of 662318 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 success\",\"Program opnb2LAfJYbRMAHHvqjCwQxanZn7ReEHp1k81EohpZb invoke [2]\",\"Program log: Instruction: PlaceTakeOrder\",\"Program opnb2LAfJYbRMAHHvqjCwQxanZn7ReEHp1k81EohpZb consumed 31840 of 650662 compute units\",\"Program opnb2LAfJYbRMAHHvqjCwQxanZn7ReEHp1k81EohpZb success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [2]\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 471 of 616416 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 success\",\"Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc invoke [2]\",\"Program log: Instruction: SwapV2\",\"Program log: AnchorError occurred. Error Code: ZeroTradableAmount. Error Number: 6035. Error Message: There are no tradable amount to swap..\",\"Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc consumed 25537 of 606625 compute units\",\"Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc failed: custom program error: 0x1793\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 164672 of 745760 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 failed: custom program error: 0x1793\"],\"replacementBlockhash\":{\"blockhash\":\"9FycdzXQQ2gWEsYALLrovW4rZ87WpsQKLuS1oLp8yMBH\",\"lastValidBlockHeight\":279032625},\"returnData\":null,\"unitsConsumed\":168912}},\"id\":4325072402117675}\n"
+}

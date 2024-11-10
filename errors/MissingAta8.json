@@ -1,0 +1,78 @@
+{
+  "error":"Missing ATA in map for A9mUU4qviSctJVPJdBJWkb28deg915LYJKrzQ19ji3FM",
+  "inAmount": "9469299868",
+  "inputMint": "So11111111111111111111111111111111111111112",
+  "otherAmountThreshold": "0",
+  "outAmount": "9469299868",
+  "outputMint": "So11111111111111111111111111111111111111112",
+  "routePlan": [
+    {
+      "percent": 100,
+      "swapInfo": {
+        "ammKey": "EgSDeuHbP1AUF9Artd2qfquevKFdpkPTrnSFcPoXTf78",
+        "feeAmount": "1136316",
+        "feeMint": "So11111111111111111111111111111111111111112",
+        "inAmount": "9469299868",
+        "inputMint": "So11111111111111111111111111111111111111112",
+        "label": "Meteora DLMM",
+        "outAmount": "500236132",
+        "outputMint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4"
+      }
+    },
+    {
+      "percent": 59,
+      "swapInfo": {
+        "ammKey": "5cuy7pMhTPhVZN9xuhgSbykRb986siGJb6vnEtkuBrSU",
+        "feeAmount": "150072",
+        "feeMint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+        "inAmount": "300141679",
+        "inputMint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+        "label": "Meteora DLMM",
+        "outAmount": "1152416388",
+        "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+      }
+    },
+    {
+      "percent": 41,
+      "swapInfo": {
+        "ammKey": "DbTk2SNKWxu9TJbPzmK9HcQCAmraBCFb5VMo8Svwh34z",
+        "feeAmount": "20772",
+        "feeMint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+        "inAmount": "200094453",
+        "inputMint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+        "label": "Meteora DLMM",
+        "outAmount": "768232126",
+        "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+      }
+    },
+    {
+      "percent": 81,
+      "swapInfo": {
+        "ammKey": "4fnrjdmQcfC1AcmH2qbq52QH6xa1MYo9212Ue6fhXN63",
+        "feeAmount": "129053",
+        "feeMint": "A9mUU4qviSctJVPJdBJWkb28deg915LYJKrzQ19ji3FM",
+        "inAmount": "1536333106",
+        "inputMint": "A9mUU4qviSctJVPJdBJWkb28deg915LYJKrzQ19ji3FM",
+        "label": "Raydium CLMM",
+        "outAmount": "1536207409",
+        "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+      }
+    },
+    {
+      "percent": 100,
+      "swapInfo": {
+        "ammKey": "3nQAMo837oPuGCGELcw2wo7C9hUUchsMWCneiPHFFdur",
+        "feeAmount": "0",
+        "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "inAmount": "1920259673",
+        "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "label": "SolFi",
+        "outAmount": "9469980644",
+        "outputMint": "So11111111111111111111111111111111111111112"
+      }
+    }
+  ],
+  "slippageBps": 10000,
+  "swapMode": "ExactIn",
+  "priceImpactPct": "0.0"
+}

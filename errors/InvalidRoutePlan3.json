@@ -1,0 +1,68 @@
+{
+  "type": "jito_dynamic",
+  "quote": {
+    "inAmount": "6070328798",
+    "inputMint": "So11111111111111111111111111111111111111112",
+    "otherAmountThreshold": "0",
+    "outAmount": "6070328798",
+    "outputMint": "So11111111111111111111111111111111111111112",
+    "routePlan": [
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "AFgkED1FUVfBe2trPUDqSqK9QKd4stJrfzq5q1RwAFTa",
+          "feeAmount": "0",
+          "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "inAmount": "6070328798",
+          "inputMint": "So11111111111111111111111111111111111111112",
+          "label": "OpenBook V2",
+          "outAmount": "1232817227",
+          "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      },
+      {
+        "percent": 10,
+        "swapInfo": {
+          "ammKey": "HD8i7qr1hd9ida6sN71RbkLxbWcbvZS4NA5CY6vfcDpj",
+          "feeAmount": "6",
+          "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "inAmount": "123295939",
+          "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "label": "Whirlpool",
+          "outAmount": "32085653",
+          "outputMint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "3nQAMo837oPuGCGELcw2wo7C9hUUchsMWCneiPHFFdur",
+          "feeAmount": "0",
+          "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "inAmount": "616297725",
+          "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "label": "SolFi",
+          "outAmount": "3035252851",
+          "outputMint": "So11111111111111111111111111111111111111112"
+        }
+      },
+      {
+        "percent": 50,
+        "swapInfo": {
+          "ammKey": "EgSDeuHbP1AUF9Artd2qfquevKFdpkPTrnSFcPoXTf78",
+          "feeAmount": "32081",
+          "feeMint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+          "inAmount": "160403284",
+          "inputMint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+          "label": "Meteora DLMM",
+          "outAmount": "3035165179",
+          "outputMint": "So11111111111111111111111111111111111111112"
+        }
+      }
+    ],
+    "slippageBps": 10000,
+    "swapMode": "ExactIn",
+    "priceImpactPct": "0.0"
+  },
+  "response": "{\"jsonrpc\":\"2.0\",\"result\":{\"context\":{\"apiVersion\":\"2.0.15\",\"slot\":300493990},\"value\":{\"accounts\":null,\"err\":{\"InstructionError\":[2,{\"Custom\":6010}]},\"innerInstructions\":null,\"logs\":[\"Program ComputeBudget111111111111111111111111111111 invoke [1]\",\"Program ComputeBudget111111111111111111111111111111 success\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H invoke [1]\",\"Program log: Instruction: PreSwapUnique\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H consumed 4091 of 599850 compute units\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [1]\",\"Program log: Instruction: Route\",\"Program opnb2LAfJYbRMAHHvqjCwQxanZn7ReEHp1k81EohpZb invoke [2]\",\"Program log: Instruction: PlaceTakeOrder\",\"Program data: lhcplJii10CJfED6nwlj3M4LyUiMXV+NxKDC2dJQd8UqA3HdypJRxQEAACAoMGcAAAAAXlwGAAAAAAB6VeOfxcL5uJmuTjccG79tyWqxroUxM/ztCbPB6qoTHQAAAAAAAAAAAAAAAAAAAAAhKDBnAAAAACQF8rQi5bRjs6yPB4rhDm5tS3SNsgIH3ZVUcs94R8KRAAAAAAAAAAAAAAAAAAAAAFBPAAAAAAAAH+0AAAAAAAA=\",\"Program data: xPmUIajkSQYL7zHCrjpsMNohieUs9fA6jy988YbbplZ7EexNmkPC3Q8AAACJfED6nwlj3M4LyUiMXV+NxKDC2dJQd8UqA3HdypJRxUaiCgEAAAAAbNLE/FEAAACwgUEBAAAAAGBt0WkBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqqgoWY1IEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\"Program data: COswOq5MnGkBJAXytCLltGOzrI8HiuEObm1LdI2yAgfdlVRyz3hHwpFgbdFpAQAAALCqdkkAAAAAAAAAAAAAAAA=\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: Transfer\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4736 of 540756 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: Transfer\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4645 of 533134 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program opnb2LAfJYbRMAHHvqjCwQxanZn7ReEHp1k81EohpZb consumed 43649 of 570193 compute units\",\"Program opnb2LAfJYbRMAHHvqjCwQxanZn7ReEHp1k81EohpZb success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [2]\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 471 of 524138 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 success\",\"Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc invoke [2]\",\"Program log: Instruction: SwapV2\",\"Program log: fee_growth: 726727295044\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: TransferChecked\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 6200 of 473870 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: TransferChecked\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 6200 of 463702 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc consumed 59450 of 514098 compute units\",\"Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [2]\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 471 of 452258 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 success\",\"Program log: AnchorError occurred. Error Code: InvalidRoutePlan. Error Number: 6010. Error Message: Invalid route plan.\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 146928 of 595759 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 failed: custom program error: 0x177a\"],\"replacementBlockhash\":{\"blockhash\":\"DA5CHPr7P33seVsBDBN2eqwnXupdDzm61fVK8fRjTapC\",\"lastValidBlockHeight\":279032086},\"returnData\":null,\"unitsConsumed\":151169}},\"id\":4325072402114720}\n"
+}

@@ -1,0 +1,81 @@
+{
+  "type": "jito_dynamic",
+  "quote": {
+    "inAmount": "6203273141",
+    "inputMint": "So11111111111111111111111111111111111111112",
+    "otherAmountThreshold": "0",
+    "outAmount": "6203273141",
+    "outputMint": "So11111111111111111111111111111111111111112",
+    "routePlan": [
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "3nQAMo837oPuGCGELcw2wo7C9hUUchsMWCneiPHFFdur",
+          "feeAmount": "0",
+          "feeMint": "So11111111111111111111111111111111111111112",
+          "inAmount": "6203273141",
+          "inputMint": "So11111111111111111111111111111111111111112",
+          "label": "SolFi",
+          "outAmount": "1261608047",
+          "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      },
+      {
+        "percent": 39,
+        "swapInfo": {
+          "ammKey": "8zdC6PtvKWN1c95Cez4CpsBgMep7ddu9jFW158Ux146j",
+          "feeAmount": "42392",
+          "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "inAmount": "504641554",
+          "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "label": "Raydium CLMM",
+          "outAmount": "4937055089",
+          "outputMint": "CRTx1JouZhzSU6XytsE42UQraoGqiHgxabocVfARTy2s"
+        }
+      },
+      {
+        "percent": 81,
+        "swapInfo": {
+          "ammKey": "2DY2irTz5JP1EhiGbjtZM6GDUGkUHQsx5f2MnQmBFfCg",
+          "feeAmount": "98",
+          "feeMint": "CRTx1JouZhzSU6XytsE42UQraoGqiHgxabocVfARTy2s",
+          "inAmount": "9874155173",
+          "inputMint": "CRTx1JouZhzSU6XytsE42UQraoGqiHgxabocVfARTy2s",
+          "label": "Whirlpool",
+          "outAmount": "1009028181",
+          "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      },
+      {
+        "percent": 20,
+        "swapInfo": {
+          "ammKey": "CgqwPLSFfht89pF5RSKGUUMFj5zRxoUt4861w2SkXaqY",
+          "feeAmount": "126132",
+          "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "inAmount": "252262189",
+          "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "label": "Meteora DLMM",
+          "outAmount": "1240913127",
+          "outputMint": "So11111111111111111111111111111111111111112"
+        }
+      },
+      {
+        "percent": 80,
+        "swapInfo": {
+          "ammKey": "FpCMFDFGYotvufJ7HrFHsWEiiQCGbkLCtwHiDnh7o28Q",
+          "feeAmount": "20",
+          "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "inAmount": "1009028181",
+          "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "label": "Whirlpool",
+          "outAmount": "4962761308",
+          "outputMint": "So11111111111111111111111111111111111111112"
+        }
+      }
+    ],
+    "slippageBps": 10000,
+    "swapMode": "ExactIn",
+    "priceImpactPct": "0.0"
+  },
+  "response": "{\"jsonrpc\":\"2.0\",\"result\":{\"context\":{\"apiVersion\":\"2.0.15\",\"slot\":300493328},\"value\":{\"accounts\":null,\"err\":{\"InstructionError\":[3,{\"Custom\":2501}]},\"innerInstructions\":null,\"logs\":[\"Program ComputeBudget111111111111111111111111111111 invoke [1]\",\"Program ComputeBudget111111111111111111111111111111 success\",\"Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [1]\",\"Program log: CreateIdempotent\",\"Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]\",\"Program log: Instruction: GetAccountDataSize\",\"Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb consumed 1389 of 744532 compute units\",\"Program return: TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb qgAAAAAAAAA=\",\"Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb success\",\"Program 11111111111111111111111111111111 invoke [2]\",\"Program 11111111111111111111111111111111 success\",\"Program log: Initialize the associated token account\",\"Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]\",\"Program log: Instruction: InitializeImmutableOwner\",\"Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb consumed 487 of 738213 compute units\",\"Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb success\",\"Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [2]\",\"Program log: Instruction: InitializeAccount3\",\"Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb consumed 2125 of 735338 compute units\",\"Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb success\",\"Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 16920 of 749850 compute units\",\"Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL success\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H invoke [1]\",\"Program log: Instruction: PreSwapUnique\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H consumed 4091 of 732930 compute units\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [1]\",\"Program log: Instruction: Route\",\"Program SoLFiHG9TfgtdUXUjWAxi3LtvYuFyDLVhBWxdMZxyCe invoke [2]\",\"Program log: @@@:KViy6k0h72sYTPt/nh5t9rERN9sHC4jwJ3AM7bnGRxm6kzoAAAAAABIq6REAAAAAAAAAAAAAAAA=\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: Transfer\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4819 of 657449 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: Transfer\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4728 of 650351 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program SoLFiHG9TfgtdUXUjWAxi3LtvYuFyDLVhBWxdMZxyCe consumed 61526 of 706909 compute units\",\"Program SoLFiHG9TfgtdUXUjWAxi3LtvYuFyDLVhBWxdMZxyCe success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [2]\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 471 of 643112 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 success\",\"Program CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK invoke [2]\",\"Program log: Instruction: SwapV2\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: TransferChecked\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 6200 of 575520 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [3]\",\"Program log: Instruction: TransferChecked\",\"Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb consumed 2184 of 565520 compute units\",\"Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb success\",\"Program data: QMbN6CYIceJ2xNYQdF4EEaALHvJhSWFaI76y1+PoFfmvNAIj5vMOyCQF8rQi5bRjs6yPB4rhDm5tS3SNsgIH3ZVUcs94R8KRjL9RxC8gsyXJeOvYvVlO0Qze5jEjxUqnwMssSicQWKcw+2rPthg7sBIKMDIIB9+RjTXV55XxvfC/fZIJxR9zQAmOhh4BAAAAAAAAAAAAAABxh0kdAAAAAAAAAAAAAAAAADlwGGTSxddRAAAAAAAAAABTxNpfkDoAAAAAAAAAAAAA56b//w==\",\"Program CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK consumed 75789 of 632614 compute units\",\"Program CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [2]\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 471 of 554372 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 success\",\"Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc invoke [2]\",\"Program log: Instruction: SwapV2\",\"Program log: fee_growth: 71592886579\",\"Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb invoke [3]\",\"Program log: Instruction: TransferChecked\",\"Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb consumed 2190 of 491632 compute units\",\"Program TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb success\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: TransferChecked\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 6200 of 485480 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc consumed 67932 of 544352 compute units\",\"Program whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [2]\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 471 of 474030 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 success\",\"Program log: AnchorError thrown in programs/jupiter/src/token_step.rs:56. Error Code: RequireEqViolated. Error Number: 2501. Error Message: A require_eq expression was violated.\",\"Program log: Left: 39\",\"Program log: Right: 0\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 260575 of 728839 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 failed: custom program error: 0x9c5\"],\"replacementBlockhash\":{\"blockhash\":\"5uqQyXuSZaVJQ2sCLyCSqt3aiEbA4gyq6AXLE69RLiYs\",\"lastValidBlockHeight\":279031448},\"returnData\":null,\"unitsConsumed\":281736}},\"id\":4325072402110621}\n"
+}
