@@ -1,0 +1,145 @@
+{
+  "response": "{\"error\":\"Missing ATA in map for CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump\"}",
+  "entry_quote": {
+    "inAmount": "6236146842",
+    "inputMint": "So11111111111111111111111111111111111111112",
+    "otherAmountThreshold": "1566288846",
+    "outAmount": "1574159644",
+    "outputMint": "CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump",
+    "priceImpactPct": "0",
+    "routePlan": [
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "3nQAMo837oPuGCGELcw2wo7C9hUUchsMWCneiPHFFdur",
+          "feeAmount": "0",
+          "feeMint": "So11111111111111111111111111111111111111112",
+          "inAmount": "6236146842",
+          "inputMint": "So11111111111111111111111111111111111111112",
+          "label": "SolFi",
+          "outAmount": "1257504956",
+          "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "HqmR2e611MRZeEr3DctgCvDDmzfbe789C9eL6oXitXmT",
+          "feeAmount": "0",
+          "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "inAmount": "1257504956",
+          "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "label": "SolFi",
+          "outAmount": "1574159644",
+          "outputMint": "CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump"
+        }
+      }
+    ],
+    "slippageBps": 50,
+    "swapMode": "ExactIn",
+    "timeTaken": 0.089149266
+  },
+  "exit_quote": {
+    "inAmount": "1574159644",
+    "inputMint": "CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump",
+    "otherAmountThreshold": "6206738946",
+    "outAmount": "6237928588",
+    "outputMint": "So11111111111111111111111111111111111111112",
+    "priceImpactPct": "0.0005788662654667825894441048",
+    "routePlan": [
+      {
+        "percent": 70,
+        "swapInfo": {
+          "ammKey": "3G5CJxYiUqHZWgnKEC46a4fKaKzvAqdtd5DfZnZR8bdA",
+          "feeAmount": "440504",
+          "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "inAmount": "1101911752",
+          "inputMint": "CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump",
+          "label": "Phoenix",
+          "outAmount": "880566388",
+          "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "3QRa6ekUJBaeKrQnRhyvQYgL42bB3Hxc8p7oxfSPmuMW",
+          "feeAmount": "131008",
+          "feeMint": "So11111111111111111111111111111111111111112",
+          "inAmount": "880566388",
+          "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "label": "Obric V2",
+          "outAmount": "4366822601",
+          "outputMint": "So11111111111111111111111111111111111111112"
+        }
+      },
+      {
+        "percent": 30,
+        "swapInfo": {
+          "ammKey": "9Tb2ohu5P16BpBarqd3N27WnkF51Ukfs8Z1GzzLDxVZW",
+          "feeAmount": "1180619",
+          "feeMint": "CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump",
+          "inAmount": "472247892",
+          "inputMint": "CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump",
+          "label": "Raydium",
+          "outAmount": "1871105987",
+          "outputMint": "So11111111111111111111111111111111111111112"
+        }
+      }
+    ],
+    "slippageBps": 50,
+    "swapMode": "ExactIn",
+    "timeTaken": 0.122372617
+  },
+  "arb_quote": {
+    "inAmount": "6236146842",
+    "inputMint": "So11111111111111111111111111111111111111112",
+    "otherAmountThreshold": "0",
+    "outAmount": "6236146842",
+    "outputMint": "So11111111111111111111111111111111111111112",
+    "routePlan": [
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "3nQAMo837oPuGCGELcw2wo7C9hUUchsMWCneiPHFFdur",
+          "feeAmount": "0",
+          "feeMint": "So11111111111111111111111111111111111111112",
+          "inAmount": "6236146842",
+          "inputMint": "So11111111111111111111111111111111111111112",
+          "label": "SolFi",
+          "outAmount": "1257504956",
+          "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "3QRa6ekUJBaeKrQnRhyvQYgL42bB3Hxc8p7oxfSPmuMW",
+          "feeAmount": "131008",
+          "feeMint": "So11111111111111111111111111111111111111112",
+          "inAmount": "880566388",
+          "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "label": "Obric V2",
+          "outAmount": "4366822601",
+          "outputMint": "So11111111111111111111111111111111111111112"
+        }
+      },
+      {
+        "percent": 30,
+        "swapInfo": {
+          "ammKey": "9Tb2ohu5P16BpBarqd3N27WnkF51Ukfs8Z1GzzLDxVZW",
+          "feeAmount": "1180619",
+          "feeMint": "CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump",
+          "inAmount": "472247892",
+          "inputMint": "CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump",
+          "label": "Raydium",
+          "outAmount": "1871105987",
+          "outputMint": "So11111111111111111111111111111111111111112"
+        }
+      }
+    ],
+    "slippageBps": 10000,
+    "swapMode": "ExactIn",
+    "priceImpactPct": "0.0"
+  }
+}
