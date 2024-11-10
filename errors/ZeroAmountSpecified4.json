@@ -1,0 +1,67 @@
+{
+  "quote": {
+    "inAmount": "46687312",
+    "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+    "otherAmountThreshold": "46687312",
+    "outAmount": "46687312",
+    "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+    "routePlan": [
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "8GQP8XkaXVCArWYovfiLRuHpJzgoou2ofDDZdyd6TpNK",
+          "feeAmount": "9337",
+          "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "inAmount": "46687312",
+          "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "label": "Lifinity V2",
+          "outAmount": "203899840996",
+          "outputMint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "3kg9FUEWgMMvMA5tg6sA7wJ4NsNQnDruhbqPstDWUe21",
+          "feeAmount": "0",
+          "feeMint": "So11111111111111111111111111111111111111112",
+          "inAmount": "203899840996",
+          "inputMint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "label": "OpenBook V2",
+          "outAmount": "226786847",
+          "outputMint": "So11111111111111111111111111111111111111112"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "BuavWdfsNTfmEQbnPt2PLc51B7pifRNhqNiDUtGLeNNn",
+          "feeAmount": "95234",
+          "feeMint": "So11111111111111111111111111111111111111112",
+          "inAmount": "226741560",
+          "inputMint": "So11111111111111111111111111111111111111112",
+          "label": "Raydium CLMM",
+          "outAmount": "18773101",
+          "outputMint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "D39QbGSiymeKR1eegDk5ztADUKWL5aFAz6BSpGEptBFc",
+          "feeAmount": "0",
+          "feeMint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "inAmount": "18773101",
+          "inputMint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+          "label": "SolFi",
+          "outAmount": "46707689",
+          "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      }
+    ],
+    "slippageBps": 0,
+    "swapMode": "ExactIn",
+    "priceImpactPct": "0.0"
+  },
+  "response": "{\"jsonrpc\":\"2.0\",\"result\":{\"context\":{\"apiVersion\":\"2.0.15\",\"slot\":300523125},\"value\":{\"accounts\":null,\"err\":{\"InstructionError\":[2,{\"Custom\":6024}]},\"innerInstructions\":null,\"logs\":[\"Program ComputeBudget111111111111111111111111111111 invoke [1]\",\"Program ComputeBudget111111111111111111111111111111 success\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H invoke [1]\",\"Program log: Instruction: PreSwapUnique\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H consumed 4090 of 599851 compute units\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [1]\",\"Program log: Instruction: Route\",\"Program 2wT8Yq49kHgDzXuPxZSaeLaH1qbmGXtEyPy64bL7aD3c invoke [2]\",\"Program log: Instruction: Swap\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: Transfer\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4645 of 510855 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: MintTo\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4492 of 503810 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: Transfer\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4645 of 496932 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program 2wT8Yq49kHgDzXuPxZSaeLaH1qbmGXtEyPy64bL7aD3c consumed 85675 of 574240 compute units\",\"Program 2wT8Yq49kHgDzXuPxZSaeLaH1qbmGXtEyPy64bL7aD3c success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [2]\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 471 of 486244 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 success\",\"Program opnb2LAfJYbRMAHHvqjCwQxanZn7ReEHp1k81EohpZb invoke [2]\",\"Program log: Instruction: PlaceTakeOrder\",\"Program opnb2LAfJYbRMAHHvqjCwQxanZn7ReEHp1k81EohpZb consumed 22702 of 474585 compute units\",\"Program opnb2LAfJYbRMAHHvqjCwQxanZn7ReEHp1k81EohpZb success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [2]\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 471 of 449477 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 success\",\"Program CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK invoke [2]\",\"Program log: Instruction: Swap\",\"Program log: AnchorError thrown in programs/amm/src/instructions/swap.rs:153. Error Code: ZeroAmountSpecified. Error Number: 6024. Error Message: Swap special amount can not be zero.\",\"Program CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK consumed 18304 of 441203 compute units\",\"Program CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK failed: custom program error: 0x1788\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 172862 of 595761 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 failed: custom program error: 0x1788\"],\"replacementBlockhash\":{\"blockhash\":\"2DuStCFV6LYBimz9s6bbCpALTjYr8syT6FLNub5PdquH\",\"lastValidBlockHeight\":279059870},\"returnData\":null,\"unitsConsumed\":177102}},\"id\":4338053039359330}\n"
+}
