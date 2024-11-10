@@ -1,0 +1,67 @@
+{
+  "quote": {
+    "inAmount": "50759817",
+    "inputMint": "So11111111111111111111111111111111111111112",
+    "otherAmountThreshold": "0",
+    "outAmount": "50759817",
+    "outputMint": "So11111111111111111111111111111111111111112",
+    "routePlan": [
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "3kg9FUEWgMMvMA5tg6sA7wJ4NsNQnDruhbqPstDWUe21",
+          "feeAmount": "0",
+          "feeMint": "So11111111111111111111111111111111111111112",
+          "inAmount": "50759817",
+          "inputMint": "So11111111111111111111111111111111111111112",
+          "label": "OpenBook V2",
+          "outAmount": "45610000000",
+          "outputMint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "G7mw1d83ismcQJKkzt62Ug4noXCjVhu3eV7U5EMgge6Z",
+          "feeAmount": "114025000",
+          "feeMint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "inAmount": "45610000000",
+          "inputMint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+          "label": "Raydium",
+          "outAmount": "10413521",
+          "outputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "DbTk2SNKWxu9TJbPzmK9HcQCAmraBCFb5VMo8Svwh34z",
+          "feeAmount": "1094",
+          "feeMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "inAmount": "10411430",
+          "inputMint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+          "label": "Meteora DLMM",
+          "outAmount": "2697341",
+          "outputMint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "HZdxWyieEioGUwVtpjei3w1rpn3SviDNQySwaoz6Rtga",
+          "feeAmount": "5597",
+          "feeMint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+          "inAmount": "2697341",
+          "inputMint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+          "label": "Meteora DLMM",
+          "outAmount": "50929580",
+          "outputMint": "So11111111111111111111111111111111111111112"
+        }
+      }
+    ],
+    "slippageBps": 10000,
+    "swapMode": "ExactIn",
+    "priceImpactPct": "0.0"
+  },
+  "response": "{\"jsonrpc\":\"2.0\",\"result\":{\"context\":{\"apiVersion\":\"2.0.15\",\"slot\":300518968},\"value\":{\"accounts\":null,\"err\":{\"InstructionError\":[2,{\"Custom\":29}]},\"innerInstructions\":null,\"logs\":[\"Program ComputeBudget111111111111111111111111111111 invoke [1]\",\"Program ComputeBudget111111111111111111111111111111 success\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H invoke [1]\",\"Program log: Instruction: PreSwapUnique\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H consumed 4091 of 599850 compute units\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [1]\",\"Program log: Instruction: Route\",\"Program opnb2LAfJYbRMAHHvqjCwQxanZn7ReEHp1k81EohpZb invoke [2]\",\"Program log: Instruction: PlaceTakeOrder\",\"Program opnb2LAfJYbRMAHHvqjCwQxanZn7ReEHp1k81EohpZb consumed 32652 of 569964 compute units\",\"Program opnb2LAfJYbRMAHHvqjCwQxanZn7ReEHp1k81EohpZb success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [2]\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 471 of 534906 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 success\",\"Program 675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8 invoke [2]\",\"Program log: ray_log: AwAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAE9uoxYAAAAAuBLg/LSQAAA4vEp7CAAAAAAAAAAAAAAA\",\"Program log: Error: InvalidInput\",\"Program 675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8 consumed 12912 of 525611 compute units\",\"Program 675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8 failed: custom program error: 0x1d\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 83060 of 595759 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 failed: custom program error: 0x1d\"],\"replacementBlockhash\":{\"blockhash\":\"2Uv2Qt9oWcHXcePL9PYBCGAXum6gHHMyxy2vdHcudZWs\",\"lastValidBlockHeight\":279055821},\"returnData\":null,\"unitsConsumed\":87301}},\"id\":4334914356964726}\n"
+}

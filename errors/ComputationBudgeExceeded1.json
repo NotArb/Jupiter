@@ -1,0 +1,54 @@
+{
+  "quote": {
+    "inAmount": "537968724",
+    "inputMint": "So11111111111111111111111111111111111111112",
+    "otherAmountThreshold": "0",
+    "outAmount": "537968724",
+    "outputMint": "So11111111111111111111111111111111111111112",
+    "routePlan": [
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "GB5W1WsE7XXMbuTzrHkqYBqP8ybGBkufnZjYsL65rBXk",
+          "feeAmount": "53797",
+          "feeMint": "So11111111111111111111111111111111111111112",
+          "inAmount": "537968724",
+          "inputMint": "So11111111111111111111111111111111111111112",
+          "label": "Meteora DLMM",
+          "outAmount": "528372387",
+          "outputMint": "StPsoHokZryePePFV8N7iXvfEmgUoJ87rivABX7gaW6"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "7rMbZmtH18HWTSDMwCAb22egjyWU431CENMEvReZTyRD",
+          "feeAmount": "2024902",
+          "feeMint": "bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1",
+          "inAmount": "528372387",
+          "inputMint": "StPsoHokZryePePFV8N7iXvfEmgUoJ87rivABX7gaW6",
+          "label": "Sanctum",
+          "outAmount": "460803599",
+          "outputMint": "bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1"
+        }
+      },
+      {
+        "percent": 100,
+        "swapInfo": {
+          "ammKey": "G3uVt3hZjRpXNazhWHBg9ngw8JVWtzM64CaR5xMHCYm2",
+          "feeAmount": "53815",
+          "feeMint": "So11111111111111111111111111111111111111112",
+          "inAmount": "460803599",
+          "inputMint": "bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1",
+          "label": "Stabble Stable Swap",
+          "outAmount": "538090344",
+          "outputMint": "So11111111111111111111111111111111111111112"
+        }
+      }
+    ],
+    "slippageBps": 10000,
+    "swapMode": "ExactIn",
+    "priceImpactPct": "0.0"
+  },
+  "response": "{\"jsonrpc\":\"2.0\",\"result\":{\"context\":{\"apiVersion\":\"2.0.15\",\"slot\":300519122},\"value\":{\"accounts\":null,\"err\":{\"InstructionError\":[2,\"ComputationalBudgetExceeded\"]},\"innerInstructions\":null,\"logs\":[\"Program ComputeBudget111111111111111111111111111111 invoke [1]\",\"Program ComputeBudget111111111111111111111111111111 success\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H invoke [1]\",\"Program log: Instruction: PreSwapUnique\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H consumed 4091 of 449850 compute units\",\"Program XXXaoN1GUF9895Tf9ojksGiGJa37F5op23QTYPvUH5H success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [1]\",\"Program log: Instruction: Route\",\"Program LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo invoke [2]\",\"Program log: Instruction: Swap\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: TransferChecked\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 6238 of 384084 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [3]\",\"Program log: Instruction: TransferChecked\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 6173 of 374413 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo invoke [3]\",\"Program LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo consumed 2136 of 364809 compute units\",\"Program LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo success\",\"Program LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo consumed 58298 of 419472 compute units\",\"Program LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo success\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 invoke [2]\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 471 of 358781 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 success\",\"Program stkitrT1Uoy18Dk1fTrgPw8W6MVzoCfYoAFT4MLsmhq invoke [2]\",\"Program log: PrefundWithdrawStake(PrefundWithdrawStakeIxArgs { args: SwapViaStakeArgs { amount: 528372387, bridge_stake_seed: 4264845852 } })\",\"Program 11111111111111111111111111111111 invoke [3]\",\"Program 11111111111111111111111111111111 success\",\"Program 11111111111111111111111111111111 invoke [3]\",\"Program 11111111111111111111111111111111 success\",\"Program 11111111111111111111111111111111 invoke [3]\",\"Program 11111111111111111111111111111111 success\",\"Program 11111111111111111111111111111111 invoke [3]\",\"Program 11111111111111111111111111111111 success\",\"Program 11111111111111111111111111111111 invoke [3]\",\"Program 11111111111111111111111111111111 success\",\"Program SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY invoke [3]\",\"Program log: Instruction: WithdrawStake\",\"Program Stake11111111111111111111111111111111111111 invoke [4]\",\"Program Stake11111111111111111111111111111111111111 success\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [4]\",\"Program log: Instruction: Burn\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4707 of 295802 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program Stake11111111111111111111111111111111111111 invoke [4]\",\"Program Stake11111111111111111111111111111111111111 success\",\"Program Stake11111111111111111111111111111111111111 invoke [4]\",\"Program Stake11111111111111111111111111111111111111 success\",\"Program Stake11111111111111111111111111111111111111 invoke [4]\",\"Program Stake11111111111111111111111111111111111111 success\",\"Program SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY consumed 36879 of 314826 compute units\",\"Program SP12tWFxD9oJsVWNavTTBZvMbA6gkAmxtVgxdqvyvhY success\",\"Program Stake11111111111111111111111111111111111111 invoke [3]\",\"Program Stake11111111111111111111111111111111111111 success\",\"Program Stake11111111111111111111111111111111111111 invoke [3]\",\"Program Stake11111111111111111111111111111111111111 success\",\"Program unpXTU2Ndrc7WWNyEhQWe4udTzSibLPi25SXv2xbCHQ invoke [3]\",\"Program log: Instruction: Unstake\",\"Program 11111111111111111111111111111111 invoke [4]\",\"Program 11111111111111111111111111111111 success\",\"Program 11111111111111111111111111111111 invoke [4]\",\"Program 11111111111111111111111111111111 success\",\"Program 11111111111111111111111111111111 invoke [4]\",\"Program 11111111111111111111111111111111 success\",\"Program Stake11111111111111111111111111111111111111 invoke [4]\",\"Program Stake11111111111111111111111111111111111111 success\",\"Program Stake11111111111111111111111111111111111111 invoke [4]\",\"Program Stake11111111111111111111111111111111111111 success\",\"Program 11111111111111111111111111111111 invoke [4]\",\"Program 11111111111111111111111111111111 success\",\"Program 11111111111111111111111111111111 invoke [4]\",\"Program 11111111111111111111111111111111 success\",\"Program log: unstake-log: [0, 3RcwP8uhMAb4sstXLn5etD951tBNGMUvdTRJDzEAjmuS, 96GAYTBHU61BbY9s3kmVAn9qeYYNZ3KL2iKeNEz6iirb, StepeLdhJ2znRjHcZdjwMWsC4nTRURNKQY8Nca82LJp, 647, [1, 1/1000, 8/100], 4593236, 4565760, 27476]\",\"Program unpXTU2Ndrc7WWNyEhQWe4udTzSibLPi25SXv2xbCHQ consumed 106896 of 239965 compute units\",\"Program unpXTU2Ndrc7WWNyEhQWe4udTzSibLPi25SXv2xbCHQ success\",\"Program stkitrT1Uoy18Dk1fTrgPw8W6MVzoCfYoAFT4MLsmhq consumed 213509 of 345436 compute units\",\"Program stkitrT1Uoy18Dk1fTrgPw8W6MVzoCfYoAFT4MLsmhq success\",\"Program stkitrT1Uoy18Dk1fTrgPw8W6MVzoCfYoAFT4MLsmhq invoke [2]\",\"Program log: DepositStake\",\"Program Stake11111111111111111111111111111111111111 invoke [3]\",\"Program Stake11111111111111111111111111111111111111 success\",\"Program Stake11111111111111111111111111111111111111 invoke [3]\",\"Program Stake11111111111111111111111111111111111111 success\",\"Program SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy invoke [3]\",\"Program log: Instruction: DepositStake\",\"Program log: Stake pre merge 2989846100868\",\"Program Stake11111111111111111111111111111111111111 invoke [4]\",\"Program Stake11111111111111111111111111111111111111 success\",\"Program Stake11111111111111111111111111111111111111 invoke [4]\",\"Program Stake11111111111111111111111111111111111111 success\",\"Program Stake11111111111111111111111111111111111111 invoke [4]\",\"Checking if destination stake is mergeable\",\"Checking if source stake is mergeable\",\"Merging stake accounts\",\"Program Stake11111111111111111111111111111111111111 success\",\"Program log: Stake post merge 2990381879822\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [4]\",\"Program log: Instruction: MintTo\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4492 of 20737 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [4]\",\"Program log: Instruction: MintTo\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4492 of 13213 compute units\",\"Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success\",\"Program Stake11111111111111111111111111111111111111 invoke [4]\",\"Program Stake11111111111111111111111111111111111111 success\",\"Program SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy consumed 93759 of 96099 compute units\",\"Program SPoo1Ku8WFXoNDMHPsrGSTSG1Y47rzgn41SLUNakuHy success\",\"Program stkitrT1Uoy18Dk1fTrgPw8W6MVzoCfYoAFT4MLsmhq consumed 122855 of 122855 compute units\",\"Program stkitrT1Uoy18Dk1fTrgPw8W6MVzoCfYoAFT4MLsmhq failed: Computational budget exceeded\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 consumed 445759 of 445759 compute units\",\"Program JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4 failed: Computational budget exceeded\"],\"replacementBlockhash\":{\"blockhash\":\"3iF7L7bhYCC1KPjD2nRNaiDDqnkNP1fAgQuRVyfRorNv\",\"lastValidBlockHeight\":279055971},\"returnData\":null,\"unitsConsumed\":450000}},\"id\":4334914356965699}\n"
+}
