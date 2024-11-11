@@ -48,6 +48,8 @@ proxy_host="" # All proxy settings are optional
 proxy_port=8002
 proxy_user=""
 proxy_password=""
+proxy_wallet=false # When true, uses a separate wallet for tips. Sends 0.01 initially to cover minimum balance, refunded at transaction end.
+bind_ip="" # Set this to bind outgoing requests to a specific source IP, like a lightweight proxy without an intermediary server.
 
 # Simulation mode (Optional)
 [simulation_mode]
