@@ -30,43 +30,12 @@ else
 fi
 
 # Java vm_args check
-if [ -z "$1" ]; then
+if [ -z "$vm_args" ]; then
     echo "Warning: No vm_args set, this is not advised."
 else
-    echo "vm_args=$*"
+    echo "vm_args=${vm_args[@]}"
 fi
 
 # Run
-if [ ! -z "$jupiter_config_path" ]; then # Jupiter
-  echo "Running Jupiter Management Server..."
-
-  # Ensure $jupiter_config_path file exists
-  if [ ! -f "$jupiter_config_path" ]; then
-      echo "Error: jupiter_config_path file does not exist"
-      echo "$jupiter_config_path"
-      exit 1
-  fi
-  echo "jupiter_config_path=$jupiter_config_path"
-
-  exec "$java_exe_path" --enable-preview "$@" -Dcaller_script_dir="$(pwd)" -cp "$bot_path" org.notarb.launcher.Main "--jupiter-config-path=$jupiter_config_path"
-  echo "Jupiter management server exited with code $?"
-
-elif [ ! -z "$bot_config_path" ]; then # Bot
-  echo "Running Bot..."
-
-  # Ensure config_path file exists
-  if [ ! -f "$bot_config_path" ]; then
-      echo "Error: bot_config_path file does not exist"
-      echo "$bot_config_path"
-      exit 1
-  fi
-  echo "bot_config_path=$bot_config_path"
-
-  exec "$java_exe_path" --enable-preview "$@" -Dcaller_script_dir="$(pwd)" -cp "$bot_path" org.notarb.launcher.Main "--jupiter-arb-config-path=$bot_config_path"
-  echo "Bot exited with code $?"
-
-else
-  echo "No config found!"
-  echo "Either jupiter_config_path or bot_config_path required."
-  exit 1
-fi
+exec "$java_exe_path" --enable-preview "${vm_args[@]}" -Dcaller_script_dir="$(pwd)" -cp "$bot_path" org.notarb.launcher.Main "${notarb_args[@]}"
+echo "NotArb exited with code $?"

@@ -54,9 +54,9 @@ FILTER_MARKETS_WITH_MINTS="" # This will be ovewritten by mint filters defined b
 # Find all of Jupiter's token tags here: https://station.jup.ag/docs/token-list/token-list-api
 [dynamic_mint_filter] # removing in the future in favor of url mint filters
 enabled=true
-skip_freezable=true # freezable tokens are generally rugs and won't be tradable long
+skip_freezable=false # freezable tokens are generally rugs and won't be tradable long
 skip_mintable=false # a handful of stable coins are mintable, so defaulting to false
-skip_no_volume=true # some tokens don't have any daily volume data on jupiter, optionally skip them (not skipping them will give you WAY more mints, which isn't always good)
+min_daily_volume=50_000 # daily volume is measured in usdc - some tokens don't have any daily volume data, however you can still include them by setting this value to -1
 required_tags=[
     ["verified", "pump"],
     ["birdeye-trending"],
