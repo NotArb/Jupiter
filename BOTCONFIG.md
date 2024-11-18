@@ -76,7 +76,7 @@ priority_fee_lamports=0 # optional, but can help tx land
 # At least one mint supplier is required for the bot to operate.
 # Note: More mints may result in opening multiple token accounts, which can affect your balance due to account creation fees. Token accounts are only opened once.
 
-# Dynamic mints (Optional)
+# Dynamic mints
 [dynamic_mints]
 enabled=true
 update_seconds=10 # this pulls from Jupiter's public endpoint, keep that in mind if running multiple bots for rate limiting (default 10)
