@@ -79,7 +79,7 @@ priority_fee_lamports=0 # optional, but can help tx land
 #################
 # Dynamic mints #
 #################
-[dynamic_mints] # this is the only mint configuration where only one configuration is allowed, hence the single brackets
+[dynamic_mints] # this is the only mint configuration where only one is allowed, hence the single brackets
 enabled=true
 limit=100 # optional - limits the number of mints obtained from this supplier, sorted by daily volume (higher volume first)
 export_path="dynamic-mints.txt" # optional - useful for debugging
