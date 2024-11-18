@@ -125,9 +125,10 @@ max_per_cycle=10 # optional field - use this to limit how many mints can be proc
 random_order=false # optional field - use this to randomize the order of the list every cycle (default false)
 url="http://yoururl.com/mints.txt OR http://yoururl.com/mints.json" # the actual extension here doesn't matter, as long as the output is either a json list of strings or raw text of 1 mint per line (raw text supports # comments)
 
+## Below are configurations for swaps with very basic placeholder settings.
+## For proper example configurations, refer to: https://examples.notarb.org/
 
-
-# Swap config (At least one required to find swaps)
+# Swap config (At least one required)
 [[swap]]
 enabled=true # Enable or disable this swap configuration (default: true)
 mint="So11111111111111111111111111111111111111112" # Base mint to trade (can also do symbols: SOL, USDC, USDT)
