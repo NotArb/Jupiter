@@ -79,11 +79,13 @@ priority_fee_lamports=0 # optional, but can help tx land
 #################
 # Dynamic mints #
 #################
-[dynamic_mints]
+[dynamic_mints] # this is the only mint configuration where only one configuration is allowed, hence the single brackets
 enabled=true
+limit=100 # optional - limits the number of mints obtained from this supplier, sorted by daily volume (higher volume first)
+export_path="dynamic-mints.txt" # optional - useful for debugging
 update_seconds=10 # this pulls from Jupiter's public endpoint, keep that in mind if running multiple bots for rate limiting (default 10)
-untradable_cooldown="5m" # if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 5m)
-max_per_cycle=10 # optional field - use this to limit how many mints can be processed from this mint supplier per bot cycle (default unlimited)
+untradable_cooldown="1m" # if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 1m)
+max_per_cycle=10 # optional - used to limit how many mints can be processed from this mint supplier per bot cycle (default unlimited)
 
 exclude=[ # optional
   "So11111111111111111111111111111111111111112",  # sol
@@ -93,16 +95,18 @@ exclude=[ # optional
 
 ## NOTE: Filter configurations must be placed at the end, after other settings like exclude and enabled. ##
 
-[[dynamic_mints.filter]] # at least 1 filter required
-skip_freezable=false # setting this to true can help filter out more volatile tokens (default true)
-skip_mintable=false # similar to freezable, can help filter out more volatile tokens (default false)
-min_daily_volume=50_000 # daily volume measured in usdc (set to -1 to allow any volume, even if none)
-
-[[dynamic_mints.filter]]
-skip_freezable=false
-skip_mintable=false
-required_tags=[ # an array of tag groups, only one group match required to be accepted
+[[dynamic_mints.filter]] # example filter to pick up all mints with either a birdeye-trending tag OR pump and verified tags
+include_tags=[ # an array of tag groups, only one group match required to be included
   ["birdeye-trending"],
+  ["pump", "verified"]
+]
+
+[[dynamic_mints.filter]] # example filter to pick up new mints
+max_age="3d"
+min_daily_volume=10_000
+exclude_tags=[ # an array of tag groups, only one group match is required to be excluded
+  ["strict"],
+  ["community"]
 ] # Juptier token tags can be found here: https://station.jup.ag/docs/token-list/token-list-api
 
 ################
