@@ -94,7 +94,7 @@ exclude=[ # optional
   "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # usdc
 ]
 
-## NOTE: Filter configurations must be placed at the end, after other settings like exclude and enabled. ##
+## NOTE: Filter configurations must be placed at the end, after other settings like exclude and enabled.
 
 [[dynamic_mints.filter]] # example filter to pick up all mints with either a birdeye-trending tag OR pump and verified tags
 include_tags=[ # an array of tag groups, only one group match required to be included
