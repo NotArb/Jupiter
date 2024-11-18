@@ -76,7 +76,9 @@ priority_fee_lamports=0 # optional, but can help tx land
 # At least one mint supplier is required for the bot to operate.
 # Note: More mints may result in opening multiple token accounts, which can affect your balance due to account creation fees. Token accounts are only opened once.
 
-# Dynamic mints
+#################
+# Dynamic mints #
+#################
 [dynamic_mints]
 enabled=true
 update_seconds=10 # this pulls from Jupiter's public endpoint, keep that in mind if running multiple bots for rate limiting (default 10)
@@ -103,7 +105,9 @@ required_tags=[ # an array of tag groups, only one group match required to be ac
   ["birdeye-trending"],
 ] # Juptier token tags can be found here: https://station.jup.ag/docs/token-list/token-list-api
 
-# Static mints
+################
+# Static mints #
+################
 [[static_mints]]
 enabled=true
 untradable_cooldown="5m" # if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 5m)
@@ -114,8 +118,9 @@ list=[
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB", # usdt
   "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # usdc
 ]
-
-# File mints
+##############
+# File mints #
+##############
 [[file_mints]]
 enabled=true
 update_seconds=10 # optional field - when set, this file will be loaded every X amount of seconds (default 0)
@@ -124,7 +129,9 @@ max_per_cycle=10 # optional field - use this to limit how many mints can be proc
 random_order=false # optional field - use this to randomize the order of the list every cycle (default false)
 path="/absolute/path/to/mints.json OR /absolute/path/to/mints.txt" # the actual extension here doesn't matter, as long as the output is either a json list of strings or raw text of 1 mint per line (raw text supports # comments)
 
-# Url mints
+#############
+# Url mints #
+#############
 [[url_mints]]
 enabled=true
 update_seconds=10 # optional field - when set, this url will be loaded every X amount of seconds (default 0)
