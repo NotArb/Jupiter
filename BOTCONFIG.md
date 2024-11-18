@@ -12,12 +12,11 @@ This guide provides detailed instructions on configuring your NotArb bot using t
 # Miscellaneous configuration (Required)
 [bot_misc]
 keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # Path to the keypair file used for signing transactions
-disable_http_pools=false # Disable HTTP pools for debugging purposes (will be removed in future)
 swap_threads=0 # Number of threads for handling swap requests (if left 0, the bot will automatically determine an optimal amount)
 jito_threads=0 # Number of threads for dispatching Jito requests. (if left 0, the bot will automatically determine an optimal amount)
 spam_threads=0 # Number of threads for dispatching Spam requests. (if left 0, the bot will automatically determine an optimal amount)
 
-# Jupiter configuration (Required)
+# Jupiter configuration (Required) (You can optionally use this same exact structure with [jupiter-quote] and [jupiter-swap] to slit Jupiter load)
 [jupiter]
 url="http://0.0.0.0:8080/" # URL of your Jupiter server
 http_timeout_ms=3000 # HTTP request timeout for Jupiter (in milliseconds)
@@ -53,7 +52,7 @@ bind_ip="" # Set this to bind outgoing requests to a specific source IP, like a 
 
 # Simulation mode (Optional)
 [simulation_mode]
-enabled=false # Enable or disable sending (default: false)
+enabled=false
 rpc="solana-pub"
 skip_known_jupiter_errors=true # When true, known Jupiter errors will be skipped from output
 skip_successful_responses=false # When true, successful responses will be skipped from output
@@ -61,44 +60,72 @@ skip_no_profit_responses=false # When true, no profit responses will be skipped 
 force_blockhash=true # When true, the "replaceRecentBlockhash=true" Solana variable will be set
 
 # Wsol Unwrapper (Optional)
-[wsol_unwrapper]
-enabled=false # Enable or disable sending (default: false)
+[wsol_unwrapper] # Requires SOL balance for network fees
+enabled=false
 rpc="your-rpc-id" # the rpc used for the balance check & rebalance transaction
 check_minutes=1 # interval in minutes to check if an unwrap is required
 min_sol=0.5 # triggers an unwrap when your sol balance is less than this number
 unwrap_sol=1 # unwraps this amount of wsol to sol
 priority_fee_lamports=0 # optional, but can help tx land
 
-# Jupiter token fetcher (Optional)
-# Note: Enabling this may result in opening multiple token accounts, which can affect your balance due to account creation fees.
-# Token accounts are only opened once. Adjust your filters to limit the number of tokens if this is a concern.
-[jupiter_token_fetcher]
-enabled=true # Enable or disable the Jupiter token fetcher (default: true)
-fetch_ms=10000 # Interval for fetching tradable tokens from Jupiter (in milliseconds)
-max_per_cycle=5 # Maximum number of tokens to attempt a swap per cycle
-required_tags=[ # Fetched tokens must match at least one group to be accepted.
-    ["birdeye-trending"], 
-    ["pump", "verified"],
-    ["pump", "community"],
+## Below are configurations for mint suppliers. There are currently 4 types of mint suppliers:
+# [dynamic_mints] - only 1 configuration allowed
+# [[static_mints]] - multiple configurations allowed
+# [[file_mints]] - multiple configurations allowed
+# [[url_mints]] - multiple configurations allowed
+# At least one mint supplier is required for the bot to operate.
+# Note: More mints may result in opening multiple token accounts, which can affect your balance due to account creation fees. Token accounts are only opened once.
+
+# Dynamic mints (Optional)
+[dynamic_mints]
+enabled=true
+update_seconds=10 # this pulls from Jupiter's public endpoint, keep that in mind if running multiple bots for rate limiting (default 10)
+untradable_cooldown="5m" # if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 5m)
+max_per_cycle=10 # optional field - use this to limit how many mints can be processed from this mint supplier per bot cycle (default unlimited)
+
+[[dynamic_mints.filter]] # at least 1 filter required
+skip_freezable=false # setting this to true can help filter out more volatile tokens (default true)
+skip_mintable=false # similar to freezable, can help filter out more volatile tokens (default false)
+min_daily_volume=50_000 # daily volume measured in usdc (set to -1 to allow any volume, even if none)
+
+[[dynamic_mints.filter]]
+skip_freezable=false
+skip_mintable=false
+required_tags=[ # an array of tag groups, only one group match required to be accepted
+  ["birdeye-trending"],
 ] # Juptier token tags can be found here: https://station.jup.ag/docs/token-list/token-list-api
 
-# File mint list configuration (Optional)
-[[file_mint_list]]
-enabled=false
-max_per_cycle=5 # optional
-random_order=true # optional
-path="/path/to/mints.json OR /path/to/mints.txt"
-
-# Static mint list configuration (Optional, but required if no other token suppliers are enabled)
-[[static_mint_list]]
-enabled=true # Enable or disable this token list (default: true)
-random_order=true # Randomize the order of tokens in this list
-max_per_cycle=5 # Maximum number of tokens to attempt a swap per cycle
-mints=[ # List of token mints to use
-    "So11111111111111111111111111111111111111112",  # SOL
-    "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB", # USDT
-    "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # USDC
+# Static mints
+[[static_mints]]
+enabled=true
+untradable_cooldown="5m" # if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 5m)
+max_per_cycle=10 # optional field - use this to limit how many mints can be processed from this mint supplier per bot cycle (default unlimited)
+random_order=false # optional field - use this to randomize the order of the list every cycle (default false)
+list=[
+  "So11111111111111111111111111111111111111112",  # sol
+  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB", # usdt
+  "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # usdc
 ]
+
+# File mints
+[[file_mints]]
+enabled=true
+update_seconds=10 # optional field - when set, this file will be loaded every X amount of seconds (default 0)
+untradable_cooldown="5m" # if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 5m)
+max_per_cycle=10 # optional field - use this to limit how many mints can be processed from this mint supplier per bot cycle (default unlimited)
+random_order=false # optional field - use this to randomize the order of the list every cycle (default false)
+path="/absolute/path/to/mints.json OR /absolute/path/to/mints.txt" # the actual extension here doesn't matter, as long as the output is either a json list of strings or raw text of 1 mint per line (raw text supports # comments)
+
+# Url mints
+[[url_mints]]
+enabled=true
+update_seconds=10 # optional field - when set, this url will be loaded every X amount of seconds (default 0)
+untradable_cooldown="5m" # if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 5m)
+max_per_cycle=10 # optional field - use this to limit how many mints can be processed from this mint supplier per bot cycle (default unlimited)
+random_order=false # optional field - use this to randomize the order of the list every cycle (default false)
+url="http://yoururl.com/mints.txt OR http://yoururl.com/mints.json" # the actual extension here doesn't matter, as long as the output is either a json list of strings or raw text of 1 mint per line (raw text supports # comments)
+
+
 
 # Swap config (At least one required to find swaps)
 [[swap]]
@@ -115,7 +142,7 @@ cooldown="3s"
 enabled=true
 min_spend=0.001 
 max_spend=0.01
-cu_limit=250_000
+cu_limit=250_000 # If not set, the bot will set this value for you. (This is advised for Jito)
 min_gain_bps=20 # Minimum _estimated_ gain required in bps; note that the actual profit may vary by the time the transaction lands. Consider starting with a higher value to be safe.
 min_priority_fee_lamports=190 # Alternatively you can use min_priority_fee_sol
 max_priority_fee_lamports=190 # Alternatively you can use max_priority_fee_sol
