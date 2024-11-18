@@ -83,6 +83,12 @@ update_seconds=10 # this pulls from Jupiter's public endpoint, keep that in mind
 untradable_cooldown="5m" # if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 5m)
 max_per_cycle=10 # optional field - use this to limit how many mints can be processed from this mint supplier per bot cycle (default unlimited)
 
+exclude=[ # optional - must come before filters if used
+  "So11111111111111111111111111111111111111112",  # sol
+  "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB", # usdt
+  "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # usdc
+]
+
 [[dynamic_mints.filter]] # at least 1 filter required
 skip_freezable=false # setting this to true can help filter out more volatile tokens (default true)
 skip_mintable=false # similar to freezable, can help filter out more volatile tokens (default false)
