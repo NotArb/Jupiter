@@ -83,6 +83,7 @@ priority_fee_lamports=0 # optional, but can help tx land
 enabled=true
 limit=100 # optional - limits the number of mints obtained from this supplier, sorted by daily volume (higher volume first)
 export_path="dynamic-mints.txt" # optional - useful for debugging
+
 update_seconds=10 # this pulls from Jupiter's public endpoint, keep that in mind if running multiple bots for rate limiting (default 10)
 untradable_cooldown="1m" # if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 1m)
 max_per_cycle=10 # optional - used to limit how many mints can be processed from this mint supplier per bot cycle (default unlimited)
