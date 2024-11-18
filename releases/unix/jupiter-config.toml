@@ -41,59 +41,60 @@ RPC_URL="your.url"
 ALLOW_CIRCULAR_ARBITRAGE="true"
 MARKET_MODE="remote"
 ENABLE_NEW_DEXES="false"
-EXCLUDE_DEX_PROGRAM_IDS=[
-    "MoonCVVNZFSYkqNXP6bxHLPL6QQJiMagDL3qcqUQTrG",  # Moonshot
-    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",  # Pump.fun
-]
+#EXCLUDE_DEX_PROGRAM_IDS=[
+#    "MoonCVVNZFSYkqNXP6bxHLPL6QQJiMagDL3qcqUQTrG",  # Moonshot
+#    "6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P",  # Pump.fun
+#]
 FILTER_MARKETS_WITH_MINTS="" # This will be ovewritten by mint filters defined below.
 
-# The dynamic mint filter fetches tradable tokens from Jupiter's Token API during startup.
-# By default, tokens are filtered out if they have no daily volume, are freezable, or are mintable.
-# Optionally, tokens can also be filtered by "required_tags". These tags are organized into groups,
-# and a token only needs to match at least one group to be accepted.
+# Dynamic mints are fetched from Jupiter's Token List API during startup.
 # Find all of Jupiter's token tags here: https://station.jup.ag/docs/token-list/token-list-api
-[dynamic_mint_filter] # removing in the future in favor of url mint filters
+[dynamic_mints] # this is the only mint configuration where only one configuration is allowed, hence the single brackets
 enabled=true
-skip_freezable=false # freezable tokens are generally rugs and won't be tradable long
-skip_mintable=false # a handful of stable coins are mintable, so defaulting to false
-min_daily_volume=50_000 # daily volume is measured in usdc - some tokens don't have any daily volume data, however you can still include them by setting this value to -1
-required_tags=[
-    ["verified", "pump"],
-    ["birdeye-trending"],
+limit=100 # optional - limits the number of mints obtained from this supplier, sorted by daily volume (higher volume first)
+export_path="dynamic-mints-jup.txt" # optional - useful for debugging
+
+exclude=[ # optional
+    "So11111111111111111111111111111111111111112",  # sol
+    "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB", # usdt
+    "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # usdc
 ]
 
-# Static mint filters are predefined lists of mints that you want to include.
-# Multiple filters can be defined to suit different needs.
+## NOTE: Filter configurations must be placed at the end, after other settings like exclude and enabled. ##
+
+[[dynamic_mints.filter]]
+include_tags=[ # an array of tag groups, only one group match required to be included
+    ["birdeye-trending"]
+]
+
+[[dynamic_mints.filter]]
+min_daily_volume=50_000
+
+# Static mints are predefined lists of mints that you want to include.
 [[static_mint_filter]]
-enabled=true
-mints=[
+enabled=false
+list=[
     "So11111111111111111111111111111111111111112",  # sol
     "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB", # usdt
     "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # usdc
     "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R", # ray
-    "J1toso1uCk3RLmjorhTtrVwY9HJ7X8V9yYac6Y7kGCPn", # jitosol
-    "mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So",  # msol
-    "7dHbWXmci3dT8UFYWYZweBLXgycu7Y3iL6trKn1Y7ARj", # stsol
     "7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs", # weth
     "3NZ9JMVBmGAqocybic2c7LQCJScmgsAZ6vQqTDzcqmJh", # wbtc
     "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",  # jup
     "HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3", # pyth
-    "jucy5XJ76pHVvtPZb5TKRcGQExkwit2P5s4vY8UzmpC",  # jucysol
-    "bSo13r4TkiE4KumL71LsHTPpL2euBYLFx6h9HP3piy1",  # bsol
-    "jupSoLaHXQiZZTSfEWMTRRgpnyFm8f6sZdosWBjx93v",  # jupsol
     "5oVNBeEEQvYi1cX3ir8Dx5n1P7pdxydbGF2X4TxVusJm", # inf
 ]
-
-# Load mints from a url. Must be txt or json format.
-# - txt should be a mint address per line with # used for comments
-# - json should be a single json list [ mint1, mint2, mint3 ]
-[[url_mint_filter]]
-enabled=false
-url="http://yourmints.com/mints.txt OR http://yourmints.com/mints.json"
 
 # Load mints from a file. Must be txt or json format.
 # - txt should be a mint address per line with # used for comments
 # - json should be a single json list [ mint1, mint2, mint3 ]
-[[file_mint_filter]]
+[[file_mints]] # only loaded on start/restart
 enabled=false
 path="/path/to/mints.json OR /path/to/mints.txt"
+
+# Load mints from a url. Must be txt or json format.
+# - txt should be a mint address per line with # used for comments
+# - json should be a single json list [ mint1, mint2, mint3 ]
+[[url_mints]] # only loaded on start/restart
+enabled=false
+url="http://yoururl.com/mints.txt OR http://yoururl.com/mints.json" # the actual extension here doesn't matter, as long as the output is either a json list of strings or raw text of 1 mint per line (raw text supports # comments)
