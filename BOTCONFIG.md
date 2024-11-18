@@ -79,14 +79,14 @@ priority_fee_lamports=0 # optional, but can help tx land
 #################
 # Dynamic mints #
 #################
-[dynamic_mints] # this is the only mint configuration where only one is allowed, hence the single brackets
+[dynamic_mints] # this is the only mint configuration where only one configuration is allowed, hence the single brackets
 enabled=true
-limit=100 # optional - limits the number of mints obtained from this supplier, sorted by daily volume (higher volume first)
+limit=100 # optional - limits the number of mints obtained from this supplier, ordered by highest daily volume first
 export_path="dynamic-mints.txt" # optional - useful for debugging
 
-update_seconds=10 # this pulls from Jupiter's public endpoint, keep that in mind if running multiple bots for rate limiting (default 10)
-untradable_cooldown="1m" # if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 1m)
+untradable_cooldown="1m" # optional - if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 1m)
 max_per_cycle=10 # optional - used to limit how many mints can be processed from this mint supplier per bot cycle (default unlimited)
+update_seconds=10 # optional - this pulls from Jupiter's public endpoint, keep that in mind if running multiple bots for rate limiting (default 10, min 5)
 
 exclude=[ # optional
   "So11111111111111111111111111111111111111112",  # sol
@@ -94,7 +94,7 @@ exclude=[ # optional
   "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # usdc
 ]
 
-## NOTE: Filter configurations must be placed at the end, after other settings like exclude and enabled.
+## NOTE: Filter configurations must be placed at the end, after other settings like exclude and enabled. ##
 
 [[dynamic_mints.filter]] # example filter to pick up all mints with either a birdeye-trending tag OR pump and verified tags
 include_tags=[ # an array of tag groups, only one group match required to be included
@@ -103,7 +103,7 @@ include_tags=[ # an array of tag groups, only one group match required to be inc
 ]
 
 [[dynamic_mints.filter]] # example filter to pick up new mints
-max_age="3d"
+max_age="3d" # d=days, h=hours, m=minutes
 min_daily_volume=10_000
 exclude_tags=[ # an array of tag groups, only one group match is required to be excluded
   ["strict"],
@@ -113,25 +113,26 @@ exclude_tags=[ # an array of tag groups, only one group match is required to be 
 ################
 # Static mints #
 ################
-[[static_mints]]
+[[static_mints]] # double brackets since we allow multiple
 enabled=true
-untradable_cooldown="5m" # if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 5m)
-max_per_cycle=10 # optional field - use this to limit how many mints can be processed from this mint supplier per bot cycle (default unlimited)
-random_order=false # optional field - use this to randomize the order of the list every cycle (default false)
+untradable_cooldown="1m" # optional - if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 1m)
+max_per_cycle=10 # optional - use this to limit how many mints can be processed from this mint supplier per bot cycle (default unlimited)
+random_order=false # optional - use this to randomize the order of the list every cycle (default false)
 list=[
   "So11111111111111111111111111111111111111112",  # sol
   "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB", # usdt
   "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # usdc
 ]
+
 ##############
 # File mints #
 ##############
 [[file_mints]]
 enabled=true
-update_seconds=10 # optional field - when set, this file will be loaded every X amount of seconds (default 0)
-untradable_cooldown="5m" # if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 5m)
-max_per_cycle=10 # optional field - use this to limit how many mints can be processed from this mint supplier per bot cycle (default unlimited)
-random_order=false # optional field - use this to randomize the order of the list every cycle (default false)
+untradable_cooldown="1m" # if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 1m)
+max_per_cycle=10 # optional - use this to limit how many mints can be processed from this mint supplier per bot cycle (default unlimited)
+random_order=false # optional - use this to randomize the order of the list every cycle (default false)
+update_seconds=10 # optional - when set, this file will be loaded every X amount of seconds (default 0)
 path="/absolute/path/to/mints.json OR /absolute/path/to/mints.txt" # the actual extension here doesn't matter, as long as the output is either a json list of strings or raw text of 1 mint per line (raw text supports # comments)
 
 #############
@@ -139,10 +140,10 @@ path="/absolute/path/to/mints.json OR /absolute/path/to/mints.txt" # the actual 
 #############
 [[url_mints]]
 enabled=true
-update_seconds=10 # optional field - when set, this url will be loaded every X amount of seconds (default 0)
-untradable_cooldown="5m" # if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 5m)
-max_per_cycle=10 # optional field - use this to limit how many mints can be processed from this mint supplier per bot cycle (default unlimited)
-random_order=false # optional field - use this to randomize the order of the list every cycle (default false)
+untradable_cooldown="1m" # optional - if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 1m)
+max_per_cycle=10 # optional - use this to limit how many mints can be processed from this mint supplier per bot cycle (default unlimited)
+random_order=false # optional - use this to randomize the order of the list every cycle (default false)
+update_seconds=10 # optional - when set, this url will be loaded every X amount of seconds (default 0)
 url="http://yoururl.com/mints.txt OR http://yoururl.com/mints.json" # the actual extension here doesn't matter, as long as the output is either a json list of strings or raw text of 1 mint per line (raw text supports # comments)
 
 ## Below are configurations for swaps with very basic placeholder settings.
