@@ -71,7 +71,7 @@ include_tags=[ # an array of tag groups, only one group match required to be inc
 min_daily_volume=50_000
 
 # Static mints are predefined lists of mints that you want to include.
-[[static_mint_filter]]
+[[static_mints]]
 enabled=false
 list=[
     "So11111111111111111111111111111111111111112",  # sol
