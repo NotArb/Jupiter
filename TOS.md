@@ -49,7 +49,7 @@ Last Updated: November 24, 2024
    - Smart contract interactions may fail or behave unexpectedly
 
 7. **GOVERNING LAW AND JURISDICTION**<br>
-   These Terms and any disputes arising from the Service shall be governed by the laws of the United States of America to the maximum extent permitted by law, except where prohibited by the mandatory consumer protection laws of the user's jurisdiction. By using the Service, you agree that any legal action, proceeding, or dispute shall be brought in the federal courts of the United States, except where prohibited by law. However, nothing in these Terms shall deprive a user of the protections of the mandatory consumer laws in their jurisdiction of residence.
+   These Terms shall be governed by and construed in accordance with the laws of the United States of America. Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts in the United States of America.
 
 8. **COMPLIANCE WITH LOCAL LAWS**<br>
    You are responsible for complying with all applicable local laws, regulations, and rules regarding:
