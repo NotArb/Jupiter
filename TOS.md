@@ -1,4 +1,4 @@
-Terms of Service for NotArb Bot
+Terms of Service for NotArb Bot<br>
 Last Updated: November 24, 2024
 
 1. ACCEPTANCE OF TERMS
