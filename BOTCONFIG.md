@@ -16,7 +16,7 @@ swap_threads=0 # Number of threads for handling swap requests (if left 0, the bo
 jito_threads=0 # Number of threads for dispatching Jito requests. (if left 0, the bot will automatically determine an optimal amount)
 spam_threads=0 # Number of threads for dispatching Spam requests. (if left 0, the bot will automatically determine an optimal amount)
 
-# Jupiter configuration (Required) (You can optionally use this same exact structure with [jupiter-quote] and [jupiter-swap] to slit Jupiter load)
+# Jupiter configuration (Required) (You can optionally use this same exact structure with [jupiter_quote] and [jupiter_swap] to slit Jupiter load)
 [jupiter]
 url="http://0.0.0.0:8080/" # URL of your Jupiter server
 http_timeout_ms=3000 # HTTP request timeout for Jupiter (in milliseconds)
