@@ -178,7 +178,6 @@ spam_max_opportunity_age_ms=100 # The maximum amount of time allowed from when t
 ## Strategy Fields
 
 #### 1.0. Fields that will directly affect the results of Jupiter entry/exit quotes:
-- `wrap_unwrap_sol`: Whether to automatically wrap and unwrap SOL for transactions. (default: false)
 - `min_spend`: The minimum amount to spend per swap operation.
 - `max_spend`: The maximum amount to spend per swap operation.
 - `min_priority_fee_lamports`: The minimum priority fee for transactions in lamports.
@@ -212,6 +211,8 @@ spam_max_opportunity_age_ms=100 # The maximum amount of time allowed from when t
 - `min_gain_sol`: The minimum _estimated_ token gain converted to solana required.
 ---
 #### 3.0. Fields that will directly affect the building of transactions:
+- `wrap_unwrap_sol`: Whether to automatically wrap and unwrap SOL for transactions. (default: false)
+- `skip_user_accounts_rpc_calls`: Only use if you're 100% certain every trade will only use tokens you have accounts open for. (default: false)
 - `cu_limit`: The cu limit to set per transaction. (If you're unsure, leave unset.)
 ---
 #### 4.0. Jito specific fields:
