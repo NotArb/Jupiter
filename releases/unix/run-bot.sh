@@ -11,7 +11,7 @@ cd "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 vm_args=( # no separating commas, each argument on a new line
   "-server"
   "-Xms256m"
-  "-Xmx2048m"
+  "-Xmx4096m"
   "-XX:+UseSerialGC"
 )
 
