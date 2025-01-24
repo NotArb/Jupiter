@@ -53,7 +53,7 @@ proxy_password=""
 proxy_wallet=false # When true, uses a separate wallet for tips. Sends 0.01 initially to cover minimum balance, refunded at transaction end.
 bind_ip="" # Set this to bind outgoing requests to a specific source IP, like a lightweight proxy without an intermediary server.
 
-# Toekn Accounts Fetcher (Optional)
+# Token Accounts Fetcher (Optional)
 [token_accounts_fetcher] # This allows the bot to know what token accounts are already open, allowing for faster transaction building.
 enabled=false
 rpc="solana-pub"
