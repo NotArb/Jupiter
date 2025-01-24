@@ -15,6 +15,9 @@ keypair_path="/path/to/keypair.json OR /path/to/keypair.txt" # Path to the keypa
 swap_threads=0 # Number of threads for handling swap requests (if left 0, the bot will automatically determine an optimal amount)
 jito_threads=0 # Number of threads for dispatching Jito requests. (if left 0, the bot will automatically determine an optimal amount)
 spam_threads=0 # Number of threads for dispatching Spam requests. (if left 0, the bot will automatically determine an optimal amount)
+acknowledge_terms_of_service=false # required to run notarb
+acknowledge_external_price_risk=false # required to run notarb when trading with anything other than SOL, which require 3rd party price fetches
+price_api_gecko=false # optional to use Gecko Terminal API prices instead of Jupiter Price API prices
 
 # Jupiter configuration (Required) (You can optionally use this same exact structure with [jupiter_quote] and [jupiter_swap] to slit Jupiter load)
 [jupiter]
@@ -50,6 +53,11 @@ proxy_password=""
 proxy_wallet=false # When true, uses a separate wallet for tips. Sends 0.01 initially to cover minimum balance, refunded at transaction end.
 bind_ip="" # Set this to bind outgoing requests to a specific source IP, like a lightweight proxy without an intermediary server.
 
+# Toekn Accounts Fetcher (Optional)
+[token_accounts_fetcher] # This allows the bot to know what token accounts are already open, allowing for faster transaction building.
+enabled=false
+rpc="solana-pub"
+
 # Simulation mode (Optional)
 [simulation_mode]
 enabled=false
@@ -76,9 +84,7 @@ priority_fee_lamports=0 # optional, but can help tx land
 # At least one mint supplier is required for the bot to operate.
 # Note: More mints may result in opening multiple token accounts, which can affect your balance due to account creation fees. Token accounts are only opened once.
 
-#################
-# Dynamic mints #
-#################
+## Dynamic Mints DEPRECATED - this will be removed in a later release
 [dynamic_mints] # this is the only mint configuration where only one configuration is allowed, hence the single brackets
 enabled=true
 limit=100 # optional - limits the number of mints obtained from this supplier, ordered by highest daily volume first
@@ -110,9 +116,7 @@ exclude_tags=[ # an array of tag groups, only one group match is required to be 
   ["community"]
 ] # Juptier token tags can be found here: https://station.jup.ag/docs/token-list/token-list-api
 
-################
-# Static mints #
-################
+## Static Mints
 [[static_mints]] # double brackets since we allow multiple
 enabled=true
 untradable_cooldown="1m" # optional - if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 1m)
@@ -124,9 +128,7 @@ list=[
   "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v", # usdc
 ]
 
-##############
-# File mints #
-##############
+## File Mints
 [[file_mints]]
 enabled=true
 untradable_cooldown="1m" # if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 1m)
@@ -135,9 +137,7 @@ random_order=false # optional - use this to randomize the order of the list ever
 update_seconds=10 # optional - when set, this file will be loaded every X amount of seconds (default 0)
 path="/absolute/path/to/mints.json OR /absolute/path/to/mints.txt" # the actual extension here doesn't matter, as long as the output is either a json list of strings or raw text of 1 mint per line (raw text supports # comments)
 
-#############
-# Url mints #
-#############
+## URL Mints
 [[url_mints]]
 enabled=true
 untradable_cooldown="1m" # optional - if the bot detects an untradable token, that token will be put on a cooldown for the given duration (default 1m)
@@ -149,7 +149,7 @@ url="http://yoururl.com/mints.txt OR http://yoururl.com/mints.json" # the actual
 ## Below are configurations for swaps with very basic placeholder settings.
 ## For proper example configurations, refer to: https://examples.notarb.org/
 
-# Swap config (At least one required)
+## Swap config (At least one required)
 [[swap]]
 enabled=true # Enable or disable this swap configuration (default: true)
 mint="So11111111111111111111111111111111111111112" # Base mint to trade (can also do symbols: SOL, USDC, USDT)
